@@ -54,17 +54,29 @@ CREATE TABLE [Pessoa_Endereco] (
 GO
 
 -- ----------------------------------------------------------------------------
+-- CRIA TABELA Tipo_Contato
+-- ----------------------------------------------------------------------------
+CREATE TABLE [Tipo_Contato] (
+    [Tipo_Id]               INT PRIMARY KEY IDENTITY,
+    [Nome]                  VARCHAR(150) NOT NULL,
+    [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
+    [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
+    CONSTRAINT [ck_Tipo_Contato_tipo_ativo_sn]
+        CHECK([Ativo] IN ('S', 'N')));          
+GO
+
+-- ----------------------------------------------------------------------------
 -- CRIA TABELA Pessoa_Contato
 -- ----------------------------------------------------------------------------
 CREATE TABLE [Pessoa_Contato] (
     [Pessoa_Id]             INT NOT NULL,
-    [Tipo_Contato]          INT NOT NULL, -- E: Email, T:Telefone, F: Fax
+    [Tipo_Id]               INT NOT NULL,
     [Contato]               VARCHAR(150) NOT NULL,
     [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
     [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
-    PRIMARY KEY ([Pessoa_Id], [Tipo_Contato], [Contato]),
-    CONSTRAINT [ck_Pessoa_Contato_Tipo]
-        CHECK([Tipo_Contato] IN ('E', 'T', 'F')), 
+    PRIMARY KEY ([Pessoa_Id], [Tipo_Id], [Contato]),
+    CONSTRAINT [fk_Pessoa_Contato_Tipo]
+        FOREIGN KEY([Tipo_Id]) REFERENCES [Tipo_Contato]([Tipo_Id]), 
     CONSTRAINT [fk_Pessoa_Contato_Pessoa]
         FOREIGN KEY([Pessoa_Id]) REFERENCES [Pessoa]([Pessoa_Id]),
     CONSTRAINT [ck_Pessoa_Contato_tipo_ativo_sn]

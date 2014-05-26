@@ -42,6 +42,11 @@
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Source\Dados\BancoDeDados.cs" />
+    <Compile Include="Source\Entidades\Contato.cs" />
+    <Compile Include="Source\Entidades\Endereco.cs" />
+    <Compile Include="Source\Entidades\Entidade.cs" />
+    <Compile Include="Source\Entidades\Parente.cs" />
+    <Compile Include="Source\Entidades\Pessoa.cs" />
     <Compile Include="Source\Program.cs" />
   </ItemGroup>
   <ItemGroup>
