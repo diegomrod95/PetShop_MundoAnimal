@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SistemaMundoAnimal.Source.Dados.Tipos;
 
 namespace SistemaMundoAnimal.Source.Entidades {
     public abstract class Pessoa : Entidade {
@@ -11,9 +12,9 @@ namespace SistemaMundoAnimal.Source.Entidades {
         protected string Sobrenome;
         protected string NomeFantasia;
         protected char Genero;
-        protected string RG;
-        protected string CPF;
-        protected string CNPJ;
+        protected TipoRG RG;
+        protected TipoCPF CPF;
+        protected TipoCNPJ CNPJ;
         protected DateTime Nascimento;
 
         protected List<Endereco> Enderecos;
@@ -22,7 +23,7 @@ namespace SistemaMundoAnimal.Source.Entidades {
 
         private const int NomeMaxLength = 60;
         private const int SobrenomeMaxLength = 80;
-        private const List<char> Generos = new List<char>(){ 'F', 'M', 'O' }; 
+        private List<char> Generos = new List<char>(){ 'F', 'M', 'O' }; 
 
         public int GetId () {
             return this.Id;
@@ -70,6 +71,42 @@ namespace SistemaMundoAnimal.Source.Entidades {
             } else {
                 throw new ArgumentException(genero + " não é um genero válido.");    
             }   
+        }
+
+        public string GetRG() {
+            return this.RG.ToString();
+        }
+
+        public void SetRG(string rg) {
+            if (TipoRG.ValidarRG(rg)) {
+                this.RG = new TipoRG(rg);
+            } else {
+                throw new ArgumentException(rg + " não é um RG válido.");
+            }
+        }
+
+        public string GetCPF() {
+            return this.CPF.ToString();
+        }
+
+        public void SetCPF(string cpf) {
+            if (TipoCPF.ValidarCPF(cpf)) {
+                this.CPF = new TipoCPF(cpf);
+            } else {
+                throw new ArgumentException(cpf + " não é um cpf válido.");
+            }   
+        }
+
+        public string GetCNPJ() {
+            return this.CNPJ.ToString();
+        }
+
+        public void SetCNPJ(string cnpj) {
+            if (TipoCNPJ.ValidarCNPJ(cnpj)) {
+                this.CNPJ = new TipoCNPJ(cnpj);
+            } else {
+                throw new ArgumentException(cnpj + " não é um cnpj válido.");
+            }
         }
 
         public string GetNomeCompleto() {

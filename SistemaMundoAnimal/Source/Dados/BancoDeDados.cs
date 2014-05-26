@@ -76,7 +76,7 @@ namespace SistemaMundoAnimal.Dados {
         /// <code>
         /// private void BotaoTeste_Clicar () {
         ///     string comando = "SELECT * FROM [Teste] WHERE [Nome] = '" + TxtNome.Text + "';"
-        ///     BancoDeDados.NovaConsulta(comando, (SqlDataReader reader) {
+        ///     BancoDeDados.NovaConsulta(comando, (SqlDataReader reader) => {
         ///         TxtTelefone.Text = reader["Telefone"];
         ///         TxtEndereco.Text = reader["Endereco"];
         ///         ...

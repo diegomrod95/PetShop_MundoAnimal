@@ -17,8 +17,8 @@ CREATE TABLE [Pessoa] (
     [Nome_Fantasia]         VARCHAR(100) NULL,
     [Tipo_Pessoa]           CHAR(1) NOT NULL, -- F: Fisica, J: Juridica
     [Genero]                CHAR(1) NOT NULL DEFAULT 'O', -- M: Masculino, F: Feminino, O: Outro/Não tem
-    [RG]                    CHAR(8) NULL, -- Formato: 55555555
-    [CPF]                   CHAR(10) NULL, -- Formato: 55555555555
+    [RG]                    CHAR(9) NULL, -- Formato: 55555555
+    [CPF]                   CHAR(11) NULL, -- Formato: 55555555555
     [CNPJ]                  CHAR(14) NULL, -- Formato: 555555555555555
     [Nascimento]            DATETIME NULL,
     [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
