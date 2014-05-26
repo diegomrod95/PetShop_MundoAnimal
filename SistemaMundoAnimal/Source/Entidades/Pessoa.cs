@@ -122,6 +122,14 @@ namespace SistemaMundoAnimal.Source.Entidades {
             }
         }
 
+        public List<Endereco> GetEnderecos() {
+            return this.Enderecos;
+        }
+
+        public void AddEndereco(Endereco endereco) {
+            this.Enderecos.Add(endereco);
+        }
+
         #endregion
 
         public string GetNomeCompleto() {

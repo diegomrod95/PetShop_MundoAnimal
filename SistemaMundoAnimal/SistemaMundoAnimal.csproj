@@ -43,10 +43,15 @@
     </Compile>
     <Compile Include="Source\Dados\BancoDeDados.cs" />
     <Compile Include="Source\Dados\Tipos\Tipo.cs" />
+    <Compile Include="Source\Dados\Tipos\TipoCelular.cs" />
     <Compile Include="Source\Dados\Tipos\TipoCEP.cs" />
     <Compile Include="Source\Dados\Tipos\TipoCNPJ.cs" />
     <Compile Include="Source\Dados\Tipos\TipoCPF.cs" />
+    <Compile Include="Source\Dados\Tipos\TipoEmail.cs" />
+    <Compile Include="Source\Dados\Tipos\TipoOutroContato.cs" />
+    <Compile Include="Source\Dados\Tipos\TipoRedeSocial.cs" />
     <Compile Include="Source\Dados\Tipos\TipoRG.cs" />
+    <Compile Include="Source\Dados\Tipos\TipoTelefone.cs" />
     <Compile Include="Source\Entidades\Contato.cs" />
     <Compile Include="Source\Entidades\Endereco.cs" />
     <Compile Include="Source\Entidades\Entidade.cs" />
