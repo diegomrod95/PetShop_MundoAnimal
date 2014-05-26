@@ -23,8 +23,9 @@ namespace SistemaMundoAnimal.Source.Entidades {
 
         private const int NomeMaxLength = 60;
         private const int SobrenomeMaxLength = 80;
-        private List<char> Generos = new List<char>(){ 'F', 'M', 'O' }; 
+        private List<char> Generos = new List<char>(){ 'F', 'M', 'O' };
 
+        #region Entidade Getters e Setters
         public int GetId () {
             return this.Id;
         }
@@ -108,6 +109,20 @@ namespace SistemaMundoAnimal.Source.Entidades {
                 throw new ArgumentException(cnpj + " não é um cnpj válido.");
             }
         }
+
+        public DateTime GetNascimento() {
+            return this.Nascimento;
+        }
+
+        public void SetNascimento(int dia, int mes, int ano) {
+            if (dia < 31 && mes < 12 && ano > 1800) {
+                this.Nascimento = new DateTime(ano, mes, dia);
+            } else {
+                throw new ArgumentException(dia + "/" + mes + "/" + ano + " não é uma data válida!");
+            }
+        }
+
+        #endregion
 
         public string GetNomeCompleto() {
             return Nome + " " + Sobrenome;

@@ -43,6 +43,7 @@
     </Compile>
     <Compile Include="Source\Dados\BancoDeDados.cs" />
     <Compile Include="Source\Dados\Tipos\Tipo.cs" />
+    <Compile Include="Source\Dados\Tipos\TipoCEP.cs" />
     <Compile Include="Source\Dados\Tipos\TipoCNPJ.cs" />
     <Compile Include="Source\Dados\Tipos\TipoCPF.cs" />
     <Compile Include="Source\Dados\Tipos\TipoRG.cs" />

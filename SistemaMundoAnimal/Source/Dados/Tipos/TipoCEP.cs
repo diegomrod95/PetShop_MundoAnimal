@@ -5,22 +5,20 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SistemaMundoAnimal.Source.Dados.Tipos {
-    public class TipoRG : Tipo<string> {
+    public class TipoCEP : Tipo<string> {
+        private static int Length = 8;
 
-        private static int Length = 9;
-
-        public TipoRG(string valor) {
-            this.Valor = valor;    
+        public TipoCEP(string valor) {
+            this.Valor = valor;
         }
 
-        public static bool ValidarRG(string rg) { 
-            // TODO: Validar RG
-            return rg.Length == Length;
+        public static bool ValidarCEP(string cep) { 
+            // TODO: Validar CEP
+            return cep.Length == Length;
         }
 
         public override string ToString() {
             return this.Valor;
         }
-
     }
 }
