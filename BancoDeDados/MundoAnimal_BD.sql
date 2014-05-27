@@ -102,3 +102,40 @@ CREATE TABLE [Pessoa_Parente] (
     CONSTRAINT [ck_Pessoa_Parente_tipo_ativo_sn]
         CHECK([Ativo] IN ('S', 'N')));
 GO
+
+-- ----------------------------------------------------------------------------
+-- CRIA TABELA Funcionario_Cargo
+-- ----------------------------------------------------------------------------
+CREATE TABLE [Funcionario_Cargo] (
+    [Cargo_Id]              INT PRIMARY KEY IDENTITY,
+    [Nome]                  VARCHAR(200) NOT NULL,
+    [Salario_Inicial]       DECIMAL(10, 2) NULL,
+    [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
+    [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
+    CONSTRAINT [ck_Funcionario_Cargo_tipo_ativo_sn]
+        CHECK([Ativo] IN ('S', 'N')));
+GO
+
+-- ----------------------------------------------------------------------------
+-- CRIA TABELA Funcionario
+-- ----------------------------------------------------------------------------
+CREATE TABLE [Funcionario] (
+    [Pessoa_Id]             INT NOT NULL,
+    [Cargo_Id]              INT NOT NULL,
+    [Salario]               DECIMAL(10, 2) NOT NULL,
+    [Vale_Alimentacao]      DECIMAL(10, 2) NULL,
+    [Vale_Transporte]       DECIMAL(10, 2) NULL,
+    [Auxilio_Creche]        DECIMAL(10, 2) NULL,
+    [Assitencia_Medica]     DECIMAL(10, 2) NULL,
+    [Dia_Pagamento]         DATETIME NULL,
+    [Data_Demissao]         DATETIME NULL,
+    [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
+    [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
+    PRIMARY KEY ([Pessoa_Id]),
+    CONSTRAINT [fk_Funcionario_Pessoa]
+        FOREIGN KEY([Pessoa_Id]) REFERENCES [Pessoa]([Pessoa_Id]),
+    CONSTRAINT [fk_Funcionario_Cargo]
+        FOREIGN KEY([Cargo_Id]) REFERENCES [Funcionario_Cargo]([Cargo_Id]),
+    CONSTRAINT [ck_Funcionario_ativo_sn]
+        CHECK([Ativo] IN ('S', 'N')));
+GO
