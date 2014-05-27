@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SistemaMundoAnimal.Source.Entidades {
 
+    /// <summary>
+    /// Enumeração que define o tipo de parentesto entre duas entidades do tipo Pessoa.
+    /// </summary>
     public enum TipoParentesco { 
         Pai = 'P',
         Mae = 'M',
@@ -14,6 +17,10 @@ namespace SistemaMundoAnimal.Source.Entidades {
         Conjuge = 'C'
     };
     
+    /// <summary>
+    /// Classe Parente do tipo Pessoa. Cadatrada junto à entidades de tipo Pessoa, realacionada com
+    /// outras por meio da tabela de parentesco.
+    /// </summary>
     public class Parente : Pessoa {
         private TipoParentesco Parentesco;
 

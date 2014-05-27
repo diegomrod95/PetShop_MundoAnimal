@@ -8,10 +8,19 @@ using SistemaMundoAnimal.Source.Dados.Tipos;
 
 namespace SistemaMundoAnimal.Source.Entidades {
 
+    /// <summary>
+    /// Enumeração que identifica os tipos de contatos registrados no banco, caso queira adicionar
+    /// um novo tipo de contato, o enum TipoContato deve ser alterado de forma que o valor seja igual
+    /// ao cadstrado no banco de dados.
+    /// </summary>
     public enum TipoContato { 
         Telefone = 1, Celular, Email, Fax, Twitter, Facebook, Orkut, Outro
     };
 
+    /// <summary>
+    /// Classe que retorna o instâncias da classe Contato com o seu devido tipo e valor. Implementa o Padrão
+    /// de Design, Fabrica.
+    /// </summary>
     public class FabricaContato {
         public static Contato GetContato(string valor, TipoContato tipo) {
             if (tipo == TipoContato.Celular) {
@@ -30,6 +39,10 @@ namespace SistemaMundoAnimal.Source.Entidades {
         }
     }
 
+    /// <summary>
+    /// Classe que representa uma entidade contato de um tipo qualquer. Classe usada por entidades do tipo
+    /// Pessoa.
+    /// </summary>
     public class Contato {
         private Tipo<string> Valor;
 

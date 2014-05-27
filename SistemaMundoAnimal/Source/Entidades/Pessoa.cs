@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 using SistemaMundoAnimal.Source.Dados.Tipos;
 
 namespace SistemaMundoAnimal.Source.Entidades {
+    /// <summary>
+    /// Classe abstrata que representa a entidade Pessoa, da qual outras entidades que se qualifiquem 
+    /// descenderão. As entidades pessoas se encontram na tabela Pessoa, e suas extenções se encontram
+    /// em tabelas detalhes, ex. Funcionário, Cliente e Fornecedor.
+    /// </summary>
     public abstract class Pessoa : Entidade {
         protected int Id;
         protected string Nome;
@@ -20,7 +25,7 @@ namespace SistemaMundoAnimal.Source.Entidades {
 
         protected List<Endereco> Enderecos;
         protected List<Contato> Contatos;
-        protected List<Pessoa> Parentes;
+        protected List<Parente> Parentes;
 
         private const int NomeMaxLength = 60;
         private const int SobrenomeMaxLength = 80;
@@ -28,6 +33,9 @@ namespace SistemaMundoAnimal.Source.Entidades {
         private List<char> TiposPessoa = new List<char>(){ 'F', 'J' };
         private List<char> Generos = new List<char>(){ 'F', 'M', 'O' };
 
+        /// <summary>
+        /// Getters e Setters públicos da classe.
+        /// </summary>
         #region Entidade Getters e Setters
         public int GetId () {
             return this.Id;
@@ -169,8 +177,19 @@ namespace SistemaMundoAnimal.Source.Entidades {
             this.Contatos.Add(contato);
         }
 
+        public List<Parente> GetParentes() {
+            return this.Parentes;
+        }
+
+        public void AddParente(Parente parente) {
+            this.Parentes.Add(parente);
+        }
         #endregion
 
+        /// <summary>
+        /// Retorna o nome completo da pessoa.
+        /// </summary>
+        /// <returns>A concatenação de Nome e Sobrenome</returns>
         public string GetNomeCompleto() {
             return Nome + " " + Sobrenome;
         }

@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SistemaMundoAnimal.Source.Entidades {
+    /// <summary>
+    /// Classe abstrata que representa entidades.
+    /// </summary>
     public abstract class Entidade {
     }
 }

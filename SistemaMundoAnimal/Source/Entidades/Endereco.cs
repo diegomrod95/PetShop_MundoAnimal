@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 using SistemaMundoAnimal.Source.Dados.Tipos;
 
 namespace SistemaMundoAnimal.Source.Entidades {
+    /// <summary>
+    /// Classe que representa a entidade Endereco, utilizada por entidades do tipo Pessoa. Uma pessoa 
+    /// pode ter múltiplos enderecos, o mais importante será registro ativo que foi cadastrado primeiro no
+    /// banco de dados.
+    /// </summary>
     public class Endereco : Entidade {
         private string Pais;
         private string Estado;
@@ -24,8 +29,10 @@ namespace SistemaMundoAnimal.Source.Entidades {
         private const int BairroMaxLength = 120;
         private const int ComplementoMaxLength = 300;
 
+        /// <summary>
+        /// Getters e Setters públicos da Classe.
+        /// </summary>
         #region Endereco Getters e Setters
-
         public string GetPais() {
             return this.Pais;
         }
