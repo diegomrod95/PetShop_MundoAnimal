@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using SistemaMundoAnimal.Source.Dados.Tipos;
+
 namespace SistemaMundoAnimal.Source.Entidades {
     public class Funcionario : Pessoa {
         private Cargo _Cargo;
-        private double Salario;
-        private double ValeAlimentacao;
-        private double ValeTransporte;
-        private double AuxilioCreche;
-        private double AssitenciaMedica;
+        private TipoDinheiro Salario;
+        private TipoDinheiro ValeAlimentacao;
+        private TipoDinheiro ValeTransporte;
+        private TipoDinheiro AuxilioCreche;
+        private TipoDinheiro AssitenciaMedica;
         private DateTime DiaPagamento;
         private DateTime DataDemissao;
 

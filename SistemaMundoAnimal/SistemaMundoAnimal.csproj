@@ -47,6 +47,7 @@
     <Compile Include="Source\Dados\Tipos\TipoCEP.cs" />
     <Compile Include="Source\Dados\Tipos\TipoCNPJ.cs" />
     <Compile Include="Source\Dados\Tipos\TipoCPF.cs" />
+    <Compile Include="Source\Dados\Tipos\TipoDinheiro.cs" />
     <Compile Include="Source\Dados\Tipos\TipoEmail.cs" />
     <Compile Include="Source\Dados\Tipos\TipoOutroContato.cs" />
     <Compile Include="Source\Dados\Tipos\TipoRedeSocial.cs" />
