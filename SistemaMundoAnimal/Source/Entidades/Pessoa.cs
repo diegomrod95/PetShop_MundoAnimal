@@ -11,6 +11,7 @@ namespace SistemaMundoAnimal.Source.Entidades {
         protected string Nome;
         protected string Sobrenome;
         protected string NomeFantasia;
+        protected char TipoPessoa;
         protected char Genero;
         protected TipoRG RG;
         protected TipoCPF CPF;
@@ -23,6 +24,7 @@ namespace SistemaMundoAnimal.Source.Entidades {
 
         private const int NomeMaxLength = 60;
         private const int SobrenomeMaxLength = 80;
+        private const int NomeFantasiaMaxLength = 100;
         private List<char> Generos = new List<char>(){ 'F', 'M', 'O' };
 
         #region Entidade Getters e Setters
@@ -59,6 +61,18 @@ namespace SistemaMundoAnimal.Source.Entidades {
                 this.Sobrenome = sobrenome;
             } else {
                 throw new ArgumentException("O sobrenome não pode ultrapassar " + SobrenomeMaxLength + " caracteres.");
+            }
+        }
+
+        public string GetNomeFantasia() {
+            return this.NomeFantasia;
+        }
+
+        public void SetNomeFantasia(string nomeFantasia) {
+            if (nomeFantasia.Length < NomeFantasiaMaxLength) {
+                this.NomeFantasia = nomeFantasia;
+            } else {
+                throw new ArgumentException(nomeFantasia + " não é um nome fantasia válido.");
             }
         }
 
@@ -128,6 +142,14 @@ namespace SistemaMundoAnimal.Source.Entidades {
 
         public void AddEndereco(Endereco endereco) {
             this.Enderecos.Add(endereco);
+        }
+
+        public List<Contato> GetContatos() {
+            return this.Contatos;
+        }
+
+        public void AddContato(Contato contato) {
+            this.Contatos.Add(contato);
         }
 
         #endregion

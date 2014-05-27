@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaMundoAnimal.Source.Entidades {
 
-    public enum Parentesco { 
+    public enum TipoParentesco { 
         Pai = 'P',
         Mae = 'M',
         Filho = 'F',
@@ -15,6 +15,10 @@ namespace SistemaMundoAnimal.Source.Entidades {
     };
     
     public class Parente : Pessoa {
-        private Parentesco Tipo;
+        private TipoParentesco Parentesco;
+
+        public string GetParentesco() {
+            return "";
+        }
     }
 }
