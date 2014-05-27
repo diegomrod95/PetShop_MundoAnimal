@@ -39,5 +39,9 @@ namespace SistemaMundoAnimal.Source.Entidades {
                 return "Outro";
             }
         }
+
+        public void SetParentesco(TipoParentesco parentesco) {
+            this.Parentesco = parentesco;
+        }
     }
 }

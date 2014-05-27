@@ -58,6 +58,9 @@
     <Compile Include="Source\Entidades\Parente.cs" />
     <Compile Include="Source\Entidades\Pessoa.cs" />
     <Compile Include="Source\Program.cs" />
+    <Compile Include="Testes\Entidades\PessoaTeste.cs" />
+    <Compile Include="Testes\ITestavel.cs" />
+    <Compile Include="Testes\Teste.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
