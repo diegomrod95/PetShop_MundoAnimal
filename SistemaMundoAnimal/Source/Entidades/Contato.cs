@@ -43,7 +43,7 @@ namespace SistemaMundoAnimal.Source.Entidades {
     /// Classe que representa uma entidade contato de um tipo qualquer. Classe usada por entidades do tipo
     /// Pessoa.
     /// </summary>
-    public class Contato {
+    public class Contato : Entidade {
         private Tipo<string> Valor;
 
         public Contato(Tipo<string> valor) {

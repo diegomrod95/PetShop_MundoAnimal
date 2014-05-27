@@ -109,7 +109,6 @@ GO
 CREATE TABLE [Funcionario_Cargo] (
     [Cargo_Id]              INT PRIMARY KEY IDENTITY,
     [Nome]                  VARCHAR(200) NOT NULL,
-    [Salario_Inicial]       DECIMAL(10, 2) NULL,
     [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
     [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
     CONSTRAINT [ck_Funcionario_Cargo_tipo_ativo_sn]

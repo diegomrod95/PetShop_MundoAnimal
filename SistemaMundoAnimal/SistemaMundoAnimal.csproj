@@ -52,9 +52,11 @@
     <Compile Include="Source\Dados\Tipos\TipoRedeSocial.cs" />
     <Compile Include="Source\Dados\Tipos\TipoRG.cs" />
     <Compile Include="Source\Dados\Tipos\TipoTelefone.cs" />
+    <Compile Include="Source\Entidades\Cargo.cs" />
     <Compile Include="Source\Entidades\Contato.cs" />
     <Compile Include="Source\Entidades\Endereco.cs" />
     <Compile Include="Source\Entidades\Entidade.cs" />
+    <Compile Include="Source\Entidades\Funcionario.cs" />
     <Compile Include="Source\Entidades\Parente.cs" />
     <Compile Include="Source\Entidades\Pessoa.cs" />
     <Compile Include="Source\Program.cs" />
