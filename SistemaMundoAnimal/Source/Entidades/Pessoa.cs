@@ -25,6 +25,7 @@ namespace SistemaMundoAnimal.Source.Entidades {
         private const int NomeMaxLength = 60;
         private const int SobrenomeMaxLength = 80;
         private const int NomeFantasiaMaxLength = 100;
+        private List<char> TiposPessoa = new List<char>(){ 'F', 'J' };
         private List<char> Generos = new List<char>(){ 'F', 'M', 'O' };
 
         #region Entidade Getters e Setters
@@ -73,6 +74,22 @@ namespace SistemaMundoAnimal.Source.Entidades {
                 this.NomeFantasia = nomeFantasia;
             } else {
                 throw new ArgumentException(nomeFantasia + " não é um nome fantasia válido.");
+            }
+        }
+
+        public string GetTipoPessoa() {
+            if (this.TipoPessoa == 'F') {
+                return "Fisica";
+            } else {
+                return "Juridica";
+            }
+        }
+
+        public void SetTipoPessoa(char tipo) {
+            if (TiposPessoa.Contains(tipo)) {
+                this.TipoPessoa = tipo;
+            } else {
+                throw new ArgumentException(tipo + " não é um tipo de pessoa válido.");
             }
         }
 

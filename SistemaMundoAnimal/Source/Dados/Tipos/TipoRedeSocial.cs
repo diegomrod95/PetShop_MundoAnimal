@@ -19,7 +19,7 @@ namespace SistemaMundoAnimal.Source.Dados.Tipos {
 
         public static bool ValidarRedeSocial(string valor, TipoContato tipo) {
             // TODO: Validar rdee social pelo tipo
-            return true;
+            return valor.Length < Length;
         }
 
         public override string ToString() {

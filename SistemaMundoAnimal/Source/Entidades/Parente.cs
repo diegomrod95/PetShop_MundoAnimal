@@ -18,7 +18,19 @@ namespace SistemaMundoAnimal.Source.Entidades {
         private TipoParentesco Parentesco;
 
         public string GetParentesco() {
-            return "";
+            if (Parentesco == TipoParentesco.Pai) { 
+                return "Pai";
+            } else if (Parentesco == TipoParentesco.Mae) {
+                return "Mãe";
+            } else if (Parentesco == TipoParentesco.Filho) {
+                return "Filho";
+            } else if (Parentesco == TipoParentesco.Irmao) {
+                return "Irmão";
+            } else if (Parentesco == TipoParentesco.Conjuge) {
+                return "Conjuge";
+            } else {
+                return "Outro";
+            }
         }
     }
 }
