@@ -13,6 +13,7 @@ namespace SistemaMundoAnimal.Testes {
         private static EnderecoTeste Endereco = new EnderecoTeste();
         private static ContatoTeste Contato = new ContatoTeste();
         private static ParenteTeste Parente = new ParenteTeste();
+        private static FuncionarioTeste Funcionario = new FuncionarioTeste();
 
         public static void RodarTodosTestes() {
             Pessoa.RodarTestes();
@@ -23,6 +24,8 @@ namespace SistemaMundoAnimal.Testes {
             Console.WriteLine("Teste Entidade Contato: " + (Contato.TesteOK));
             Parente.RodarTestes();
             Console.WriteLine("Teste Entidade Parente: " + (Parente.TesteOK));
+            Funcionario.RodarTestes();
+            Console.WriteLine("Teste Entidade Funcionario: " + (Funcionario.TesteOK));
         }
     }
 }

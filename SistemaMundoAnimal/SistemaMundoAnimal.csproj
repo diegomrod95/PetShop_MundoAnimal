@@ -65,6 +65,7 @@
     <Compile Include="Source\Program.cs" />
     <Compile Include="Testes\Entidades\ContatoTeste.cs" />
     <Compile Include="Testes\Entidades\EnderecoTeste.cs" />
+    <Compile Include="Testes\Entidades\FuncionarioTeste.cs" />
     <Compile Include="Testes\Entidades\ParenteTeste.cs" />
     <Compile Include="Testes\Entidades\PessoaTeste.cs" />
     <Compile Include="Testes\ITestavel.cs" />

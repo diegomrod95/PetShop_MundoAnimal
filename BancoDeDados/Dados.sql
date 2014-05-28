@@ -14,6 +14,16 @@ VALUES
 GO
 
 -- ----------------------------------------------------------------------------
+-- CARGOS -- NÃO ALTERAR, COMPROMETE FUNCIONAMENTO DO SISTEMA
+-- ----------------------------------------------------------------------------
+INSERT INTO [Funcionario_Cargo]
+    ([Nome])
+VALUES
+    ('Vendedor'), ('DiretorGeral'), ('DiretorMarketing'), ('DiretorVendas'),
+    ('Vendas'), ('Balconista');
+GO
+
+-- ----------------------------------------------------------------------------
 -- PESSOAS PARA TESTAR TABELA E ENTIDADE PESSOA
 -- ----------------------------------------------------------------------------
 INSERT INTO [Pessoa]
@@ -52,4 +62,9 @@ VALUES
     (1, 2, 'C'), (1, 3, 'F');
 GO 
 
-SELECT * FROM [Pessoa_Parente]
+INSERT INTO [Funcionario]
+    ([Pessoa_Id], [Cargo_Id], [Salario], [Vale_Alimentacao], [Vale_Transporte], [Auxilio_Creche]
+     ,[Assitencia_Medica], [Dia_Pagamento])
+VALUES
+    (1, 1, 800, 50, 100, 120, 0, 5)
+GO

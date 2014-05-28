@@ -50,8 +50,8 @@ namespace SistemaMundoAnimal.Source.Entidades {
             return this.Nome;
         }
 
-        public TipoCargo GetTipo() {
-            return this.Tipo;
+        public int GetTipo() {
+            return (int)this.Tipo;
         }
     }
 }
