@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using SistemaMundoAnimal.Source.Dados;
 using SistemaMundoAnimal.Source.Dados.Tipos;
 
 namespace SistemaMundoAnimal.Source.Entidades {
     /// <summary>
     /// Classe abstrata que representa a entidade Pessoa, da qual outras entidades que se qualifiquem 
     /// descenderão. As entidades pessoas se encontram na tabela Pessoa, e suas extenções se encontram
-    /// em tabelas detalhes, ex. Funcionário, Cliente e Fornecedor.
+    /// em tabelas detalhes, ex. Funcionário, Fornecedor.
     /// </summary>
     public abstract class Pessoa : Entidade {
         protected int Id;
@@ -32,6 +34,33 @@ namespace SistemaMundoAnimal.Source.Entidades {
         private const int NomeFantasiaMaxLength = 100;
         private List<char> TiposPessoa = new List<char>(){ 'F', 'J' };
         private List<char> Generos = new List<char>(){ 'F', 'M', 'O' };
+
+        /// <summary>
+        /// Query usada para inserir entidades do tipo Pessoa na tabela Pessoa no banco de dados.
+        /// </summary>
+        private static string InsertPessoaSqlQuery = @"INSERT INTO [Pessoa]" 
+            + " ([Nome], [Sobrenome], [Nome_Fantasia], [Tipo_Pessoa], [Genero], [RG], [CPF], [CNPJ], [Nascimento])"
+            + " VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}');"; 
+
+        /// <summary>
+        /// Insere uma entidade do tipo pessoa no banco de dados.
+        /// </summary>
+        /// <param name="pessoa">Uma instancia da classe Pessoa</param>
+        public static void InserirNoBancoDeDados(Pessoa pessoa) {
+            string consulta;
+            try {
+
+                consulta = string.Format(InsertPessoaSqlQuery, pessoa.GetNome(),
+                    pessoa.GetSobrenome(), pessoa.GetNomeFantasia(), pessoa.GetTipoPessoa(),
+                    pessoa.GetGenero(), pessoa.GetRG(), pessoa.GetCPF(), pessoa.GetCNPJ(),
+                    pessoa.GetNascimento().ToString("d"));
+
+                BancoDeDados.NovoComandoSql(consulta);
+
+            } catch (Exception e) {
+                throw e;
+            }
+        }
 
         /// <summary>
         /// Getters e Setters públicos da classe.
@@ -85,12 +114,8 @@ namespace SistemaMundoAnimal.Source.Entidades {
             }
         }
 
-        public string GetTipoPessoa() {
-            if (this.TipoPessoa == 'F') {
-                return "Fisica";
-            } else {
-                return "Juridica";
-            }
+        public char GetTipoPessoa() {
+            return this.TipoPessoa;
         }
 
         public void SetTipoPessoa(char tipo) {
@@ -186,12 +211,5 @@ namespace SistemaMundoAnimal.Source.Entidades {
         }
         #endregion
 
-        /// <summary>
-        /// Retorna o nome completo da pessoa.
-        /// </summary>
-        /// <returns>A concatenação de Nome e Sobrenome</returns>
-        public string GetNomeCompleto() {
-            return Nome + " " + Sobrenome;
-        }
     }
 }

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaMundoAnimal.Source.Dados.Tipos {
     public class TipoDinheiro : Tipo<double> {
-        private double Valor;
-
+        
         public TipoDinheiro(double valor) {
             SetDinheiro(valor);
         }

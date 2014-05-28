@@ -9,9 +9,9 @@ using SistemaMundoAnimal.Testes.Entidades;
 namespace SistemaMundoAnimal.Testes {
     public class Teste {
 
-        private PessoaTeste Pessoa = new PessoaTeste();
+        private static PessoaTeste Pessoa = new PessoaTeste();
 
-        public void RodarTodosTestes() {
+        public static void RodarTodosTestes() {
             Pessoa.RodarTestes();
         }
     }

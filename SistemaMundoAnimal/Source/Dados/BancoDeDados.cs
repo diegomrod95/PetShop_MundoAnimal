@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using System.Data.SqlClient;
 
-namespace SistemaMundoAnimal.Dados {
+namespace SistemaMundoAnimal.Source.Dados {
 
     #region Classe BancoDeDados
     public class BancoDeDados {

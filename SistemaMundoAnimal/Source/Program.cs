@@ -1,4 +1,5 @@
 ﻿using SistemaMundoAnimal.Forms;
+using SistemaMundoAnimal.Testes;
 
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace SistemaMundoAnimal {
         /// </summary>
         [STAThread]
         public static void Main(string[] args) {
+            Teste.RodarTodosTestes();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormPrincipal());
