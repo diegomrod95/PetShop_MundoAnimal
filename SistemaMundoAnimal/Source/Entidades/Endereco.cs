@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using SistemaMundoAnimal.Source.Dados;
 using SistemaMundoAnimal.Source.Dados.Tipos;
 
 namespace SistemaMundoAnimal.Source.Entidades {
@@ -28,6 +29,35 @@ namespace SistemaMundoAnimal.Source.Entidades {
         private const int EnderecoMaxLength = 200;
         private const int BairroMaxLength = 120;
         private const int ComplementoMaxLength = 300;
+
+        /// <summary>
+        /// Query usada para inserir entidades do tipo Enderco, usada por entidades do tipo Pessoa.
+        /// </summary>
+        private static string InsertEnderecoSqlQuery = @"INSERT INTO [Pessoa_Endereco]"
+            + "([Pessoa_Id], [Pais], [Estado], [Cidade], [Endereco], [NumeroEndereco], [Bairro], [Complemento], [CEP])"
+            + " VALUES ({0}, '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}');";
+
+        public static void InserirNoBancoDeDados(Endereco endereco, int pessoa_id) {
+            string consulta;
+            try {
+
+                consulta = string.Format(InsertEnderecoSqlQuery,
+                    pessoa_id,
+                    endereco.GetPais(),
+                    endereco.GetEstado(),
+                    endereco.GetCidade(),
+                    endereco.GetEndereco(),
+                    endereco.GetNumeroEndereco(),
+                    endereco.GetBairro(),
+                    endereco.GetComplemento(),
+                    endereco.GetCEP());
+
+                BancoDeDados.NovoComandoSql(consulta);
+
+            } catch (Exception e) {
+                throw e;
+            }
+        }
 
         /// <summary>
         /// Getters e Setters públicos da Classe.
