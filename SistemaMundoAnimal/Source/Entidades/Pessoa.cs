@@ -48,12 +48,28 @@ namespace SistemaMundoAnimal.Source.Entidades {
         /// <param name="pessoa">Uma instancia da classe Pessoa</param>
         public static void InserirNoBancoDeDados(Pessoa pessoa) {
             string consulta;
+            string rg = "";
+            string cpf = "";
+            string cnpj = "";
+            string nascimento = "";
+
             try {
 
-                consulta = string.Format(InsertPessoaSqlQuery, pessoa.GetNome(),
-                    pessoa.GetSobrenome(), pessoa.GetNomeFantasia(), pessoa.GetTipoPessoa(),
-                    pessoa.GetGenero(), pessoa.GetRG(), pessoa.GetCPF(), pessoa.GetCNPJ(),
-                    pessoa.GetNascimento().ToString("d"));
+                if (pessoa.GetTipoPessoa() == 'F') {
+                    rg = pessoa.GetRG();
+                    cpf = pessoa.GetCPF();
+                    nascimento = pessoa.GetNascimento().ToString("d");
+                } else {
+                    cnpj = pessoa.GetCNPJ();
+                }
+
+                consulta = string.Format(InsertPessoaSqlQuery, 
+                    pessoa.GetNome(),
+                    pessoa.GetSobrenome(), 
+                    pessoa.GetNomeFantasia(), 
+                    pessoa.GetTipoPessoa(),
+                    pessoa.GetGenero(), 
+                    rg, cpf, cnpj, nascimento);
 
                 BancoDeDados.NovoComandoSql(consulta);
 

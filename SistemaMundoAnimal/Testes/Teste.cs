@@ -13,6 +13,7 @@ namespace SistemaMundoAnimal.Testes {
 
         public static void RodarTodosTestes() {
             Pessoa.RodarTestes();
+            Console.WriteLine("Teste Entidade Pessoa: " + (Pessoa.TesteOK));
         }
     }
 }
