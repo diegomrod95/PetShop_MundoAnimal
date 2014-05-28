@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using SistemaMundoAnimal.Source.Dados.Tipos;
+using SistemaMundoAnimal.Source.Dados;
 
 namespace SistemaMundoAnimal.Source.Entidades {
 
@@ -24,17 +25,17 @@ namespace SistemaMundoAnimal.Source.Entidades {
     public class FabricaContato {
         public static Contato GetContato(string valor, TipoContato tipo) {
             if (tipo == TipoContato.Celular) {
-                return new Contato(new TipoCelular(valor));
+                return new Contato(new TipoCelular(valor), tipo);
             } else if (tipo == TipoContato.Telefone) {
-                return new Contato(new TipoTelefone(valor));
+                return new Contato(new TipoTelefone(valor), tipo);
             } else if (tipo == TipoContato.Email) {
-                return new Contato(new TipoEmail(valor));
+                return new Contato(new TipoEmail(valor), tipo);
             } else if (tipo == TipoContato.Fax) {
-                return new Contato(new TipoTelefone(valor));
+                return new Contato(new TipoTelefone(valor), TipoContato.Fax);
             } else if (tipo == TipoContato.Twitter || tipo == TipoContato.Facebook || tipo == TipoContato.Orkut) {
-                return new Contato(new TipoRedeSocial(valor, tipo));
+                return new Contato(new TipoRedeSocial(valor, tipo), tipo);
             } else {
-                return new Contato(new TipoOutroContato(valor));
+                return new Contato(new TipoOutroContato(valor), tipo);
             }
         }
     }
@@ -45,13 +46,42 @@ namespace SistemaMundoAnimal.Source.Entidades {
     /// </summary>
     public class Contato : Entidade {
         private Tipo<string> Valor;
+        private TipoContato Tipo;
 
-        public Contato(Tipo<string> valor) {
-            this.Valor = valor;
+        private static string InsertContatoSqlQuery = @"INSERT INTO [Pessoa_Contato]"
+            + " ([Pessoa_Id], [Tipo_Id], [Contato])"
+            + " VALUES ({0}, {1}, '{2}')";
+
+        public static void InserirNoBancoDeDados(Contato contato, int pessoa_id) {
+            string comando;
+            try {
+
+                comando = string.Format(InsertContatoSqlQuery,
+                    pessoa_id,
+                    contato.GetTipo(),
+                    contato.GetValor());
+
+                BancoDeDados.NovoComandoSql(comando);
+
+            } catch (Exception e) {
+                throw e;
+            }
         }
 
-        public Tipo<string> GetValor() {
-            return this.Valor;    
+        public Contato(Tipo<string> valor, TipoContato tipo) {
+            this.Valor = valor;
+            this.Tipo = tipo;
+        }
+
+        public Contato() { 
+        }
+
+        public string GetValor() {
+            return this.Valor.ToString();    
+        }
+
+        public int GetTipo() {
+            return (int)this.Tipo;
         }
     }
 }

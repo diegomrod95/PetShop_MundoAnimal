@@ -38,10 +38,10 @@ namespace SistemaMundoAnimal.Source.Entidades {
             + " VALUES ({0}, '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}');";
 
         public static void InserirNoBancoDeDados(Endereco endereco, int pessoa_id) {
-            string consulta;
+            string comando;
             try {
 
-                consulta = string.Format(InsertEnderecoSqlQuery,
+                comando = string.Format(InsertEnderecoSqlQuery,
                     pessoa_id,
                     endereco.GetPais(),
                     endereco.GetEstado(),
@@ -52,7 +52,7 @@ namespace SistemaMundoAnimal.Source.Entidades {
                     endereco.GetComplemento(),
                     endereco.GetCEP());
 
-                BancoDeDados.NovoComandoSql(consulta);
+                BancoDeDados.NovoComandoSql(comando);
 
             } catch (Exception e) {
                 throw e;

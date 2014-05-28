@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using SistemaMundoAnimal.Source.Dados;
+
 namespace SistemaMundoAnimal.Source.Entidades {
 
     /// <summary>
@@ -24,20 +26,28 @@ namespace SistemaMundoAnimal.Source.Entidades {
     public class Parente : Pessoa {
         private TipoParentesco Parentesco;
 
-        public string GetParentesco() {
-            if (Parentesco == TipoParentesco.Pai) { 
-                return "Pai";
-            } else if (Parentesco == TipoParentesco.Mae) {
-                return "Mãe";
-            } else if (Parentesco == TipoParentesco.Filho) {
-                return "Filho";
-            } else if (Parentesco == TipoParentesco.Irmao) {
-                return "Irmão";
-            } else if (Parentesco == TipoParentesco.Conjuge) {
-                return "Conjuge";
-            } else {
-                return "Outro";
+        private static string InsertParenteSqlQuery = @"INSERT INTO [Pessoa_Parente]"
+            + " ([Pessoa_Id], [Parente_Id], [Parentesco])"
+            + " VALUES ({0}, {1}, '{2}');";
+
+        public static void InserirNoBancoDeDados(Parente parente, int pessoa_id) {
+            string comando;
+            try {
+
+                comando = string.Format(InsertParenteSqlQuery,
+                    pessoa_id,
+                    parente.GetId(),
+                    parente.GetParentesco());
+
+                BancoDeDados.NovoComandoSql(comando);
+
+            } catch (Exception e) {
+                throw e;
             }
+        }
+
+        public char GetParentesco() {
+            return (char) Parentesco;
         }
 
         public void SetParentesco(TipoParentesco parentesco) {

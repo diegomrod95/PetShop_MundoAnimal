@@ -47,7 +47,9 @@ VALUES
 GO 
 
 INSERT INTO [Pessoa_Parente]
-    ([Parente_Id], [Parente_Id], [Parentesco])
+    ([Pessoa_Id], [Parente_Id], [Parentesco])
 VALUES
     (1, 2, 'C'), (1, 3, 'F');
 GO 
+
+SELECT * FROM [Pessoa_Parente]
