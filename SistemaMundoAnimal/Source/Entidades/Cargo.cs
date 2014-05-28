@@ -34,6 +34,8 @@ namespace SistemaMundoAnimal.Source.Entidades {
         private const int NomeCargoMaxLength = 200;
 
         public Cargo(string nome, TipoCargo tipo) {
+            this.SetNome(nome);
+            this.Tipo = tipo;
         }
 
         public void SetNome(string nome) {
