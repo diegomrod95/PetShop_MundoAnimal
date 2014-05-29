@@ -35,32 +35,32 @@
             this.TxtRG = new System.Windows.Forms.MaskedTextBox();
             this.TxtCPF = new System.Windows.Forms.MaskedTextBox();
             this.TxtNascimento = new System.Windows.Forms.MaskedTextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.BtnAddEndereco = new System.Windows.Forms.Button();
-            this.BtnLimpaEndereco = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.ComboEnderecoPais = new System.Windows.Forms.ComboBox();
-            this.ComboEstado = new System.Windows.Forms.ComboBox();
-            this.TxtEnderecoCidade = new System.Windows.Forms.TextBox();
-            this.TxtEndereco = new System.Windows.Forms.TextBox();
-            this.TxtNumeroEndereco = new System.Windows.Forms.TextBox();
-            this.TxtBairroEndereco = new System.Windows.Forms.TextBox();
-            this.TxtCEPEndereco = new System.Windows.Forms.TextBox();
+            this.GroupEndereco = new System.Windows.Forms.GroupBox();
             this.TxtComplemento = new System.Windows.Forms.RichTextBox();
+            this.TxtCEPEndereco = new System.Windows.Forms.TextBox();
+            this.TxtBairroEndereco = new System.Windows.Forms.TextBox();
+            this.TxtNumeroEndereco = new System.Windows.Forms.TextBox();
+            this.TxtEndereco = new System.Windows.Forms.TextBox();
+            this.TxtEnderecoCidade = new System.Windows.Forms.TextBox();
+            this.ComboEstado = new System.Windows.Forms.ComboBox();
+            this.ComboEnderecoPais = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.BtnLimpaEndereco = new System.Windows.Forms.Button();
+            this.BtnAddEndereco = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.TxtContato = new System.Windows.Forms.TextBox();
+            this.ComboTipoContato = new System.Windows.Forms.ComboBox();
             this.BtnLimpaContato = new System.Windows.Forms.Button();
             this.BtnAddContato = new System.Windows.Forms.Button();
-            this.ComboTipoContato = new System.Windows.Forms.ComboBox();
-            this.TxtContato = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -77,7 +77,7 @@
             this.TxtDiaPagamento = new System.Windows.Forms.TextBox();
             this.BtnRegistrarFuncionario = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.GroupEndereco.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,16 +143,16 @@
             // 
             // TxtNome
             // 
-            this.TxtNome.Location = new System.Drawing.Point(128, 8);
+            this.TxtNome.Location = new System.Drawing.Point(153, 11);
             this.TxtNome.Name = "TxtNome";
-            this.TxtNome.Size = new System.Drawing.Size(289, 20);
+            this.TxtNome.Size = new System.Drawing.Size(223, 20);
             this.TxtNome.TabIndex = 9;
             // 
             // TxtSobrenome
             // 
-            this.TxtSobrenome.Location = new System.Drawing.Point(128, 40);
+            this.TxtSobrenome.Location = new System.Drawing.Point(153, 43);
             this.TxtSobrenome.Name = "TxtSobrenome";
-            this.TxtSobrenome.Size = new System.Drawing.Size(289, 20);
+            this.TxtSobrenome.Size = new System.Drawing.Size(223, 20);
             this.TxtSobrenome.TabIndex = 10;
             // 
             // ComboGeneros
@@ -162,159 +162,120 @@
             "Masculino",
             "Feminino",
             "Outro"});
-            this.ComboGeneros.Location = new System.Drawing.Point(128, 69);
+            this.ComboGeneros.Location = new System.Drawing.Point(153, 72);
             this.ComboGeneros.Name = "ComboGeneros";
             this.ComboGeneros.Size = new System.Drawing.Size(121, 21);
             this.ComboGeneros.TabIndex = 11;
             // 
             // TxtRG
             // 
-            this.TxtRG.Location = new System.Drawing.Point(128, 98);
+            this.TxtRG.Location = new System.Drawing.Point(153, 101);
             this.TxtRG.Mask = "99.999.999-9";
             this.TxtRG.Name = "TxtRG";
             this.TxtRG.Size = new System.Drawing.Size(83, 20);
             this.TxtRG.TabIndex = 12;
+            this.TxtRG.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // TxtCPF
             // 
-            this.TxtCPF.Location = new System.Drawing.Point(128, 130);
+            this.TxtCPF.Location = new System.Drawing.Point(153, 133);
             this.TxtCPF.Mask = "999999999/99";
             this.TxtCPF.Name = "TxtCPF";
             this.TxtCPF.Size = new System.Drawing.Size(83, 20);
             this.TxtCPF.TabIndex = 13;
+            this.TxtCPF.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // TxtNascimento
             // 
-            this.TxtNascimento.Location = new System.Drawing.Point(128, 156);
+            this.TxtNascimento.Location = new System.Drawing.Point(153, 159);
             this.TxtNascimento.Mask = "99/99/9999";
             this.TxtNascimento.Name = "TxtNascimento";
             this.TxtNascimento.Size = new System.Drawing.Size(83, 20);
             this.TxtNascimento.TabIndex = 14;
+            this.TxtNascimento.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
-            // groupBox1
+            // GroupEndereco
             // 
-            this.groupBox1.Controls.Add(this.TxtComplemento);
-            this.groupBox1.Controls.Add(this.TxtCEPEndereco);
-            this.groupBox1.Controls.Add(this.TxtBairroEndereco);
-            this.groupBox1.Controls.Add(this.TxtNumeroEndereco);
-            this.groupBox1.Controls.Add(this.TxtEndereco);
-            this.groupBox1.Controls.Add(this.TxtEnderecoCidade);
-            this.groupBox1.Controls.Add(this.ComboEstado);
-            this.groupBox1.Controls.Add(this.ComboEnderecoPais);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.BtnLimpaEndereco);
-            this.groupBox1.Controls.Add(this.BtnAddEndereco);
-            this.groupBox1.Location = new System.Drawing.Point(18, 197);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(399, 357);
-            this.groupBox1.TabIndex = 15;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Endereços";
+            this.GroupEndereco.Controls.Add(this.TxtComplemento);
+            this.GroupEndereco.Controls.Add(this.TxtCEPEndereco);
+            this.GroupEndereco.Controls.Add(this.TxtBairroEndereco);
+            this.GroupEndereco.Controls.Add(this.TxtNumeroEndereco);
+            this.GroupEndereco.Controls.Add(this.TxtEndereco);
+            this.GroupEndereco.Controls.Add(this.TxtEnderecoCidade);
+            this.GroupEndereco.Controls.Add(this.ComboEstado);
+            this.GroupEndereco.Controls.Add(this.ComboEnderecoPais);
+            this.GroupEndereco.Controls.Add(this.label14);
+            this.GroupEndereco.Controls.Add(this.label13);
+            this.GroupEndereco.Controls.Add(this.label12);
+            this.GroupEndereco.Controls.Add(this.label11);
+            this.GroupEndereco.Controls.Add(this.label10);
+            this.GroupEndereco.Controls.Add(this.label8);
+            this.GroupEndereco.Controls.Add(this.label4);
+            this.GroupEndereco.Controls.Add(this.label3);
+            this.GroupEndereco.Controls.Add(this.BtnLimpaEndereco);
+            this.GroupEndereco.Controls.Add(this.BtnAddEndereco);
+            this.GroupEndereco.Location = new System.Drawing.Point(382, 11);
+            this.GroupEndereco.Name = "GroupEndereco";
+            this.GroupEndereco.Size = new System.Drawing.Size(399, 357);
+            this.GroupEndereco.TabIndex = 15;
+            this.GroupEndereco.TabStop = false;
+            this.GroupEndereco.Text = "Endereços";
             // 
-            // BtnAddEndereco
+            // TxtComplemento
             // 
-            this.BtnAddEndereco.Location = new System.Drawing.Point(7, 323);
-            this.BtnAddEndereco.Name = "BtnAddEndereco";
-            this.BtnAddEndereco.Size = new System.Drawing.Size(113, 27);
-            this.BtnAddEndereco.TabIndex = 0;
-            this.BtnAddEndereco.Text = "Add";
-            this.BtnAddEndereco.UseVisualStyleBackColor = true;
+            this.TxtComplemento.Location = new System.Drawing.Point(118, 236);
+            this.TxtComplemento.Name = "TxtComplemento";
+            this.TxtComplemento.Size = new System.Drawing.Size(257, 81);
+            this.TxtComplemento.TabIndex = 30;
+            this.TxtComplemento.Text = "";
             // 
-            // BtnLimpaEndereco
+            // TxtCEPEndereco
             // 
-            this.BtnLimpaEndereco.Location = new System.Drawing.Point(126, 323);
-            this.BtnLimpaEndereco.Name = "BtnLimpaEndereco";
-            this.BtnLimpaEndereco.Size = new System.Drawing.Size(113, 27);
-            this.BtnLimpaEndereco.TabIndex = 1;
-            this.BtnLimpaEndereco.Text = "Limpar";
-            this.BtnLimpaEndereco.UseVisualStyleBackColor = true;
+            this.TxtCEPEndereco.Location = new System.Drawing.Point(118, 204);
+            this.TxtCEPEndereco.MaxLength = 8;
+            this.TxtCEPEndereco.Name = "TxtCEPEndereco";
+            this.TxtCEPEndereco.Size = new System.Drawing.Size(121, 20);
+            this.TxtCEPEndereco.TabIndex = 29;
             // 
-            // label3
+            // TxtBairroEndereco
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 18);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Pais:";
+            this.TxtBairroEndereco.Location = new System.Drawing.Point(118, 178);
+            this.TxtBairroEndereco.Name = "TxtBairroEndereco";
+            this.TxtBairroEndereco.Size = new System.Drawing.Size(257, 20);
+            this.TxtBairroEndereco.TabIndex = 28;
             // 
-            // label4
+            // TxtNumeroEndereco
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 55);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 18);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Estado:";
+            this.TxtNumeroEndereco.Location = new System.Drawing.Point(118, 147);
+            this.TxtNumeroEndereco.Name = "TxtNumeroEndereco";
+            this.TxtNumeroEndereco.Size = new System.Drawing.Size(75, 20);
+            this.TxtNumeroEndereco.TabIndex = 27;
             // 
-            // label8
+            // TxtEndereco
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 86);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 18);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Cidade:";
+            this.TxtEndereco.Location = new System.Drawing.Point(118, 116);
+            this.TxtEndereco.Name = "TxtEndereco";
+            this.TxtEndereco.Size = new System.Drawing.Size(257, 20);
+            this.TxtEndereco.TabIndex = 26;
             // 
-            // label10
+            // TxtEnderecoCidade
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(7, 115);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 18);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Endreco:";
+            this.TxtEnderecoCidade.Location = new System.Drawing.Point(118, 83);
+            this.TxtEnderecoCidade.Name = "TxtEnderecoCidade";
+            this.TxtEnderecoCidade.Size = new System.Drawing.Size(257, 20);
+            this.TxtEnderecoCidade.TabIndex = 25;
             // 
-            // label11
+            // ComboEstado
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 147);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(66, 18);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "Numero:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 177);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(52, 18);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "Bairro:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(6, 236);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(106, 18);
-            this.label13.TabIndex = 21;
-            this.label13.Text = "Complemento:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(6, 203);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(43, 18);
-            this.label14.TabIndex = 22;
-            this.label14.Text = "CEP:";
+            this.ComboEstado.FormattingEnabled = true;
+            this.ComboEstado.Items.AddRange(new object[] {
+            "SP",
+            "RJ",
+            "AC"});
+            this.ComboEstado.Location = new System.Drawing.Point(118, 56);
+            this.ComboEstado.Name = "ComboEstado";
+            this.ComboEstado.Size = new System.Drawing.Size(75, 21);
+            this.ComboEstado.TabIndex = 24;
             // 
             // ComboEnderecoPais
             // 
@@ -329,60 +290,105 @@
             this.ComboEnderecoPais.Size = new System.Drawing.Size(257, 21);
             this.ComboEnderecoPais.TabIndex = 23;
             // 
-            // ComboEstado
+            // label14
             // 
-            this.ComboEstado.FormattingEnabled = true;
-            this.ComboEstado.Items.AddRange(new object[] {
-            "São Paulo",
-            "Rio de Janeiro",
-            "Bahia"});
-            this.ComboEstado.Location = new System.Drawing.Point(118, 56);
-            this.ComboEstado.Name = "ComboEstado";
-            this.ComboEstado.Size = new System.Drawing.Size(257, 21);
-            this.ComboEstado.TabIndex = 24;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(6, 203);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(43, 18);
+            this.label14.TabIndex = 22;
+            this.label14.Text = "CEP:";
             // 
-            // TxtEnderecoCidade
+            // label13
             // 
-            this.TxtEnderecoCidade.Location = new System.Drawing.Point(118, 83);
-            this.TxtEnderecoCidade.Name = "TxtEnderecoCidade";
-            this.TxtEnderecoCidade.Size = new System.Drawing.Size(257, 20);
-            this.TxtEnderecoCidade.TabIndex = 25;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(6, 236);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(106, 18);
+            this.label13.TabIndex = 21;
+            this.label13.Text = "Complemento:";
             // 
-            // TxtEndereco
+            // label12
             // 
-            this.TxtEndereco.Location = new System.Drawing.Point(118, 116);
-            this.TxtEndereco.Name = "TxtEndereco";
-            this.TxtEndereco.Size = new System.Drawing.Size(257, 20);
-            this.TxtEndereco.TabIndex = 26;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(6, 177);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(52, 18);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Bairro:";
             // 
-            // TxtNumeroEndereco
+            // label11
             // 
-            this.TxtNumeroEndereco.Location = new System.Drawing.Point(118, 147);
-            this.TxtNumeroEndereco.Name = "TxtNumeroEndereco";
-            this.TxtNumeroEndereco.Size = new System.Drawing.Size(75, 20);
-            this.TxtNumeroEndereco.TabIndex = 27;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(6, 147);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(66, 18);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "Numero:";
             // 
-            // TxtBairroEndereco
+            // label10
             // 
-            this.TxtBairroEndereco.Location = new System.Drawing.Point(118, 178);
-            this.TxtBairroEndereco.Name = "TxtBairroEndereco";
-            this.TxtBairroEndereco.Size = new System.Drawing.Size(257, 20);
-            this.TxtBairroEndereco.TabIndex = 28;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(7, 115);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 18);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Endreco:";
             // 
-            // TxtCEPEndereco
+            // label8
             // 
-            this.TxtCEPEndereco.Location = new System.Drawing.Point(118, 204);
-            this.TxtCEPEndereco.Name = "TxtCEPEndereco";
-            this.TxtCEPEndereco.Size = new System.Drawing.Size(121, 20);
-            this.TxtCEPEndereco.TabIndex = 29;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 86);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 18);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Cidade:";
             // 
-            // TxtComplemento
+            // label4
             // 
-            this.TxtComplemento.Location = new System.Drawing.Point(118, 236);
-            this.TxtComplemento.Name = "TxtComplemento";
-            this.TxtComplemento.Size = new System.Drawing.Size(257, 81);
-            this.TxtComplemento.TabIndex = 30;
-            this.TxtComplemento.Text = "";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 18);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Estado:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 18);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Pais:";
+            // 
+            // BtnLimpaEndereco
+            // 
+            this.BtnLimpaEndereco.Location = new System.Drawing.Point(126, 323);
+            this.BtnLimpaEndereco.Name = "BtnLimpaEndereco";
+            this.BtnLimpaEndereco.Size = new System.Drawing.Size(113, 27);
+            this.BtnLimpaEndereco.TabIndex = 1;
+            this.BtnLimpaEndereco.Text = "Limpar";
+            this.BtnLimpaEndereco.UseVisualStyleBackColor = true;
+            this.BtnLimpaEndereco.Click += new System.EventHandler(this.BtnLimpaEndereco_Click);
+            // 
+            // BtnAddEndereco
+            // 
+            this.BtnAddEndereco.Location = new System.Drawing.Point(7, 323);
+            this.BtnAddEndereco.Name = "BtnAddEndereco";
+            this.BtnAddEndereco.Size = new System.Drawing.Size(113, 27);
+            this.BtnAddEndereco.TabIndex = 0;
+            this.BtnAddEndereco.Text = "Add";
+            this.BtnAddEndereco.UseVisualStyleBackColor = true;
+            this.BtnAddEndereco.Click += new System.EventHandler(this.BtnAddEndereco_Click);
             // 
             // groupBox2
             // 
@@ -392,55 +398,12 @@
             this.groupBox2.Controls.Add(this.ComboTipoContato);
             this.groupBox2.Controls.Add(this.BtnLimpaContato);
             this.groupBox2.Controls.Add(this.BtnAddContato);
-            this.groupBox2.Location = new System.Drawing.Point(433, 239);
+            this.groupBox2.Location = new System.Drawing.Point(382, 385);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(300, 153);
+            this.groupBox2.Size = new System.Drawing.Size(399, 153);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contatos";
-            // 
-            // BtnLimpaContato
-            // 
-            this.BtnLimpaContato.Location = new System.Drawing.Point(129, 116);
-            this.BtnLimpaContato.Name = "BtnLimpaContato";
-            this.BtnLimpaContato.Size = new System.Drawing.Size(113, 27);
-            this.BtnLimpaContato.TabIndex = 32;
-            this.BtnLimpaContato.Text = "Limpar";
-            this.BtnLimpaContato.UseVisualStyleBackColor = true;
-            // 
-            // BtnAddContato
-            // 
-            this.BtnAddContato.Location = new System.Drawing.Point(10, 116);
-            this.BtnAddContato.Name = "BtnAddContato";
-            this.BtnAddContato.Size = new System.Drawing.Size(113, 27);
-            this.BtnAddContato.TabIndex = 31;
-            this.BtnAddContato.Text = "Add";
-            this.BtnAddContato.UseVisualStyleBackColor = true;
-            // 
-            // ComboTipoContato
-            // 
-            this.ComboTipoContato.FormattingEnabled = true;
-            this.ComboTipoContato.Location = new System.Drawing.Point(97, 19);
-            this.ComboTipoContato.Name = "ComboTipoContato";
-            this.ComboTipoContato.Size = new System.Drawing.Size(197, 21);
-            this.ComboTipoContato.TabIndex = 33;
-            // 
-            // TxtContato
-            // 
-            this.TxtContato.Location = new System.Drawing.Point(97, 59);
-            this.TxtContato.Name = "TxtContato";
-            this.TxtContato.Size = new System.Drawing.Size(197, 20);
-            this.TxtContato.TabIndex = 34;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(7, 22);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 18);
-            this.label15.TabIndex = 31;
-            this.label15.Text = "Tipo:";
             // 
             // label16
             // 
@@ -452,11 +415,65 @@
             this.label16.TabIndex = 35;
             this.label16.Text = "Contato:";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(7, 22);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 18);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "Tipo:";
+            // 
+            // TxtContato
+            // 
+            this.TxtContato.Location = new System.Drawing.Point(97, 59);
+            this.TxtContato.Name = "TxtContato";
+            this.TxtContato.Size = new System.Drawing.Size(197, 20);
+            this.TxtContato.TabIndex = 34;
+            // 
+            // ComboTipoContato
+            // 
+            this.ComboTipoContato.FormattingEnabled = true;
+            this.ComboTipoContato.Items.AddRange(new object[] {
+            "Telefone",
+            "Celular",
+            "Email",
+            "Fax",
+            "Twitter",
+            "Facebook",
+            "Orkut",
+            "Outro"});
+            this.ComboTipoContato.Location = new System.Drawing.Point(97, 19);
+            this.ComboTipoContato.Name = "ComboTipoContato";
+            this.ComboTipoContato.Size = new System.Drawing.Size(197, 21);
+            this.ComboTipoContato.TabIndex = 33;
+            // 
+            // BtnLimpaContato
+            // 
+            this.BtnLimpaContato.Location = new System.Drawing.Point(126, 116);
+            this.BtnLimpaContato.Name = "BtnLimpaContato";
+            this.BtnLimpaContato.Size = new System.Drawing.Size(113, 27);
+            this.BtnLimpaContato.TabIndex = 32;
+            this.BtnLimpaContato.Text = "Limpar";
+            this.BtnLimpaContato.UseVisualStyleBackColor = true;
+            this.BtnLimpaContato.Click += new System.EventHandler(this.BtnLimpaContato_Click);
+            // 
+            // BtnAddContato
+            // 
+            this.BtnAddContato.Location = new System.Drawing.Point(7, 116);
+            this.BtnAddContato.Name = "BtnAddContato";
+            this.BtnAddContato.Size = new System.Drawing.Size(113, 27);
+            this.BtnAddContato.TabIndex = 31;
+            this.BtnAddContato.Text = "Add";
+            this.BtnAddContato.UseVisualStyleBackColor = true;
+            this.BtnAddContato.Click += new System.EventHandler(this.BtnAddContato_Click);
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(430, 11);
+            this.label17.Location = new System.Drawing.Point(15, 188);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(53, 18);
             this.label17.TabIndex = 17;
@@ -466,7 +483,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(430, 39);
+            this.label18.Location = new System.Drawing.Point(15, 216);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(58, 18);
             this.label18.TabIndex = 18;
@@ -476,7 +493,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(430, 68);
+            this.label19.Location = new System.Drawing.Point(15, 245);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(125, 18);
             this.label19.TabIndex = 19;
@@ -486,7 +503,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(430, 100);
+            this.label20.Location = new System.Drawing.Point(15, 277);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(116, 18);
             this.label20.TabIndex = 20;
@@ -496,7 +513,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(430, 132);
+            this.label21.Location = new System.Drawing.Point(15, 309);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(106, 18);
             this.label21.TabIndex = 21;
@@ -506,7 +523,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(430, 161);
+            this.label22.Location = new System.Drawing.Point(15, 338);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(131, 18);
             this.label22.TabIndex = 22;
@@ -516,7 +533,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(430, 194);
+            this.label23.Location = new System.Drawing.Point(15, 371);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(134, 18);
             this.label23.TabIndex = 23;
@@ -528,50 +545,59 @@
             this.ComboCargoFuncionario.Items.AddRange(new object[] {
             "Vendedor",
             "Diretor Geral",
-            "Balconista"});
-            this.ComboCargoFuncionario.Location = new System.Drawing.Point(568, 11);
+            "Diretor Marketing",
+            "Diretor Vendas",
+            "Diretor TI",
+            "Assitência Técnica",
+            "DBA",
+            "Contador",
+            "Motorista",
+            "Caixa",
+            "Balconista",
+            "Outro"});
+            this.ComboCargoFuncionario.Location = new System.Drawing.Point(153, 188);
             this.ComboCargoFuncionario.Name = "ComboCargoFuncionario";
             this.ComboCargoFuncionario.Size = new System.Drawing.Size(165, 21);
             this.ComboCargoFuncionario.TabIndex = 24;
             // 
             // TxtSalarioFuncionario
             // 
-            this.TxtSalarioFuncionario.Location = new System.Drawing.Point(568, 42);
+            this.TxtSalarioFuncionario.Location = new System.Drawing.Point(153, 219);
             this.TxtSalarioFuncionario.Name = "TxtSalarioFuncionario";
             this.TxtSalarioFuncionario.Size = new System.Drawing.Size(165, 20);
             this.TxtSalarioFuncionario.TabIndex = 25;
             // 
             // TxtValeAlimentacao
             // 
-            this.TxtValeAlimentacao.Location = new System.Drawing.Point(568, 69);
+            this.TxtValeAlimentacao.Location = new System.Drawing.Point(153, 246);
             this.TxtValeAlimentacao.Name = "TxtValeAlimentacao";
             this.TxtValeAlimentacao.Size = new System.Drawing.Size(165, 20);
             this.TxtValeAlimentacao.TabIndex = 26;
             // 
             // TxtValeTransporte
             // 
-            this.TxtValeTransporte.Location = new System.Drawing.Point(568, 98);
+            this.TxtValeTransporte.Location = new System.Drawing.Point(153, 275);
             this.TxtValeTransporte.Name = "TxtValeTransporte";
             this.TxtValeTransporte.Size = new System.Drawing.Size(165, 20);
             this.TxtValeTransporte.TabIndex = 27;
             // 
             // TxtAuxilioCreche
             // 
-            this.TxtAuxilioCreche.Location = new System.Drawing.Point(568, 130);
+            this.TxtAuxilioCreche.Location = new System.Drawing.Point(153, 307);
             this.TxtAuxilioCreche.Name = "TxtAuxilioCreche";
             this.TxtAuxilioCreche.Size = new System.Drawing.Size(165, 20);
             this.TxtAuxilioCreche.TabIndex = 28;
             // 
             // TxtAssitenciaMedica
             // 
-            this.TxtAssitenciaMedica.Location = new System.Drawing.Point(568, 162);
+            this.TxtAssitenciaMedica.Location = new System.Drawing.Point(153, 339);
             this.TxtAssitenciaMedica.Name = "TxtAssitenciaMedica";
             this.TxtAssitenciaMedica.Size = new System.Drawing.Size(165, 20);
             this.TxtAssitenciaMedica.TabIndex = 29;
             // 
             // TxtDiaPagamento
             // 
-            this.TxtDiaPagamento.Location = new System.Drawing.Point(568, 192);
+            this.TxtDiaPagamento.Location = new System.Drawing.Point(153, 369);
             this.TxtDiaPagamento.Name = "TxtDiaPagamento";
             this.TxtDiaPagamento.Size = new System.Drawing.Size(68, 20);
             this.TxtDiaPagamento.TabIndex = 30;
@@ -584,6 +610,7 @@
             this.BtnRegistrarFuncionario.TabIndex = 31;
             this.BtnRegistrarFuncionario.Text = "Registrar Funcionario";
             this.BtnRegistrarFuncionario.UseVisualStyleBackColor = true;
+            this.BtnRegistrarFuncionario.Click += new System.EventHandler(this.BtnRegistrarFuncionario_Click);
             // 
             // button1
             // 
@@ -593,6 +620,7 @@
             this.button1.TabIndex = 32;
             this.button1.Text = "Limpar Campos";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormCadastroFuncionario
             // 
@@ -615,7 +643,7 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.GroupEndereco);
             this.Controls.Add(this.TxtNascimento);
             this.Controls.Add(this.TxtCPF);
             this.Controls.Add(this.TxtRG);
@@ -630,8 +658,8 @@
             this.Controls.Add(this.label1);
             this.Name = "FormCadastroFuncionario";
             this.Size = new System.Drawing.Size(1008, 590);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.GroupEndereco.ResumeLayout(false);
+            this.GroupEndereco.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -653,7 +681,7 @@
         private System.Windows.Forms.MaskedTextBox TxtRG;
         private System.Windows.Forms.MaskedTextBox TxtCPF;
         private System.Windows.Forms.MaskedTextBox TxtNascimento;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GroupEndereco;
         private System.Windows.Forms.Button BtnLimpaEndereco;
         private System.Windows.Forms.Button BtnAddEndereco;
         private System.Windows.Forms.Label label4;
