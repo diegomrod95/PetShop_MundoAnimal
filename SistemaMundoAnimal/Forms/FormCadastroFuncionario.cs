@@ -33,7 +33,7 @@ namespace SistemaMundoAnimal.Forms {
                     }
                 }
 
-                if (grupo is TextBox || grupo is ComboBox || grupo is RichTextBox) {
+                if (grupo is TextBox || grupo is ComboBox || grupo is RichTextBox || grupo is MaskedTextBox) {
                     grupo.Text = "";
                 }
             }
@@ -96,7 +96,7 @@ namespace SistemaMundoAnimal.Forms {
                 int ano = Convert.ToInt32(TxtNascimento.Text.Substring(4, 4));
 
                 // <TODO: Pesquisar ultimo id no banco!>
-                funcionario.SetId(5);
+                funcionario.SetId(6);
                 // </TODO>
                 funcionario.SetNome(TxtNome.Text);
                 funcionario.SetSobrenome(TxtSobrenome.Text);
@@ -105,7 +105,7 @@ namespace SistemaMundoAnimal.Forms {
                 funcionario.SetRG(TxtRG.Text);
                 funcionario.SetCPF(TxtCPF.Text);
                 funcionario.SetNascimento(dia, mes, ano);
-                funcionario.SetCargo((TipoCargo) ComboCargoFuncionario.Items.IndexOf(ComboCargoFuncionario.Text));
+                funcionario.SetCargo((TipoCargo) ComboCargoFuncionario.Items.IndexOf(ComboCargoFuncionario.Text) + 1);
                 funcionario.SetSalario(Convert.ToDouble(TxtSalarioFuncionario.Text));
                 funcionario.SetValeAlimentacao(Convert.ToDouble(TxtValeAlimentacao.Text));
                 funcionario.SetValeTransporte(Convert.ToDouble(TxtValeTransporte.Text));
@@ -124,7 +124,7 @@ namespace SistemaMundoAnimal.Forms {
                 funcionario = new Funcionario();
 
             } catch (Exception ex) {
-                MessageBox.Show(ex.StackTrace + "\n" + ex.Message);
+                MessageBox.Show(ex.StackTrace + "\n\n" + ex.Message);
             }
         }
 
@@ -133,7 +133,7 @@ namespace SistemaMundoAnimal.Forms {
         /// </summary>
         private void BtnAddContato_Click(object sender, EventArgs e) {
             try {
-                int index = ComboTipoContato.Items.IndexOf(ComboTipoContato.Text);
+                int index = ComboTipoContato.Items.IndexOf(ComboTipoContato.Text) + 1;
                 var contato = FabricaContato.GetContato(TxtContato.Text, (TipoContato)index);
 
                 funcionario.AddContato(contato);
