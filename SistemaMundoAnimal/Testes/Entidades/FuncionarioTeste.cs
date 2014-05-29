@@ -17,7 +17,7 @@ namespace SistemaMundoAnimal.Testes.Entidades {
             try {
 
                 funcionario.SetId(2);
-                funcionario.SetCargo(TipoCargo.Caixa);
+                funcionario.SetCargo(TipoCargo.Vendedor);
                 funcionario.SetSalario(400);
                 funcionario.SetValeAlimentacao(100);
                 funcionario.SetValeTransporte(100);
@@ -34,7 +34,6 @@ namespace SistemaMundoAnimal.Testes.Entidades {
         }
         
         public void RodarTestes() {
-            InserirFuncionarioNoBancoDeDados();
         }
     }
 }

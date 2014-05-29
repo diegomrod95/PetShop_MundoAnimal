@@ -20,7 +20,7 @@ namespace SistemaMundoAnimal.Source.Dados.Tipos {
         }
 
         public override string ToString() {
-            return this.Valor.ToString("0.00");
+            return this.Valor.ToString("0.00").Replace(",", ".");
         }
     }
 }

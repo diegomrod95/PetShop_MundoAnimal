@@ -126,7 +126,7 @@ CREATE TABLE [Funcionario] (
     [Vale_Transporte]       DECIMAL(10, 2) NULL,
     [Auxilio_Creche]        DECIMAL(10, 2) NULL,
     [Assitencia_Medica]     DECIMAL(10, 2) NULL,
-    [Dia_Pagamento]         DATETIME NULL,
+    [Dia_Pagamento]         INT NULL,
     [Data_Demissao]         DATETIME NULL,
     [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
     [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',

@@ -79,6 +79,34 @@ namespace SistemaMundoAnimal.Source.Entidades {
         }
 
         /// <summary>
+        /// Insere todos enderecos da entidade Pessoa no Banco de Dados.
+        /// </summary>
+        public void InserirEnderecosNoBancoDeDados() {
+            this.GetEnderecos().ForEach((Endereco e) => {
+                Endereco.InserirNoBancoDeDados(e, this.GetId());
+            });
+        }
+
+        /// <summary>
+        /// Insere todos contatos da entidade Pessoa no Banco de Dados.
+        /// </summary>
+        public void InserirContatosNoBancoDeDados() {
+            this.GetContatos().ForEach((Contato e) => {
+                Contato.InserirNoBancoDeDados(e, this.GetId());
+            });
+        }
+
+
+        /// <summary>
+        /// Inicia a Listas de Entidades depedentes desta.
+        /// </summary>
+        public Pessoa() {
+            this.Enderecos = new List<Endereco>();
+            this.Parentes = new List<Parente>();
+            this.Contatos = new List<Contato>();
+        }
+
+        /// <summary>
         /// Getters e Setters públicos da classe.
         /// </summary>
         #region Entidade Getters e Setters

@@ -11,6 +11,11 @@ namespace SistemaMundoAnimal.Source.Entidades {
         DiretorGeral, 
         DiretorMarketing,
         DiretorVendas,
+        DiretorTI,
+        AssistenciaTecnica,
+        DBA,
+        Contador,
+        Motorista,
         Caixa,
         Balconista,
         Outro
@@ -18,9 +23,26 @@ namespace SistemaMundoAnimal.Source.Entidades {
 
     public class FabricaCargo {
         public static Cargo GetCargo(TipoCargo tipo) {
-            // TODO: Terminar Fabrica de cargos e deixar consistente com o banco
             if (tipo == TipoCargo.Vendedor) {
-                return new Cargo("Vendedor", TipoCargo.Vendedor);
+                return new Cargo("Vendedor", TipoCargo.Vendedor);  
+            } else if (tipo == TipoCargo.DiretorGeral) {
+                return new Cargo("Diretor Geral", TipoCargo.Contador);
+            } else if (tipo == TipoCargo.DiretorVendas) {
+                return new Cargo("Diretor Vendas", TipoCargo.DiretorVendas);
+            } else if (tipo == TipoCargo.DiretorTI) {
+                return new Cargo("Diretor de TI", TipoCargo.DiretorTI);
+            } else if (tipo == TipoCargo.AssistenciaTecnica) {
+                return new Cargo("Assistencia Tecnica", TipoCargo.AssistenciaTecnica);
+            } else if (tipo == TipoCargo.DBA) {
+                return new Cargo("DBA", TipoCargo.DBA);
+            } else if (tipo == TipoCargo.Contador) {
+                return new Cargo("Contador", TipoCargo.Contador);
+            } else if (tipo == TipoCargo.Motorista) {
+                return new Cargo("Motorista", TipoCargo.Motorista);
+            } else if (tipo == TipoCargo.Caixa) {
+                return new Cargo("Caixa", TipoCargo.Caixa);
+            } else if (tipo == TipoCargo.Balconista) {
+                return new Cargo("Balconista", TipoCargo.Balconista);
             } else {
                 return new Cargo("Outro", TipoCargo.Outro);
             }
