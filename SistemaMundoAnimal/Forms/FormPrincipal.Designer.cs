@@ -25,9 +25,10 @@
         private void InitializeComponent() {
             this.TabControl = new System.Windows.Forms.TabControl();
             this.PageRecursosHumanos = new System.Windows.Forms.TabPage();
+            this.BtnCadastrarFuncionario = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.PainelPrincipal = new System.Windows.Forms.Panel();
-            this.BtnCadastrarFuncionario = new System.Windows.Forms.Button();
+            this.BtnPesquisaFuncionario = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.PageRecursosHumanos.SuspendLayout();
             this.SuspendLayout();
@@ -45,6 +46,7 @@
             // 
             // PageRecursosHumanos
             // 
+            this.PageRecursosHumanos.Controls.Add(this.BtnPesquisaFuncionario);
             this.PageRecursosHumanos.Controls.Add(this.BtnCadastrarFuncionario);
             this.PageRecursosHumanos.Location = new System.Drawing.Point(4, 22);
             this.PageRecursosHumanos.Name = "PageRecursosHumanos";
@@ -53,6 +55,16 @@
             this.PageRecursosHumanos.TabIndex = 0;
             this.PageRecursosHumanos.Text = "Resursos Humanos";
             this.PageRecursosHumanos.UseVisualStyleBackColor = true;
+            // 
+            // BtnCadastrarFuncionario
+            // 
+            this.BtnCadastrarFuncionario.Location = new System.Drawing.Point(8, 6);
+            this.BtnCadastrarFuncionario.Name = "BtnCadastrarFuncionario";
+            this.BtnCadastrarFuncionario.Size = new System.Drawing.Size(148, 26);
+            this.BtnCadastrarFuncionario.TabIndex = 0;
+            this.BtnCadastrarFuncionario.Text = "Cadastrar Funcionario";
+            this.BtnCadastrarFuncionario.UseVisualStyleBackColor = true;
+            this.BtnCadastrarFuncionario.Click += new System.EventHandler(this.BtnCadastrarFuncionario_Click);
             // 
             // tabPage2
             // 
@@ -72,15 +84,15 @@
             this.PainelPrincipal.Size = new System.Drawing.Size(1008, 590);
             this.PainelPrincipal.TabIndex = 1;
             // 
-            // BtnCadastrarFuncionario
+            // BtnPesquisaFuncionario
             // 
-            this.BtnCadastrarFuncionario.Location = new System.Drawing.Point(8, 6);
-            this.BtnCadastrarFuncionario.Name = "BtnCadastrarFuncionario";
-            this.BtnCadastrarFuncionario.Size = new System.Drawing.Size(148, 23);
-            this.BtnCadastrarFuncionario.TabIndex = 0;
-            this.BtnCadastrarFuncionario.Text = "Cadastrar Funcionario";
-            this.BtnCadastrarFuncionario.UseVisualStyleBackColor = true;
-            this.BtnCadastrarFuncionario.Click += new System.EventHandler(this.BtnCadastrarFuncionario_Click);
+            this.BtnPesquisaFuncionario.Location = new System.Drawing.Point(163, 5);
+            this.BtnPesquisaFuncionario.Name = "BtnPesquisaFuncionario";
+            this.BtnPesquisaFuncionario.Size = new System.Drawing.Size(158, 27);
+            this.BtnPesquisaFuncionario.TabIndex = 1;
+            this.BtnPesquisaFuncionario.Text = "Pesquisar Funcionários";
+            this.BtnPesquisaFuncionario.UseVisualStyleBackColor = true;
+            this.BtnPesquisaFuncionario.Click += new System.EventHandler(this.BtnPesquisaFuncionario_Click);
             // 
             // FormPrincipal
             // 
@@ -108,6 +120,7 @@
         private System.Windows.Forms.Button BtnCadastrarFuncionario;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel PainelPrincipal;
+        private System.Windows.Forms.Button BtnPesquisaFuncionario;
 
     }
 }

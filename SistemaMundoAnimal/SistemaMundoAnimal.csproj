@@ -41,6 +41,12 @@
     <Compile Include="Forms\FormCadastroFuncionario.Designer.cs">
       <DependentUpon>FormCadastroFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormPesquisarFuncionarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPesquisarFuncionarios.Designer.cs">
+      <DependentUpon>FormPesquisarFuncionarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,7 @@
     <Compile Include="Source\Entidades\Funcionario.cs" />
     <Compile Include="Source\Entidades\Parente.cs" />
     <Compile Include="Source\Entidades\Pessoa.cs" />
+    <Compile Include="Source\Pesquisa\Entidade\PesquisaFuncionario.cs" />
     <Compile Include="Source\Program.cs" />
     <Compile Include="Testes\Entidades\ContatoTeste.cs" />
     <Compile Include="Testes\Entidades\EnderecoTeste.cs" />
@@ -92,6 +99,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\FormCadastroFuncionario.resx">
       <DependentUpon>FormCadastroFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPesquisarFuncionarios.resx">
+      <DependentUpon>FormPesquisarFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>

@@ -138,3 +138,35 @@ CREATE TABLE [Funcionario] (
     CONSTRAINT [ck_Funcionario_ativo_sn]
         CHECK([Ativo] IN ('S', 'N')));
 GO
+
+-- ----------------------------------------------------------------------------
+-- CRIA VIEW View_Funcionarios
+-- ----------------------------------------------------------------------------
+CREATE VIEW [View_Funcionarios]
+AS
+SELECT 
+    P.Pessoa_Id                 AS [Código da Pessoa],
+    P.Nome, 
+    P.Sobrenome,
+    P.Tipo_Pessoa               AS [Tipo Pessoa],
+    P.Genero                    AS [Genero],
+    P.RG,
+    P.CPF,
+    P.Nascimento,
+    YEAR(GETDATE() - P.Nascimento) - 1900 AS [Idade],
+    F.Data_Cadastro             AS [Admissao],
+    F.Salario                   AS [Salario], 
+    F.Assitencia_Medica         AS [Assitencia Medica], 
+    F.Auxilio_Creche            AS [Auxilio Creche], 
+    F.Vale_Alimentacao          AS [Vale Alimentção], -- Arrumar no código! 
+    F.Vale_Transporte           AS [Vale Transporte],
+    F.Dia_Pagamento             AS [Dia de Pagamento],
+    F.Data_Demissao             AS [Data Demissao],
+    F.Cargo_Id                  AS [Codigo do Cargo],
+    C.Nome                      AS [Cargo] 
+FROM [Pessoa] AS P JOIN [Funcionario] AS F ON P.Pessoa_Id = F.Pessoa_Id
+                   JOIN [Funcionario_Cargo] AS C ON F.Cargo_Id = C.Cargo_Id
+WHERE P.Ativo = 'S' AND F.Ativo = 'S'
+
+SELECT *
+FROM View_Funcionarios WHERE [Código da Pessoa] = 1
