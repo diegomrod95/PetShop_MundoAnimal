@@ -10,8 +10,15 @@ using System.Windows.Forms;
 
 namespace SistemaMundoAnimal.Forms {
     public partial class FormPrincipal : Form {
+
         public FormPrincipal() {
             InitializeComponent();
         }
+
+        private void BtnCadastrarFuncionario_Click(object sender, EventArgs e) {
+            PainelPrincipal.Controls.Clear();
+            PainelPrincipal.Controls.Add(new FormCadastroFuncionario());
+        }
+
     }
 }
