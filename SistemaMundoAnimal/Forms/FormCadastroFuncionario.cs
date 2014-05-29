@@ -113,6 +113,7 @@ namespace SistemaMundoAnimal.Forms {
                 funcionario.SetAssitenciaMedica(Convert.ToDouble(TxtAssitenciaMedica.Text));
                 funcionario.SetDiaPagamento(Convert.ToInt32(TxtDiaPagamento.Text));
 
+                Pessoa.InserirNoBancoDeDados(funcionario);
                 Funcionario.InserirNoBancoDeDados(funcionario);
 
                 funcionario.InserirContatosNoBancoDeDados();
