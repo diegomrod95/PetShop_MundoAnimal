@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 using SistemaMundoAnimal.Source.Dados;
 using SistemaMundoAnimal.Source.Dados.Tipos;
@@ -40,6 +41,7 @@ namespace SistemaMundoAnimal.Source.Entidades {
         /// </summary>
         private static string InsertPessoaSqlQuery = @"INSERT INTO [Pessoa]" 
             + " ([Nome], [Sobrenome], [Nome_Fantasia], [Tipo_Pessoa], [Genero], [RG], [CPF], [CNPJ], [Nascimento])"
+            + " OUTPUT inserted.Pessoa_Id AS [ID]"
             + " VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}');"; 
 
         /// <summary>
@@ -71,7 +73,9 @@ namespace SistemaMundoAnimal.Source.Entidades {
                     pessoa.GetGenero(), 
                     rg, cpf, cnpj, nascimento);
 
-                BancoDeDados.NovoComandoSql(comando);
+                BancoDeDados.NovaConsultaSql(comando, (SqlDataReader reader) => {
+                    pessoa.SetId(Convert.ToInt32(reader["ID"]));
+                });
 
             } catch (Exception e) {
                 throw e;

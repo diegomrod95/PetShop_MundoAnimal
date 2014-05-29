@@ -95,9 +95,6 @@ namespace SistemaMundoAnimal.Forms {
                 int mes = Convert.ToInt32(TxtNascimento.Text.Substring(2, 2));
                 int ano = Convert.ToInt32(TxtNascimento.Text.Substring(4, 4));
 
-                // <TODO: Pesquisar ultimo id no banco!>
-                funcionario.SetId(6);
-                // </TODO>
                 funcionario.SetNome(TxtNome.Text);
                 funcionario.SetSobrenome(TxtSobrenome.Text);
                 funcionario.SetTipoPessoa('F');
