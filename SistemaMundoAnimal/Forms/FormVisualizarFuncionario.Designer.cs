@@ -23,9 +23,9 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GroupInformacoesPessoais = new System.Windows.Forms.GroupBox();
             this.BtnSalvar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtDataCadastro = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TxtDiaPagamento = new System.Windows.Forms.TextBox();
             this.TxtAssitenciaMedica = new System.Windows.Forms.TextBox();
@@ -54,7 +54,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DataGridEnderecos = new System.Windows.Forms.DataGridView();
             this.Pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,52 +82,52 @@
             this.ParenteRG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ParenteCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ParenteDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1.SuspendLayout();
+            this.GroupInformacoesPessoais.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridEnderecos)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridContato)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // GroupInformacoesPessoais
             // 
-            this.groupBox1.Controls.Add(this.BtnSalvar);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.TxtDiaPagamento);
-            this.groupBox1.Controls.Add(this.TxtAssitenciaMedica);
-            this.groupBox1.Controls.Add(this.TxtAuxilioCreche);
-            this.groupBox1.Controls.Add(this.TxtValeTransporte);
-            this.groupBox1.Controls.Add(this.TxtValeAlimentacao);
-            this.groupBox1.Controls.Add(this.TxtSalarioFuncionario);
-            this.groupBox1.Controls.Add(this.ComboCargoFuncionario);
-            this.groupBox1.Controls.Add(this.label23);
-            this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.TxtNascimento);
-            this.groupBox1.Controls.Add(this.TxtCPF);
-            this.groupBox1.Controls.Add(this.TxtRG);
-            this.groupBox1.Controls.Add(this.ComboGeneros);
-            this.groupBox1.Controls.Add(this.TxtSobrenome);
-            this.groupBox1.Controls.Add(this.TxtNome);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(17, 23);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(387, 537);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Informações Pessoais";
+            this.GroupInformacoesPessoais.Controls.Add(this.BtnSalvar);
+            this.GroupInformacoesPessoais.Controls.Add(this.TxtDataCadastro);
+            this.GroupInformacoesPessoais.Controls.Add(this.label4);
+            this.GroupInformacoesPessoais.Controls.Add(this.TxtDiaPagamento);
+            this.GroupInformacoesPessoais.Controls.Add(this.TxtAssitenciaMedica);
+            this.GroupInformacoesPessoais.Controls.Add(this.TxtAuxilioCreche);
+            this.GroupInformacoesPessoais.Controls.Add(this.TxtValeTransporte);
+            this.GroupInformacoesPessoais.Controls.Add(this.TxtValeAlimentacao);
+            this.GroupInformacoesPessoais.Controls.Add(this.TxtSalarioFuncionario);
+            this.GroupInformacoesPessoais.Controls.Add(this.ComboCargoFuncionario);
+            this.GroupInformacoesPessoais.Controls.Add(this.label23);
+            this.GroupInformacoesPessoais.Controls.Add(this.label22);
+            this.GroupInformacoesPessoais.Controls.Add(this.label21);
+            this.GroupInformacoesPessoais.Controls.Add(this.label20);
+            this.GroupInformacoesPessoais.Controls.Add(this.label19);
+            this.GroupInformacoesPessoais.Controls.Add(this.label18);
+            this.GroupInformacoesPessoais.Controls.Add(this.label17);
+            this.GroupInformacoesPessoais.Controls.Add(this.TxtNascimento);
+            this.GroupInformacoesPessoais.Controls.Add(this.TxtCPF);
+            this.GroupInformacoesPessoais.Controls.Add(this.TxtRG);
+            this.GroupInformacoesPessoais.Controls.Add(this.ComboGeneros);
+            this.GroupInformacoesPessoais.Controls.Add(this.TxtSobrenome);
+            this.GroupInformacoesPessoais.Controls.Add(this.TxtNome);
+            this.GroupInformacoesPessoais.Controls.Add(this.label9);
+            this.GroupInformacoesPessoais.Controls.Add(this.label7);
+            this.GroupInformacoesPessoais.Controls.Add(this.label6);
+            this.GroupInformacoesPessoais.Controls.Add(this.label5);
+            this.GroupInformacoesPessoais.Controls.Add(this.label2);
+            this.GroupInformacoesPessoais.Controls.Add(this.label1);
+            this.GroupInformacoesPessoais.Location = new System.Drawing.Point(17, 23);
+            this.GroupInformacoesPessoais.Name = "GroupInformacoesPessoais";
+            this.GroupInformacoesPessoais.Size = new System.Drawing.Size(387, 537);
+            this.GroupInformacoesPessoais.TabIndex = 0;
+            this.GroupInformacoesPessoais.TabStop = false;
+            this.GroupInformacoesPessoais.Text = "Informações Pessoais";
             // 
             // BtnSalvar
             // 
@@ -138,13 +138,13 @@
             this.BtnSalvar.Text = "Salvar Alterações";
             this.BtnSalvar.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // TxtDataCadastro
             // 
-            this.textBox1.Location = new System.Drawing.Point(151, 409);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 58;
+            this.TxtDataCadastro.Location = new System.Drawing.Point(151, 409);
+            this.TxtDataCadastro.Name = "TxtDataCadastro";
+            this.TxtDataCadastro.ReadOnly = true;
+            this.TxtDataCadastro.Size = new System.Drawing.Size(121, 20);
+            this.TxtDataCadastro.TabIndex = 58;
             // 
             // label4
             // 
@@ -169,7 +169,6 @@
             this.TxtAssitenciaMedica.Name = "TxtAssitenciaMedica";
             this.TxtAssitenciaMedica.Size = new System.Drawing.Size(223, 20);
             this.TxtAssitenciaMedica.TabIndex = 55;
-            this.TxtAssitenciaMedica.Text = "0,00";
             // 
             // TxtAuxilioCreche
             // 
@@ -177,7 +176,6 @@
             this.TxtAuxilioCreche.Name = "TxtAuxilioCreche";
             this.TxtAuxilioCreche.Size = new System.Drawing.Size(223, 20);
             this.TxtAuxilioCreche.TabIndex = 54;
-            this.TxtAuxilioCreche.Text = "0,00";
             // 
             // TxtValeTransporte
             // 
@@ -185,7 +183,6 @@
             this.TxtValeTransporte.Name = "TxtValeTransporte";
             this.TxtValeTransporte.Size = new System.Drawing.Size(223, 20);
             this.TxtValeTransporte.TabIndex = 53;
-            this.TxtValeTransporte.Text = "0,00";
             // 
             // TxtValeAlimentacao
             // 
@@ -193,7 +190,6 @@
             this.TxtValeAlimentacao.Name = "TxtValeAlimentacao";
             this.TxtValeAlimentacao.Size = new System.Drawing.Size(223, 20);
             this.TxtValeAlimentacao.TabIndex = 52;
-            this.TxtValeAlimentacao.Text = "0,00";
             // 
             // TxtSalarioFuncionario
             // 
@@ -201,7 +197,6 @@
             this.TxtSalarioFuncionario.Name = "TxtSalarioFuncionario";
             this.TxtSalarioFuncionario.Size = new System.Drawing.Size(223, 20);
             this.TxtSalarioFuncionario.TabIndex = 51;
-            this.TxtSalarioFuncionario.Text = "0,00";
             // 
             // ComboCargoFuncionario
             // 
@@ -409,20 +404,20 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.DataGridEnderecos);
             this.groupBox2.Location = new System.Drawing.Point(422, 41);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(561, 184);
+            this.groupBox2.Size = new System.Drawing.Size(561, 153);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereços";
             // 
-            // dataGridView1
+            // DataGridEnderecos
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataGridEnderecos.AllowUserToAddRows = false;
+            this.DataGridEnderecos.AllowUserToDeleteRows = false;
+            this.DataGridEnderecos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridEnderecos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Pais,
             this.Estado,
             this.Cidade,
@@ -433,10 +428,10 @@
             this.CEP,
             this.DataCadastro,
             this.Ativo});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 17);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(549, 161);
-            this.dataGridView1.TabIndex = 0;
+            this.DataGridEnderecos.Location = new System.Drawing.Point(6, 17);
+            this.DataGridEnderecos.Name = "DataGridEnderecos";
+            this.DataGridEnderecos.Size = new System.Drawing.Size(549, 123);
+            this.DataGridEnderecos.TabIndex = 0;
             // 
             // Pais
             // 
@@ -491,9 +486,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.DataGridContato);
-            this.groupBox3.Location = new System.Drawing.Point(422, 231);
+            this.groupBox3.Location = new System.Drawing.Point(422, 200);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(561, 167);
+            this.groupBox3.Size = new System.Drawing.Size(561, 172);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Contatos";
@@ -555,9 +550,9 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dataGridView3);
-            this.groupBox4.Location = new System.Drawing.Point(422, 405);
+            this.groupBox4.Location = new System.Drawing.Point(422, 378);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(561, 155);
+            this.groupBox4.Size = new System.Drawing.Size(561, 182);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Parentes";
@@ -577,7 +572,7 @@
             this.ParenteDataNascimento});
             this.dataGridView3.Location = new System.Drawing.Point(7, 20);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(548, 129);
+            this.dataGridView3.Size = new System.Drawing.Size(548, 156);
             this.dataGridView3.TabIndex = 0;
             // 
             // ParenteParentesco
@@ -624,13 +619,13 @@
             this.Controls.Add(this.TxtCodigo);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.GroupInformacoesPessoais);
             this.Name = "FormVisualizarFuncionario";
             this.Size = new System.Drawing.Size(1008, 590);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.GroupInformacoesPessoais.ResumeLayout(false);
+            this.GroupInformacoesPessoais.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridEnderecos)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridContato)).EndInit();
             this.groupBox4.ResumeLayout(false);
@@ -642,7 +637,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GroupInformacoesPessoais;
         private System.Windows.Forms.TextBox TxtDiaPagamento;
         private System.Windows.Forms.TextBox TxtAssitenciaMedica;
         private System.Windows.Forms.TextBox TxtAuxilioCreche;
@@ -670,7 +665,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DataGridEnderecos;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView DataGridContato;
         private System.Windows.Forms.TextBox TxtCodigo;
@@ -686,7 +681,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DataCadastro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ativo;
         private System.Windows.Forms.Button BtnSalvar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtDataCadastro;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contato;
