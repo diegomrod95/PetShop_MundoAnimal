@@ -10,7 +10,8 @@
     LICENCE
     BancoDeDados/
       MundoAnimal_BD.sql                  > Script de criação do banco
-      Dados.sql                           > Dados para funcionamento e teste do db
+      Dados.sql                           > Dados para funcionamento do db
+      Teste.sql                           > Dados para testar o funcionamento do db
     SistemaMundoAnimal/
       Forms/                              > Formularios usados pela aplicação
         ...
