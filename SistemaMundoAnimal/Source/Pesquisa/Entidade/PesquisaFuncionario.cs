@@ -11,8 +11,20 @@ using SistemaMundoAnimal.Source.Entidades;
 namespace SistemaMundoAnimal.Source.Pesquisa.Entidade {
     public static class PesquisaFuncionario {
 
+        /// <summary>
+        /// Filtros usado pelos metodos de pesquisa.
+        /// </summary>
+        public enum Filtros : int { 
+            Id = 1,
+            Nome,
+            Cargo
+        }
+
         private static string SelectFuncionarioPorIdSqlQuery = @"SELECT *"
             + " FROM [View_Funcionarios] WHERE [Código da Pessoa] = {0}";
+
+        private static string SelectFuncionarioPorCampoSqlQuery = @"SELECT *"
+            + " FROM [View_Funcionarios] WHERE [{0}] LIKE '{1}%'";
 
         private static string SelectFuncionarioTodos = @"SELECT * FROM [View_Funcionarios]";
 
@@ -64,6 +76,27 @@ namespace SistemaMundoAnimal.Source.Pesquisa.Entidade {
         /// <param name="callback">Uma função callback que permite manipular os dados retornandos</param>
         public static void PorId(int id, BancoDeDados.ConsultaSqlCallback callback) {
             var consulta = string.Format(SelectFuncionarioPorIdSqlQuery, id);
+            BancoDeDados.NovaConsultaSql(consulta, callback);
+        }
+
+        /// <summary>
+        /// Faz uma consulta na view funcionarios retornando aqueles que tem nome
+        /// parecido com o nome passado como argumento.
+        /// </summary>
+        /// <param name="nome">Nom usadao para pesquisa</param>
+        /// <param name="callback">Uma função callback que permite manipular os dados retornandos</param>
+        public static void PorNome(string nome, BancoDeDados.ConsultaSqlCallback callback) {
+            var consulta = string.Format(SelectFuncionarioPorCampoSqlQuery, "Nome", nome);
+            BancoDeDados.NovaConsultaSql(consulta, callback);
+        }
+
+        /// <summary>
+        /// Faz uma consulta na view funcionários, retornando aqueles que exercem um determinado cargo.
+        /// </summary>
+        /// <param name="cargo">O cargo a ser pesquisado</param>
+        /// <param name="callback">Uma função callback que permite manipular os dados retornandos</param>
+        public static void PorCargo(string cargo, BancoDeDados.ConsultaSqlCallback callback) {
+            var consulta = string.Format(SelectFuncionarioPorCampoSqlQuery, "Cargo", cargo);
             BancoDeDados.NovaConsultaSql(consulta, callback);
         }
 

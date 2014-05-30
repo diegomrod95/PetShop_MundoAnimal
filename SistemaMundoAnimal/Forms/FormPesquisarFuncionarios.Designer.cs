@@ -60,7 +60,9 @@
             // 
             this.ComboFiltroPesquisa.FormattingEnabled = true;
             this.ComboFiltroPesquisa.Items.AddRange(new object[] {
-            "Código"});
+            "1 Código",
+            "2 Nome",
+            "3 Cargo"});
             this.ComboFiltroPesquisa.Location = new System.Drawing.Point(78, 28);
             this.ComboFiltroPesquisa.Name = "ComboFiltroPesquisa";
             this.ComboFiltroPesquisa.Size = new System.Drawing.Size(154, 21);
@@ -72,6 +74,8 @@
             this.TxtConsulta.Name = "TxtConsulta";
             this.TxtConsulta.Size = new System.Drawing.Size(534, 20);
             this.TxtConsulta.TabIndex = 2;
+            this.TxtConsulta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtConsulta_KeyPress);
+            this.TxtConsulta.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtConsulta_KeyUp);
             // 
             // GridResultado
             // 
@@ -201,6 +205,7 @@
             this.BtnLimpar.TabIndex = 5;
             this.BtnLimpar.Text = "Limpar Resultado";
             this.BtnLimpar.UseVisualStyleBackColor = true;
+            this.BtnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click);
             // 
             // FormPesquisarFuncionarios
             // 

@@ -18,9 +18,8 @@ namespace SistemaMundoAnimal.Forms {
         private BindingSource bs = new BindingSource();
 
         private void PrencherTodosFuncionarios() {
-            PesquisaFuncionario.Todos((SqlDataReader reader) => {
-                AddResultadosDePesquisaAoGrid(reader);
-            });
+            GridResultado.Rows.Clear();
+            PesquisaFuncionario.Todos(AddResultadosDePesquisaAoGrid);
         }
 
         private void AddResultadosDePesquisaAoGrid(SqlDataReader reader) {
@@ -41,13 +40,47 @@ namespace SistemaMundoAnimal.Forms {
                     reader["Dia de Pagamento"]);
         }
 
+        private void Pesquisar() {
+            GridResultado.Rows.Clear();
+            try {
+                switch (Convert.ToInt32(ComboFiltroPesquisa.Text[0].ToString())) {
+                    case (int)PesquisaFuncionario.Filtros.Id:
+                        if (TxtConsulta.Text != "") {
+                            PesquisaFuncionario.PorId(Convert.ToInt32(TxtConsulta.Text), AddResultadosDePesquisaAoGrid);
+                        }
+                        break;
+                    case (int)PesquisaFuncionario.Filtros.Cargo:
+                        PesquisaFuncionario.PorCargo(TxtConsulta.Text, AddResultadosDePesquisaAoGrid);
+                        break;
+                    default:
+                        PesquisaFuncionario.PorNome(TxtConsulta.Text, AddResultadosDePesquisaAoGrid);
+                        break;
+                }
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+                TxtConsulta.Text = "";
+            }
+        }
+
         public FormPesquisarFuncionarios() {
             InitializeComponent();
             PrencherTodosFuncionarios();
         }
 
         private void BtnPesquisar_Click(object sender, EventArgs e) {
+            Pesquisar();
+        }
 
+        private void TxtConsulta_KeyUp(object sender, KeyEventArgs e) {
+            Pesquisar();
+        }
+
+        private void TxtConsulta_KeyPress(object sender, KeyPressEventArgs e) {
+            Pesquisar();
+        }
+
+        private void BtnLimpar_Click(object sender, EventArgs e) {
+            PrencherTodosFuncionarios();
         }
     }
 }

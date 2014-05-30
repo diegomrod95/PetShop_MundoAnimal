@@ -20,9 +20,7 @@ namespace SistemaMundoAnimal.Source.Pesquisa.Entidade {
         /// </summary>
         /// <param name="callback">Uma expressão lambda com um SqlDataReader como parâmetro.</param>
         public static void Todos(BancoDeDados.ConsultaSqlCallback callback) {
-            BancoDeDados.NovaConsultaSql(SelectTiposDeCargosTodos, (SqlDataReader reader) => {
-                callback(reader);
-            });
+            BancoDeDados.NovaConsultaSql(SelectTiposDeCargosTodos, callback);
         }
     }
 }
