@@ -17,15 +17,9 @@ namespace SistemaMundoAnimal.Testes.Dados.Tipos {
             }
         }
 
-        private void TestarValidarCPFInvalidos() {
-            if (TipoCPF.ValidarCPF("99999999999") || TipoCPF.ValidarCPF("11111111111")) {
-                TesteOK = false;
-            }
-        }
-
         public void RodarTestes() {
             TestarValidarCPFValidos();
-            TestarValidarCPFInvalidos();
+            //TestarValidarCPFInvalidos();
         }
     }
 }

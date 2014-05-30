@@ -81,6 +81,7 @@
             // 
             this.GridResultado.AllowUserToAddRows = false;
             this.GridResultado.AllowUserToDeleteRows = false;
+            this.GridResultado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.GridResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridResultado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
@@ -102,90 +103,105 @@
             this.GridResultado.ReadOnly = true;
             this.GridResultado.Size = new System.Drawing.Size(951, 496);
             this.GridResultado.TabIndex = 3;
+            this.GridResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridResultado_CellClick);
             // 
             // Codigo
             // 
             this.Codigo.HeaderText = "Código";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 65;
             // 
             // Nome
             // 
             this.Nome.HeaderText = "Nome";
             this.Nome.Name = "Nome";
             this.Nome.ReadOnly = true;
+            this.Nome.Width = 60;
             // 
             // Sobrenome
             // 
             this.Sobrenome.HeaderText = "Sobrenome";
             this.Sobrenome.Name = "Sobrenome";
             this.Sobrenome.ReadOnly = true;
+            this.Sobrenome.Width = 86;
             // 
             // Genero
             // 
             this.Genero.HeaderText = "Genero";
             this.Genero.Name = "Genero";
             this.Genero.ReadOnly = true;
+            this.Genero.Width = 67;
             // 
             // Cargo
             // 
             this.Cargo.HeaderText = "Cargo";
             this.Cargo.Name = "Cargo";
             this.Cargo.ReadOnly = true;
+            this.Cargo.Width = 60;
             // 
             // RG
             // 
             this.RG.HeaderText = "RG";
             this.RG.Name = "RG";
             this.RG.ReadOnly = true;
+            this.RG.Width = 48;
             // 
             // CPF
             // 
             this.CPF.HeaderText = "CPF";
             this.CPF.Name = "CPF";
             this.CPF.ReadOnly = true;
+            this.CPF.Width = 52;
             // 
             // Idade
             // 
             this.Idade.HeaderText = "Idade";
             this.Idade.Name = "Idade";
             this.Idade.ReadOnly = true;
+            this.Idade.Width = 59;
             // 
             // Salario
             // 
             this.Salario.HeaderText = "Salario";
             this.Salario.Name = "Salario";
             this.Salario.ReadOnly = true;
+            this.Salario.Width = 64;
             // 
             // AssitenciaMedica
             // 
             this.AssitenciaMedica.HeaderText = "Assitencia Medica";
             this.AssitenciaMedica.Name = "AssitenciaMedica";
             this.AssitenciaMedica.ReadOnly = true;
+            this.AssitenciaMedica.Width = 108;
             // 
             // AuxilioCreche
             // 
             this.AuxilioCreche.HeaderText = "Auxilio Creche";
             this.AuxilioCreche.Name = "AuxilioCreche";
             this.AuxilioCreche.ReadOnly = true;
+            this.AuxilioCreche.Width = 91;
             // 
             // ValeAlimentacao
             // 
             this.ValeAlimentacao.HeaderText = "Vale Alimentacão";
             this.ValeAlimentacao.Name = "ValeAlimentacao";
             this.ValeAlimentacao.ReadOnly = true;
+            this.ValeAlimentacao.Width = 105;
             // 
             // ValeTransporte
             // 
             this.ValeTransporte.HeaderText = "Vale Transporte";
             this.ValeTransporte.Name = "ValeTransporte";
             this.ValeTransporte.ReadOnly = true;
+            this.ValeTransporte.Width = 98;
             // 
             // DiaPagamento
             // 
             this.DiaPagamento.HeaderText = "Dia de Pagamento";
             this.DiaPagamento.Name = "DiaPagamento";
             this.DiaPagamento.ReadOnly = true;
+            this.DiaPagamento.Width = 110;
             // 
             // BtnPesquisar
             // 

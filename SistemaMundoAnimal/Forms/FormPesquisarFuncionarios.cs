@@ -81,6 +81,14 @@ namespace SistemaMundoAnimal.Forms {
 
         private void BtnLimpar_Click(object sender, EventArgs e) {
             PrencherTodosFuncionarios();
+            TxtConsulta.Text = "";
         }
+        
+        private void GridResultado_CellClick(object sender, DataGridViewCellEventArgs e) {
+            // TODO: Criar um formulario onde o usuario possa alterar os dados do 
+            // funcionário clicado, com base no código dele.
+            MessageBox.Show(GridResultado.Rows[e.RowIndex].Cells[0].Value.ToString());
+        }
+
     }
 }

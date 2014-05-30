@@ -25,10 +25,11 @@
         private void InitializeComponent() {
             this.TabControl = new System.Windows.Forms.TabControl();
             this.PageRecursosHumanos = new System.Windows.Forms.TabPage();
+            this.BtnPesquisaFuncionario = new System.Windows.Forms.Button();
             this.BtnCadastrarFuncionario = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.PainelPrincipal = new System.Windows.Forms.Panel();
-            this.BtnPesquisaFuncionario = new System.Windows.Forms.Button();
+            this.BtnVisualizarFuncionario = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.PageRecursosHumanos.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +47,7 @@
             // 
             // PageRecursosHumanos
             // 
+            this.PageRecursosHumanos.Controls.Add(this.BtnVisualizarFuncionario);
             this.PageRecursosHumanos.Controls.Add(this.BtnPesquisaFuncionario);
             this.PageRecursosHumanos.Controls.Add(this.BtnCadastrarFuncionario);
             this.PageRecursosHumanos.Location = new System.Drawing.Point(4, 22);
@@ -56,13 +58,23 @@
             this.PageRecursosHumanos.Text = "Resursos Humanos";
             this.PageRecursosHumanos.UseVisualStyleBackColor = true;
             // 
+            // BtnPesquisaFuncionario
+            // 
+            this.BtnPesquisaFuncionario.Location = new System.Drawing.Point(163, 5);
+            this.BtnPesquisaFuncionario.Name = "BtnPesquisaFuncionario";
+            this.BtnPesquisaFuncionario.Size = new System.Drawing.Size(158, 27);
+            this.BtnPesquisaFuncionario.TabIndex = 1;
+            this.BtnPesquisaFuncionario.Text = "Pesquisar Funcionários";
+            this.BtnPesquisaFuncionario.UseVisualStyleBackColor = true;
+            this.BtnPesquisaFuncionario.Click += new System.EventHandler(this.BtnPesquisaFuncionario_Click);
+            // 
             // BtnCadastrarFuncionario
             // 
             this.BtnCadastrarFuncionario.Location = new System.Drawing.Point(8, 6);
             this.BtnCadastrarFuncionario.Name = "BtnCadastrarFuncionario";
             this.BtnCadastrarFuncionario.Size = new System.Drawing.Size(148, 26);
             this.BtnCadastrarFuncionario.TabIndex = 0;
-            this.BtnCadastrarFuncionario.Text = "Cadastrar Funcionario";
+            this.BtnCadastrarFuncionario.Text = "Cadastrar Funcionário";
             this.BtnCadastrarFuncionario.UseVisualStyleBackColor = true;
             this.BtnCadastrarFuncionario.Click += new System.EventHandler(this.BtnCadastrarFuncionario_Click);
             // 
@@ -84,15 +96,15 @@
             this.PainelPrincipal.Size = new System.Drawing.Size(1008, 590);
             this.PainelPrincipal.TabIndex = 1;
             // 
-            // BtnPesquisaFuncionario
+            // BtnVisualizarFuncionario
             // 
-            this.BtnPesquisaFuncionario.Location = new System.Drawing.Point(163, 5);
-            this.BtnPesquisaFuncionario.Name = "BtnPesquisaFuncionario";
-            this.BtnPesquisaFuncionario.Size = new System.Drawing.Size(158, 27);
-            this.BtnPesquisaFuncionario.TabIndex = 1;
-            this.BtnPesquisaFuncionario.Text = "Pesquisar Funcionários";
-            this.BtnPesquisaFuncionario.UseVisualStyleBackColor = true;
-            this.BtnPesquisaFuncionario.Click += new System.EventHandler(this.BtnPesquisaFuncionario_Click);
+            this.BtnVisualizarFuncionario.Location = new System.Drawing.Point(328, 5);
+            this.BtnVisualizarFuncionario.Name = "BtnVisualizarFuncionario";
+            this.BtnVisualizarFuncionario.Size = new System.Drawing.Size(141, 27);
+            this.BtnVisualizarFuncionario.TabIndex = 2;
+            this.BtnVisualizarFuncionario.Text = "Visualizar Funcionário";
+            this.BtnVisualizarFuncionario.UseVisualStyleBackColor = true;
+            this.BtnVisualizarFuncionario.Click += new System.EventHandler(this.BtnVisualizarFuncionario_Click);
             // 
             // FormPrincipal
             // 
@@ -121,6 +133,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel PainelPrincipal;
         private System.Windows.Forms.Button BtnPesquisaFuncionario;
+        private System.Windows.Forms.Button BtnVisualizarFuncionario;
 
     }
 }
