@@ -15,8 +15,6 @@ using SistemaMundoAnimal.Source.Pesquisa.Entidade;
 namespace SistemaMundoAnimal.Forms {
     public partial class FormPesquisarFuncionarios : UserControl {
 
-        private BindingSource bs = new BindingSource();
-
         private void PrencherTodosFuncionarios() {
             GridResultado.Rows.Clear();
             PesquisaFuncionario.Todos(AddResultadosDePesquisaAoGrid);
@@ -87,7 +85,13 @@ namespace SistemaMundoAnimal.Forms {
         private void GridResultado_CellClick(object sender, DataGridViewCellEventArgs e) {
             // TODO: Criar um formulario onde o usuario possa alterar os dados do 
             // funcionário clicado, com base no código dele.
-            MessageBox.Show(GridResultado.Rows[e.RowIndex].Cells[0].Value.ToString());
+            try {
+                int index = Convert.ToInt32(GridResultado.Rows[e.RowIndex].Cells[0].Value);
+                if (index >= 0) {
+                    MessageBox.Show(index.ToString());
+                }
+            } catch (Exception) {
+            }
         }
 
     }
