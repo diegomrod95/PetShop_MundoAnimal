@@ -12,8 +12,9 @@ namespace SistemaMundoAnimal.Source.Pesquisa.Entidade {
     public static class PesquisaFuncionario {
 
         private static string SelectFuncionarioPorIdSqlQuery = @"SELECT *"
-            + " FROM View_Funcionarios WHERE [Código da Pessoa] = {0}";
+            + " FROM [View_Funcionarios] WHERE [Código da Pessoa] = {0}";
 
+        private static string SelectFuncionarioTodos = @"SELECT * FROM [View_Funcionarios]";
 
         /// <summary>
         /// Recebe um ponteiro à uma entidade do tipo funcionário e um reader com informações
@@ -53,6 +54,16 @@ namespace SistemaMundoAnimal.Source.Pesquisa.Entidade {
             });
 
             return funcionario;
+        }
+
+        /// <summary>
+        /// Seleciona todos os funcionários no Banco de Dados.
+        /// </summary>
+        /// <param name="callback">Callback invocado a cada linha da view</param>
+        public static void Todos(BancoDeDados.ConsultaSqlCallback callback) { 
+            BancoDeDados.NovaConsultaSql(SelectFuncionarioTodos, (SqlDataReader reader) => {
+                callback(reader);
+            });
         }
 
     }
