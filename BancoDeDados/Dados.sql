@@ -19,8 +19,9 @@ GO
 INSERT INTO [Funcionario_Cargo]
     ([Nome])
 VALUES
-    ('Vendedor'), ('DiretorGeral'), ('DiretorMarketing'), ('DiretorVendas'),
-    ('Vendas'), ('Balconista');
+    ('Vendedor'), ('Diretor Geral'), ('Diretor Marketing'), ('Diretor Vendas'),
+    ('Diretor TI'), ('Assitencia Tecnica'), ('DBA'), ('Contador'),
+    ('Motorista'), ('Caixa'), ('Balconista'), ('Outro')
 GO
 
 -- ----------------------------------------------------------------------------

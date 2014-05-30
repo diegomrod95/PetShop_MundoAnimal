@@ -8,17 +8,17 @@ namespace SistemaMundoAnimal.Source.Entidades {
 
     public enum TipoCargo {
         Vendedor = 1, 
-        DiretorGeral, 
-        DiretorMarketing,
-        DiretorVendas,
-        DiretorTI,
-        AssistenciaTecnica,
-        DBA,
-        Contador,
-        Motorista,
-        Caixa,
-        Balconista,
-        Outro
+        DiretorGeral = 2, 
+        DiretorMarketing = 3,
+        DiretorVendas = 4,
+        DiretorTI = 5,
+        AssistenciaTecnica = 6,
+        DBA = 7,
+        Contador = 8,
+        Motorista = 9,
+        Caixa = 10,
+        Balconista = 11,
+        Outro = 12
     };
 
     public class FabricaCargo {

@@ -8,12 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Data.SqlClient;
+
+using SistemaMundoAnimal.Source.Dados;
 using SistemaMundoAnimal.Source.Entidades;
 
 namespace SistemaMundoAnimal.Forms {
     public partial class FormCadastroFuncionario : UserControl {
 
         private Funcionario funcionario;
+
+        private string ConsultaTiposDeCargos = @"SELECT [Cargo_Id], [Nome] FROM Funcionario_Cargo ORDER BY Cargo_Id";
 
         public FormCadastroFuncionario() {
             InitializeComponent();
@@ -151,6 +156,17 @@ namespace SistemaMundoAnimal.Forms {
 
         private void button1_Click(object sender, EventArgs e) {
             LimpaControlesFormularioCadastroFuncionario();
+        }
+
+        private void ComboCargoFuncionario_Enter(object sender, EventArgs e) {
+            ComboCargoFuncionario.Items.Clear();
+            BancoDeDados.NovaConsultaSql(ConsultaTiposDeCargos, (SqlDataReader reader) => {
+                ComboCargoFuncionario.Items.Add(reader["Nome"]);
+            });
+        }
+
+        private void ComboCargoFuncionario_Leave(object sender, EventArgs e) {
+            ComboCargoFuncionario.Items.Clear();
         }
 
     }

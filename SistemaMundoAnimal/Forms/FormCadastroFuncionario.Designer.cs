@@ -559,6 +559,8 @@
             this.ComboCargoFuncionario.Name = "ComboCargoFuncionario";
             this.ComboCargoFuncionario.Size = new System.Drawing.Size(165, 21);
             this.ComboCargoFuncionario.TabIndex = 24;
+            this.ComboCargoFuncionario.Enter += new System.EventHandler(this.ComboCargoFuncionario_Enter);
+            this.ComboCargoFuncionario.Leave += new System.EventHandler(this.ComboCargoFuncionario_Leave);
             // 
             // TxtSalarioFuncionario
             // 

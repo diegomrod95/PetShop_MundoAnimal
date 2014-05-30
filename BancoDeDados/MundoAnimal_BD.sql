@@ -167,6 +167,3 @@ SELECT
 FROM [Pessoa] AS P JOIN [Funcionario] AS F ON P.Pessoa_Id = F.Pessoa_Id
                    JOIN [Funcionario_Cargo] AS C ON F.Cargo_Id = C.Cargo_Id
 WHERE P.Ativo = 'S' AND F.Ativo = 'S'
-
-SELECT *
-FROM View_Funcionarios WHERE [Código da Pessoa] = 1
