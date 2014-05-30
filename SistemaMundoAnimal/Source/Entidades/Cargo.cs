@@ -6,27 +6,29 @@ using System.Threading.Tasks;
 
 namespace SistemaMundoAnimal.Source.Entidades {
 
-    public enum TipoCargo {
+    public enum TipoCargo : int {
         Vendedor = 1, 
-        DiretorGeral = 2, 
-        DiretorMarketing = 3,
-        DiretorVendas = 4,
-        DiretorTI = 5,
-        AssistenciaTecnica = 6,
-        DBA = 7,
-        Contador = 8,
-        Motorista = 9,
-        Caixa = 10,
-        Balconista = 11,
-        Outro = 12
+        DiretorGeral, 
+        DiretorMarketing,
+        DiretorVendas,
+        DiretorTI,
+        AssistenciaTecnica,
+        DBA,
+        Contador,
+        Motorista,
+        Caixa,
+        Balconista,
+        Outro
     };
 
     public class FabricaCargo {
         public static Cargo GetCargo(TipoCargo tipo) {
             if (tipo == TipoCargo.Vendedor) {
-                return new Cargo("Vendedor", TipoCargo.Vendedor);  
+                return new Cargo("Vendedor", TipoCargo.Vendedor);
             } else if (tipo == TipoCargo.DiretorGeral) {
-                return new Cargo("Diretor Geral", TipoCargo.Contador);
+                return new Cargo("Diretor Geral", TipoCargo.DiretorGeral);
+            } else if (tipo == TipoCargo.DiretorMarketing) {
+                return new Cargo("Diretor Marketing", TipoCargo.DiretorMarketing);
             } else if (tipo == TipoCargo.DiretorVendas) {
                 return new Cargo("Diretor Vendas", TipoCargo.DiretorVendas);
             } else if (tipo == TipoCargo.DiretorTI) {

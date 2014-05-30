@@ -95,7 +95,6 @@ namespace SistemaMundoAnimal.Forms {
 
         private void BtnRegistrarFuncionario_Click(object sender, EventArgs e) {
             try {
-
                 int dia = Convert.ToInt32(TxtNascimento.Text.Substring(0, 2));
                 int mes = Convert.ToInt32(TxtNascimento.Text.Substring(2, 2));
                 int ano = Convert.ToInt32(TxtNascimento.Text.Substring(4, 4));
@@ -107,7 +106,8 @@ namespace SistemaMundoAnimal.Forms {
                 funcionario.SetRG(TxtRG.Text);
                 funcionario.SetCPF(TxtCPF.Text);
                 funcionario.SetNascimento(dia, mes, ano);
-                funcionario.SetCargo((TipoCargo) ComboCargoFuncionario.Items.IndexOf(ComboCargoFuncionario.Text) + 1);
+                funcionario.SetCargo((TipoCargo) Convert.ToInt32(ComboCargoFuncionario.Text[0].ToString()));
+                MessageBox.Show(funcionario.GetCargo().GetTipo().ToString());
                 funcionario.SetSalario(Convert.ToDouble(TxtSalarioFuncionario.Text));
                 funcionario.SetValeAlimentacao(Convert.ToDouble(TxtValeAlimentacao.Text));
                 funcionario.SetValeTransporte(Convert.ToDouble(TxtValeTransporte.Text));
@@ -161,7 +161,7 @@ namespace SistemaMundoAnimal.Forms {
         private void ComboCargoFuncionario_Enter(object sender, EventArgs e) {
             ComboCargoFuncionario.Items.Clear();
             BancoDeDados.NovaConsultaSql(ConsultaTiposDeCargos, (SqlDataReader reader) => {
-                ComboCargoFuncionario.Items.Add(reader["Nome"]);
+                ComboCargoFuncionario.Items.Add(reader["Cargo_Id"] + " " + reader["Nome"]);
             });
         }
 
