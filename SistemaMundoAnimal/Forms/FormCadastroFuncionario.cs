@@ -107,7 +107,6 @@ namespace SistemaMundoAnimal.Forms {
                 funcionario.SetCPF(TxtCPF.Text);
                 funcionario.SetNascimento(dia, mes, ano);
                 funcionario.SetCargo((TipoCargo) Convert.ToInt32(ComboCargoFuncionario.Text[0].ToString()));
-                MessageBox.Show(funcionario.GetCargo().GetTipo().ToString());
                 funcionario.SetSalario(Convert.ToDouble(TxtSalarioFuncionario.Text));
                 funcionario.SetValeAlimentacao(Convert.ToDouble(TxtValeAlimentacao.Text));
                 funcionario.SetValeTransporte(Convert.ToDouble(TxtValeTransporte.Text));
