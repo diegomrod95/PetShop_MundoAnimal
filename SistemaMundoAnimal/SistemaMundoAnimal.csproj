@@ -79,8 +79,10 @@
     <Compile Include="Source\Entidades\Funcionario.cs" />
     <Compile Include="Source\Entidades\Parente.cs" />
     <Compile Include="Source\Entidades\Pessoa.cs" />
+    <Compile Include="Source\Pesquisa\Entidade\PesquisaCargos.cs" />
     <Compile Include="Source\Pesquisa\Entidade\PesquisaFuncionario.cs" />
     <Compile Include="Source\Program.cs" />
+    <Compile Include="Testes\Dados\Tipos\TipoCPFTeste.cs" />
     <Compile Include="Testes\Entidades\ContatoTeste.cs" />
     <Compile Include="Testes\Entidades\EnderecoTeste.cs" />
     <Compile Include="Testes\Entidades\FuncionarioTeste.cs" />

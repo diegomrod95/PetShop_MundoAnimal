@@ -568,6 +568,7 @@
             this.TxtSalarioFuncionario.Name = "TxtSalarioFuncionario";
             this.TxtSalarioFuncionario.Size = new System.Drawing.Size(165, 20);
             this.TxtSalarioFuncionario.TabIndex = 25;
+            this.TxtSalarioFuncionario.Text = "0,00";
             // 
             // TxtValeAlimentacao
             // 
@@ -575,6 +576,7 @@
             this.TxtValeAlimentacao.Name = "TxtValeAlimentacao";
             this.TxtValeAlimentacao.Size = new System.Drawing.Size(165, 20);
             this.TxtValeAlimentacao.TabIndex = 26;
+            this.TxtValeAlimentacao.Text = "0,00";
             // 
             // TxtValeTransporte
             // 
@@ -582,6 +584,7 @@
             this.TxtValeTransporte.Name = "TxtValeTransporte";
             this.TxtValeTransporte.Size = new System.Drawing.Size(165, 20);
             this.TxtValeTransporte.TabIndex = 27;
+            this.TxtValeTransporte.Text = "0,00";
             // 
             // TxtAuxilioCreche
             // 
@@ -589,6 +592,7 @@
             this.TxtAuxilioCreche.Name = "TxtAuxilioCreche";
             this.TxtAuxilioCreche.Size = new System.Drawing.Size(165, 20);
             this.TxtAuxilioCreche.TabIndex = 28;
+            this.TxtAuxilioCreche.Text = "0,00";
             // 
             // TxtAssitenciaMedica
             // 
@@ -596,6 +600,7 @@
             this.TxtAssitenciaMedica.Name = "TxtAssitenciaMedica";
             this.TxtAssitenciaMedica.Size = new System.Drawing.Size(165, 20);
             this.TxtAssitenciaMedica.TabIndex = 29;
+            this.TxtAssitenciaMedica.Text = "0,00";
             // 
             // TxtDiaPagamento
             // 

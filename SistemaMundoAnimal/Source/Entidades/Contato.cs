@@ -29,7 +29,11 @@ namespace SistemaMundoAnimal.Source.Entidades {
             } else if (tipo == TipoContato.Telefone) {
                 return new Contato(new TipoTelefone(valor), tipo);
             } else if (tipo == TipoContato.Email) {
-                return new Contato(new TipoEmail(valor), tipo);
+                if (TipoEmail.ValidarEmail(valor)) {
+                    return new Contato(new TipoEmail(valor), tipo);
+                } else {
+                    throw new Exception(valor + " não é um email válido");
+                }
             } else if (tipo == TipoContato.Fax) {
                 return new Contato(new TipoTelefone(valor), TipoContato.Fax);
             } else if (tipo == TipoContato.Twitter || tipo == TipoContato.Facebook || tipo == TipoContato.Orkut) {

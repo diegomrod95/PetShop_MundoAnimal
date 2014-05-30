@@ -8,6 +8,9 @@ using SistemaMundoAnimal.Source.Dados;
 using SistemaMundoAnimal.Source.Dados.Tipos;
 
 namespace SistemaMundoAnimal.Source.Entidades {
+    /// <summary>
+    /// Entidade do tipo Funcionario, que extende a entidade Pessoa.
+    /// </summary>
     public class Funcionario : Pessoa {
         private Cargo _Cargo;
         private TipoDinheiro Salario;
@@ -18,11 +21,27 @@ namespace SistemaMundoAnimal.Source.Entidades {
         private int DiaPagamento;
         private DateTime DataDemissao;
 
+        /// <summary>
+        /// Consulta Sql usada para inserir Funcionarios na tabela Funcionario.
+        /// </summary>
         private static string InsertFuncionarioSqlQuery = @"INSERT INTO [Funcionario]"
             + " ([Pessoa_Id], [Cargo_Id], [Salario], [Vale_Alimentacao], [Vale_Transporte], [Auxilio_Creche],"
             + " [Assitencia_Medica], [Dia_Pagamento])"
             + " VALUES ({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7});";
 
+        /// <summary>
+        /// Metodo que insere Entidades do tipo Pessoa no banco de dados.
+        /// </summary>
+        /// <example>
+        /// <code>
+        /// Funcionario func = new Funcionario();
+        /// func.SetNome("Teste");
+        /// ...
+        /// Pessoa.InserirNoBancoDeDados(func);
+        /// Funcionario.InserirNoBancoDeDados(func);
+        /// </code>
+        /// </example>
+        /// <param name="funcionario">Uma entidade com todas propriedades prenchidas</param>
         public static void InserirNoBancoDeDados(Funcionario funcionario) {
             string comando;
 

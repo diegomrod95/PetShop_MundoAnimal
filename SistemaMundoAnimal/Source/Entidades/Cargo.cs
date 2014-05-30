@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace SistemaMundoAnimal.Source.Entidades {
 
+    /// <summary>
+    /// Enumeração TipoCargo, que especifica os tipos de Cargos que podem
+    /// haver na empresa.
+    /// </summary>
     public enum TipoCargo : int {
         Vendedor = 1, 
         DiretorGeral, 
@@ -21,7 +25,18 @@ namespace SistemaMundoAnimal.Source.Entidades {
         Outro
     };
 
-    public class FabricaCargo {
+    /// <summary>
+    /// Classe estatica que retorna instancias da Entidade Cargo, usada por entidades
+    /// do tipo Funcionario.
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// ...
+    /// Cargo cargo = FabricaCargo.GetCargo(TipoCargo.Vendedor);
+    /// ...
+    /// </code>
+    /// </example>
+    public static class FabricaCargo {
         public static Cargo GetCargo(TipoCargo tipo) {
             if (tipo == TipoCargo.Vendedor) {
                 return new Cargo("Vendedor", TipoCargo.Vendedor);
@@ -51,6 +66,9 @@ namespace SistemaMundoAnimal.Source.Entidades {
         }
     }
 
+    /// <summary>
+    /// Entidade do tipo Cargo usado por entidades do tipo Funcionario.
+    /// </summary>
     public class Cargo : Entidade {
         private TipoCargo Tipo;
         private string Nome;
@@ -62,6 +80,7 @@ namespace SistemaMundoAnimal.Source.Entidades {
             this.Tipo = tipo;
         }
 
+        #region Getters e Setters
         public void SetNome(string nome) {
             if (nome.Length < NomeCargoMaxLength) {
                 this.Nome = nome;
@@ -77,5 +96,6 @@ namespace SistemaMundoAnimal.Source.Entidades {
         public int GetTipo() {
             return (int)this.Tipo;
         }
+        #endregion
     }
 }

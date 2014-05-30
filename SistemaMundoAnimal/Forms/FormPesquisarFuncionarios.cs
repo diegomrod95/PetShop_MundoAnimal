@@ -15,6 +15,8 @@ using SistemaMundoAnimal.Source.Pesquisa.Entidade;
 namespace SistemaMundoAnimal.Forms {
     public partial class FormPesquisarFuncionarios : UserControl {
 
+        private BindingSource bs = new BindingSource();
+
         private void PrencherTodosFuncionarios() {
             PesquisaFuncionario.Todos((SqlDataReader reader) => {
                 AddResultadosDePesquisaAoGrid(reader);
@@ -38,10 +40,14 @@ namespace SistemaMundoAnimal.Forms {
                     reader["Vale Transporte"],
                     reader["Dia de Pagamento"]);
         }
-        
+
         public FormPesquisarFuncionarios() {
             InitializeComponent();
             PrencherTodosFuncionarios();
+        }
+
+        private void BtnPesquisar_Click(object sender, EventArgs e) {
+
         }
     }
 }

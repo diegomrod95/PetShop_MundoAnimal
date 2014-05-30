@@ -27,8 +27,6 @@
             this.ComboFiltroPesquisa = new System.Windows.Forms.ComboBox();
             this.TxtConsulta = new System.Windows.Forms.TextBox();
             this.GridResultado = new System.Windows.Forms.DataGridView();
-            this.BtnPesquisar = new System.Windows.Forms.Button();
-            this.BtnLimpar = new System.Windows.Forms.Button();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +41,8 @@
             this.ValeAlimentacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ValeTransporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnPesquisar = new System.Windows.Forms.Button();
+            this.BtnLimpar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.GridResultado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,24 +98,6 @@
             this.GridResultado.ReadOnly = true;
             this.GridResultado.Size = new System.Drawing.Size(951, 496);
             this.GridResultado.TabIndex = 3;
-            // 
-            // BtnPesquisar
-            // 
-            this.BtnPesquisar.Location = new System.Drawing.Point(779, 26);
-            this.BtnPesquisar.Name = "BtnPesquisar";
-            this.BtnPesquisar.Size = new System.Drawing.Size(75, 23);
-            this.BtnPesquisar.TabIndex = 4;
-            this.BtnPesquisar.Text = "Pesquisar";
-            this.BtnPesquisar.UseVisualStyleBackColor = true;
-            // 
-            // BtnLimpar
-            // 
-            this.BtnLimpar.Location = new System.Drawing.Point(860, 26);
-            this.BtnLimpar.Name = "BtnLimpar";
-            this.BtnLimpar.Size = new System.Drawing.Size(121, 23);
-            this.BtnLimpar.TabIndex = 5;
-            this.BtnLimpar.Text = "Limpar Resultado";
-            this.BtnLimpar.UseVisualStyleBackColor = true;
             // 
             // Codigo
             // 
@@ -200,6 +182,25 @@
             this.DiaPagamento.HeaderText = "Dia de Pagamento";
             this.DiaPagamento.Name = "DiaPagamento";
             this.DiaPagamento.ReadOnly = true;
+            // 
+            // BtnPesquisar
+            // 
+            this.BtnPesquisar.Location = new System.Drawing.Point(779, 26);
+            this.BtnPesquisar.Name = "BtnPesquisar";
+            this.BtnPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.BtnPesquisar.TabIndex = 4;
+            this.BtnPesquisar.Text = "Pesquisar";
+            this.BtnPesquisar.UseVisualStyleBackColor = true;
+            this.BtnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
+            // 
+            // BtnLimpar
+            // 
+            this.BtnLimpar.Location = new System.Drawing.Point(860, 26);
+            this.BtnLimpar.Name = "BtnLimpar";
+            this.BtnLimpar.Size = new System.Drawing.Size(121, 23);
+            this.BtnLimpar.TabIndex = 5;
+            this.BtnLimpar.Text = "Limpar Resultado";
+            this.BtnLimpar.UseVisualStyleBackColor = true;
             // 
             // FormPesquisarFuncionarios
             // 

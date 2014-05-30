@@ -57,13 +57,22 @@ namespace SistemaMundoAnimal.Source.Pesquisa.Entidade {
         }
 
         /// <summary>
+        /// Faz uma consulta na view de funcionários retornando o funcionario com
+        /// determinado id.
+        /// </summary>
+        /// <param name="id">O id do funcionário desejado</param>
+        /// <param name="callback">Uma função callback que permite manipular os dados retornandos</param>
+        public static void PorId(int id, BancoDeDados.ConsultaSqlCallback callback) {
+            var consulta = string.Format(SelectFuncionarioPorIdSqlQuery, id);
+            BancoDeDados.NovaConsultaSql(consulta, callback);
+        }
+
+        /// <summary>
         /// Seleciona todos os funcionários no Banco de Dados.
         /// </summary>
         /// <param name="callback">Callback invocado a cada linha da view</param>
         public static void Todos(BancoDeDados.ConsultaSqlCallback callback) { 
-            BancoDeDados.NovaConsultaSql(SelectFuncionarioTodos, (SqlDataReader reader) => {
-                callback(reader);
-            });
+            BancoDeDados.NovaConsultaSql(SelectFuncionarioTodos, callback);
         }
 
     }

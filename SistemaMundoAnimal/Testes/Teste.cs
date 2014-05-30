@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using SistemaMundoAnimal.Testes.Entidades;
+using SistemaMundoAnimal.Testes.Dados.Tipos;
 
 namespace SistemaMundoAnimal.Testes {
     public class Teste {
@@ -14,6 +15,7 @@ namespace SistemaMundoAnimal.Testes {
         private static ContatoTeste Contato = new ContatoTeste();
         private static ParenteTeste Parente = new ParenteTeste();
         private static FuncionarioTeste Funcionario = new FuncionarioTeste();
+        private static TipoCPFTeste TipoCPF = new TipoCPFTeste();
 
         public static void RodarTodosTestes() {
             Pessoa.RodarTestes();
@@ -26,6 +28,9 @@ namespace SistemaMundoAnimal.Testes {
             Console.WriteLine("Teste Entidade Parente: " + (Parente.TesteOK));
             Funcionario.RodarTestes();
             Console.WriteLine("Teste Entidade Funcionario: " + (Funcionario.TesteOK));
+
+            TipoCPF.RodarTestes();
+            Console.WriteLine("Teste Tipo CPF: " + (TipoCPF.TesteOK));
         }
     }
 }
