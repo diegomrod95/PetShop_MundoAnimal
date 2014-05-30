@@ -2,6 +2,31 @@
 
 <p>Sistema completo e E-commerce de uma empresa de grande porte do ramo de Pet Shop.</p>
 
+<h3>Estrutura de Diretórios</h3>
+<pre>
+<code>
+  projeto/
+    README.md
+    LICENCE
+    BancoDeDados/
+      MundoAnimal_BD.sql                  > Script de criação do banco
+      Dados.sql                           > Dados para funcionamento e teste do db
+    SistemaMundoAnimal/
+      Forms/                              > Formularios usados pela aplicação
+        ...
+      Source/                             > Diretório com todos objetos da aplicação
+        Dados/                            > Diretório com objetos referentes à tipos e banco de dados
+          Tipos/                          > Diretório com tipos de dados
+          BancoDeDados.cs                 > Classe responsável por fazer consultas e executar comandos no banco
+        Entidades/                        > Diretório com entidades do sistema
+        Pesquisa/                         > Diretório com classes referentes a pesquisa no banco
+          Entidade/                       > Diretório com classes que realizam pesquisa de entidades no banco
+      Testes/                             > Diretório com testes dos objetos da aplicação
+        ...
+      Program.cs                          > Classe reponsável por inicar o programa
+</code>
+</pre>
+
 <h3>Colaboradores</h3>
 <ul>
   <li>Guilherme Bellotti - @guibellotti</li>
