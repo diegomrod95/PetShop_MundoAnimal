@@ -227,7 +227,7 @@ namespace SistemaMundoAnimal.Source.Entidades {
         }
 
         public void SetNascimento(int dia, int mes, int ano) {
-            if (dia < 31 && mes < 12 && ano > 1800) {
+            if (dia <= 31 && mes <= 12 && ano > 1800) {
                 this.Nascimento = new DateTime(ano, mes, dia);
             } else {
                 throw new ArgumentException(dia + "/" + mes + "/" + ano + " não é uma data válida!");
