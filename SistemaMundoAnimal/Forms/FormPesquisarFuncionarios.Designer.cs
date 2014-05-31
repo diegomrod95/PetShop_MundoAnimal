@@ -60,9 +60,9 @@
             // 
             this.ComboFiltroPesquisa.FormattingEnabled = true;
             this.ComboFiltroPesquisa.Items.AddRange(new object[] {
-            "1 Código",
-            "2 Nome",
-            "3 Cargo"});
+            "Código",
+            "Nome",
+            "Cargo"});
             this.ComboFiltroPesquisa.Location = new System.Drawing.Point(78, 28);
             this.ComboFiltroPesquisa.Name = "ComboFiltroPesquisa";
             this.ComboFiltroPesquisa.Size = new System.Drawing.Size(154, 21);

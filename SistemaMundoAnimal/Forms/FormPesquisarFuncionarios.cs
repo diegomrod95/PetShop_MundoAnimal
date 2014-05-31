@@ -41,7 +41,7 @@ namespace SistemaMundoAnimal.Forms {
         private void Pesquisar() {
             GridResultado.Rows.Clear();
             try {
-                switch (Convert.ToInt32(ComboFiltroPesquisa.Text[0].ToString())) {
+                switch (ComboFiltroPesquisa.SelectedIndex + 1) {
                     case (int)PesquisaFuncionario.Filtros.Id:
                         if (TxtConsulta.Text != "") {
                             PesquisaFuncionario.PorId(Convert.ToInt32(TxtConsulta.Text), AddResultadosDePesquisaAoGrid);
