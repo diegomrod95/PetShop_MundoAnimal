@@ -22,6 +22,16 @@ namespace SistemaMundoAnimal.Source.Entidades {
             switch (tipo) { 
                 case TipoCategoria.AlimentoGranel:
                     return new Categoria("Alimento Granel", tipo);
+                case TipoCategoria.AlimentoUnitario:
+                    return new Categoria("Alimento Unitário", tipo);
+                case TipoCategoria.HigieneBeleza:
+                    return new Categoria("Higiene e Beleza", tipo);
+                case TipoCategoria.Duraveis:
+                    return new Categoria("Duraveis", tipo);
+                case TipoCategoria.Vestuario:
+                    return new Categoria("Vestuario", tipo);
+                case TipoCategoria.Farmacia:
+                    return new Categoria("Farmacia", tipo);
                 default:
                     return new Categoria("Outro", TipoCategoria.Outro);
             }

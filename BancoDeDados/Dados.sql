@@ -24,3 +24,19 @@ VALUES
     ('Diretor TI'), ('Assitencia Tecnica'), ('DBA'), ('Contador'),
     ('Motorista'), ('Caixa'), ('Balconista'), ('Outro')
 GO
+
+-- ----------------------------------------------------------------------------
+-- CATEGOIAS -- NÃO ALTERAR, COMPROMETE FUNCIONAMENTO DO SISTEMA
+-- ----------------------------------------------------------------------------
+INSERT INTO [Categoria]
+    ([Nome], [Descricao])
+VALUES
+    ('Alimento Granel', 'Alimentos vendidos a granel.'),
+    ('Alimento Unitário', 'Alimentos que são vendidos unitários.'),
+    ('Higiene e Beleza', 'Produtos de higiene e Beleza'),
+    ('Duráveis', 'Bens duráveis.'),
+    ('Vestuário', 'Produtos de vestuário.'),
+    ('Farmacia', 'Produto e Medicamentos.'),
+    ('Conforto', 'Produto de conforto.'),
+    ('Outro', 'Outros tipos de produtos.');
+GO
