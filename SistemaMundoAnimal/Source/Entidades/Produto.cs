@@ -17,6 +17,9 @@ namespace SistemaMundoAnimal.Source.Entidades {
         private string Descricao;
         private string Especificacoes;
 
+        private List<Categoria> Categorias;
+        private List<Fornecedor> Fornecedores;
+        private List<Fabricante> Fabricantes;
 
     }
 }

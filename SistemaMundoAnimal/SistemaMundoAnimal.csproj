@@ -81,6 +81,7 @@
     <Compile Include="Source\Dados\Tipos\TipoTamanho.cs" />
     <Compile Include="Source\Dados\Tipos\TipoTelefone.cs" />
     <Compile Include="Source\Entidades\Cargo.cs" />
+    <Compile Include="Source\Entidades\Categoria.cs" />
     <Compile Include="Source\Entidades\Cliente.cs" />
     <Compile Include="Source\Entidades\Contato.cs" />
     <Compile Include="Source\Entidades\Endereco.cs" />
