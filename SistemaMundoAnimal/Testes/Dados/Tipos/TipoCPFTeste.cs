@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using SistemaMundoAnimal.Source.Dados.Tipos;
 
 namespace SistemaMundoAnimal.Testes.Dados.Tipos {
-    public class TipoCPFTeste : Teste, ITestavel {
+    public class TipoCPFTeste : ITestavel {
 
         public bool TesteOK = true;
 

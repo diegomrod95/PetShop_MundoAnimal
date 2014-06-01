@@ -193,7 +193,7 @@ CREATE TABLE [Produto] (
     [Codigo]                CHAR(10) NOT NULL,
     [Tamanho]               DECIMAL(10,2) NULL,
     [Peso]                  DECIMAL(10,3) NULL,
-    [Tipo_Unidade]          CHAR(2) NOT NULL,
+    [Tipo_Medida]           CHAR(2) NOT NULL,
     [Descricao]             VARCHAR(1000) NULL,
     [Especificacoes]        VARCHAR(MAX) NULL,
     [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),

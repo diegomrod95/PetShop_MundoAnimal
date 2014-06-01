@@ -25,13 +25,18 @@
         private void InitializeComponent() {
             this.TabControl = new System.Windows.Forms.TabControl();
             this.PageRecursosHumanos = new System.Windows.Forms.TabPage();
+            this.BtnVisualizarFuncionario = new System.Windows.Forms.Button();
             this.BtnPesquisaFuncionario = new System.Windows.Forms.Button();
             this.BtnCadastrarFuncionario = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.PainelPrincipal = new System.Windows.Forms.Panel();
-            this.BtnVisualizarFuncionario = new System.Windows.Forms.Button();
+            this.BtnCadastrarProduto = new System.Windows.Forms.Button();
+            this.BtnPesquisarProduto = new System.Windows.Forms.Button();
+            this.BtnFornecedores = new System.Windows.Forms.Button();
+            this.BtnEstoque = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.PageRecursosHumanos.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl
@@ -58,6 +63,16 @@
             this.PageRecursosHumanos.Text = "Resursos Humanos";
             this.PageRecursosHumanos.UseVisualStyleBackColor = true;
             // 
+            // BtnVisualizarFuncionario
+            // 
+            this.BtnVisualizarFuncionario.Location = new System.Drawing.Point(328, 5);
+            this.BtnVisualizarFuncionario.Name = "BtnVisualizarFuncionario";
+            this.BtnVisualizarFuncionario.Size = new System.Drawing.Size(141, 27);
+            this.BtnVisualizarFuncionario.TabIndex = 2;
+            this.BtnVisualizarFuncionario.Text = "Visualizar Funcionário";
+            this.BtnVisualizarFuncionario.UseVisualStyleBackColor = true;
+            this.BtnVisualizarFuncionario.Click += new System.EventHandler(this.BtnVisualizarFuncionario_Click);
+            // 
             // BtnPesquisaFuncionario
             // 
             this.BtnPesquisaFuncionario.Location = new System.Drawing.Point(163, 5);
@@ -80,12 +95,16 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.BtnEstoque);
+            this.tabPage2.Controls.Add(this.BtnFornecedores);
+            this.tabPage2.Controls.Add(this.BtnPesquisarProduto);
+            this.tabPage2.Controls.Add(this.BtnCadastrarProduto);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1000, 74);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Suprimentos";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // PainelPrincipal
@@ -96,15 +115,41 @@
             this.PainelPrincipal.Size = new System.Drawing.Size(1008, 590);
             this.PainelPrincipal.TabIndex = 1;
             // 
-            // BtnVisualizarFuncionario
+            // BtnCadastrarProduto
             // 
-            this.BtnVisualizarFuncionario.Location = new System.Drawing.Point(328, 5);
-            this.BtnVisualizarFuncionario.Name = "BtnVisualizarFuncionario";
-            this.BtnVisualizarFuncionario.Size = new System.Drawing.Size(141, 27);
-            this.BtnVisualizarFuncionario.TabIndex = 2;
-            this.BtnVisualizarFuncionario.Text = "Visualizar Funcionário";
-            this.BtnVisualizarFuncionario.UseVisualStyleBackColor = true;
-            this.BtnVisualizarFuncionario.Click += new System.EventHandler(this.BtnVisualizarFuncionario_Click);
+            this.BtnCadastrarProduto.Location = new System.Drawing.Point(9, 7);
+            this.BtnCadastrarProduto.Name = "BtnCadastrarProduto";
+            this.BtnCadastrarProduto.Size = new System.Drawing.Size(144, 24);
+            this.BtnCadastrarProduto.TabIndex = 0;
+            this.BtnCadastrarProduto.Text = "Cadastrar Produto";
+            this.BtnCadastrarProduto.UseVisualStyleBackColor = true;
+            // 
+            // BtnPesquisarProduto
+            // 
+            this.BtnPesquisarProduto.Location = new System.Drawing.Point(159, 7);
+            this.BtnPesquisarProduto.Name = "BtnPesquisarProduto";
+            this.BtnPesquisarProduto.Size = new System.Drawing.Size(144, 24);
+            this.BtnPesquisarProduto.TabIndex = 1;
+            this.BtnPesquisarProduto.Text = "Pesquisar Produto";
+            this.BtnPesquisarProduto.UseVisualStyleBackColor = true;
+            // 
+            // BtnFornecedores
+            // 
+            this.BtnFornecedores.Location = new System.Drawing.Point(309, 7);
+            this.BtnFornecedores.Name = "BtnFornecedores";
+            this.BtnFornecedores.Size = new System.Drawing.Size(144, 24);
+            this.BtnFornecedores.TabIndex = 2;
+            this.BtnFornecedores.Text = "Fornecedores";
+            this.BtnFornecedores.UseVisualStyleBackColor = true;
+            // 
+            // BtnEstoque
+            // 
+            this.BtnEstoque.Location = new System.Drawing.Point(459, 7);
+            this.BtnEstoque.Name = "BtnEstoque";
+            this.BtnEstoque.Size = new System.Drawing.Size(144, 24);
+            this.BtnEstoque.TabIndex = 3;
+            this.BtnEstoque.Text = "Estoque";
+            this.BtnEstoque.UseVisualStyleBackColor = true;
             // 
             // FormPrincipal
             // 
@@ -121,6 +166,7 @@
             this.Text = "Sistema Mundo Animal";
             this.TabControl.ResumeLayout(false);
             this.PageRecursosHumanos.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -134,6 +180,10 @@
         private System.Windows.Forms.Panel PainelPrincipal;
         private System.Windows.Forms.Button BtnPesquisaFuncionario;
         private System.Windows.Forms.Button BtnVisualizarFuncionario;
+        private System.Windows.Forms.Button BtnEstoque;
+        private System.Windows.Forms.Button BtnFornecedores;
+        private System.Windows.Forms.Button BtnPesquisarProduto;
+        private System.Windows.Forms.Button BtnCadastrarProduto;
 
     }
 }

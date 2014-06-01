@@ -8,7 +8,7 @@ using SistemaMundoAnimal.Testes.Entidades;
 using SistemaMundoAnimal.Testes.Dados.Tipos;
 
 namespace SistemaMundoAnimal.Testes {
-    public class Teste {
+    public static class Teste {
 
         private static PessoaTeste Pessoa = new PessoaTeste();
         private static EnderecoTeste Endereco = new EnderecoTeste();
@@ -16,6 +16,7 @@ namespace SistemaMundoAnimal.Testes {
         private static ParenteTeste Parente = new ParenteTeste();
         private static FuncionarioTeste Funcionario = new FuncionarioTeste();
         private static TipoCPFTeste TipoCPF = new TipoCPFTeste();
+        private static TipoEmailTeste TipoEmail = new TipoEmailTeste();
 
         public static void RodarTodosTestes() {
             Pessoa.RodarTestes();
@@ -31,6 +32,8 @@ namespace SistemaMundoAnimal.Testes {
 
             TipoCPF.RodarTestes();
             Console.WriteLine("Teste Tipo CPF: " + (TipoCPF.TesteOK));
+            TipoEmail.RodarTestes();
+            Console.WriteLine("Teste Tipo Email: " + (TipoEmail.TesteOK));
         }
     }
 }
