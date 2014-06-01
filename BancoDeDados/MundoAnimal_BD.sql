@@ -167,3 +167,99 @@ SELECT
 FROM [Pessoa] AS P JOIN [Funcionario] AS F ON P.Pessoa_Id = F.Pessoa_Id
                    JOIN [Funcionario_Cargo] AS C ON F.Cargo_Id = C.Cargo_Id
 WHERE P.Ativo = 'S' AND F.Ativo = 'S'
+
+-- ----------------------------------------------------------------------------
+-- CRIA TABELA Fabricante
+-- ----------------------------------------------------------------------------
+CREATE TABLE [Fabricante] (
+    [Fabricante_Id]         INT NOT NULL,
+    [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
+    [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
+    PRIMARY KEY([Fabricante_Id]),
+    CONSTRAINT [fk_Fabricante_Pessoa]
+        FOREIGN KEY([Fabricante_Id]) REFERENCES [Pessoa]([Pessoa_Id]),
+    CONSTRAINT [ck_Fabricante_ativo_sn]
+        CHECK([Ativo] IN ('S', 'N')));
+GO
+
+-- ----------------------------------------------------------------------------
+-- CRIA TABELA Produto
+-- Tipo_unidade: UN - Unitario, KG - Killos, GR - Gramas, DU - Duzias, 
+--               DZ - Dezenas, LT - Litros
+-- ----------------------------------------------------------------------------
+CREATE TABLE [Produto] (
+    [Produto_Id]            INT PRIMARY KEY IDENTITY,
+    [Nome]                  VARCHAR(150) NOT NULL,
+    [Codigo]                CHAR(10) NOT NULL,
+    [Tamanho]               DECIMAL(10,2) NULL,
+    [Peso]                  DECIMAL(10,3) NULL,
+    [Tipo_Unidade]          CHAR(2) NOT NULL,
+    [Descricao]             VARCHAR(1000) NULL,
+    [Especificacoes]        VARCHAR(MAX) NULL,
+    [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
+    [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
+    CONSTRAINT [ck_Produto_Tipo_Unidade]
+        CHECK([Tipo_Unidade] IN ('UN', 'KG', 'GR', 'DU', 'DZ', 'LT')),
+    CONSTRAINT [ck_Produto_ativo_sn]
+        CHECK([Ativo] IN ('S', 'N')));
+GO
+
+-- ----------------------------------------------------------------------------
+-- CRIA TABELA Fabricante_Produto
+-- ----------------------------------------------------------------------------
+CREATE TABLE [Fabricante_Produto] (
+   [Produto_Id]            INT NOT NULL,
+   [Fabricante_Id]         INT NOT NULL,
+   [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
+   [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
+   PRIMARY KEY ([Produto_Id], [Fabricante_Id]),
+   CONSTRAINT [fk_Fabricante_Produto_Produto]
+        FOREIGN KEY([Produto_Id]) REFERENCES [Produto]([Produto_Id]),
+   CONSTRAINT [fk_Fabricante_Produto_Fabricante]
+        FOREIGN KEY([Fabricante_Id]) REFERENCES [Fabricante]([Fabricante_Id]),
+   CONSTRAINT [ck_Fabricante_Produto_ativo_sn]
+        CHECK([Ativo] IN ('S', 'N')));
+GO
+
+-- ----------------------------------------------------------------------------
+-- CRIA TABELA Fornecedor
+-- ----------------------------------------------------------------------------
+CREATE TABLE [Fornecedor] (
+   [Fornecedor_Id]         INT PRIMARY KEY IDENTITY,
+   [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
+   [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
+   CONSTRAINT [ck_Fornecedor_ativo_sn]
+        CHECK([Ativo] IN ('S', 'N')));
+GO
+
+-- ----------------------------------------------------------------------------
+-- CRIA TABELA Fornecedor_Produto
+-- ----------------------------------------------------------------------------
+CREATE TABLE [Fornecedor_Produto] (
+   [Fornecedor_Id]         INT NOT NULL,
+   [Produto_Id]            INT NOT NULL,
+   [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
+   [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
+   PRIMARY KEY([Fornecedor_Id], [Produto_Id]),
+   CONSTRAINT [fk_Fornecedor_Produto_Fornecedor]
+        FOREIGN KEY([Fornecedor_Id]) REFERENCES [Fornecedor]([Fornecedor_Id]),
+   CONSTRAINT [fk_Fornecedor_Produto_Produto]
+        FOREIGN KEY([Produto_Id]) REFERENCES [Produto]([Produto_Id]),
+   CONSTRAINT [ck_Fornecedor_Produto_ativo_sn]
+        CHECK([Ativo] IN ('S', 'N')));
+GO
+
+-- ----------------------------------------------------------------------------
+-- CRIA TABELA Estoque_Produto
+-- ----------------------------------------------------------------------------
+CREATE TABLE [Estoque_Produto] (
+    [Produto_Id]            INT NOT NULL,
+    [Quantidade]            DECIMAL(10, 3) NULL,
+    [Unidades]              INT NULL,
+    [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
+    [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
+    CONSTRAINT [fk_Estoque_Produto_Produto]
+        FOREIGN KEY([Produto_Id]) REFERENCES [Produto]([Produto_Id]),
+    CONSTRAINT [ck_Estoque_Produto_ativo_sn]
+        CHECK([Ativo] IN ('S', 'N')));
+GO
