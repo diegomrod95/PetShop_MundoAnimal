@@ -29,11 +29,11 @@
             this.BtnPesquisaFuncionario = new System.Windows.Forms.Button();
             this.BtnCadastrarFuncionario = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.PainelPrincipal = new System.Windows.Forms.Panel();
-            this.BtnCadastrarProduto = new System.Windows.Forms.Button();
-            this.BtnPesquisarProduto = new System.Windows.Forms.Button();
-            this.BtnFornecedores = new System.Windows.Forms.Button();
             this.BtnEstoque = new System.Windows.Forms.Button();
+            this.BtnVisualizarProduto = new System.Windows.Forms.Button();
+            this.BtnPesquisarProduto = new System.Windows.Forms.Button();
+            this.BtnCadastrarProduto = new System.Windows.Forms.Button();
+            this.PainelPrincipal = new System.Windows.Forms.Panel();
             this.TabControl.SuspendLayout();
             this.PageRecursosHumanos.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -96,7 +96,7 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.BtnEstoque);
-            this.tabPage2.Controls.Add(this.BtnFornecedores);
+            this.tabPage2.Controls.Add(this.BtnVisualizarProduto);
             this.tabPage2.Controls.Add(this.BtnPesquisarProduto);
             this.tabPage2.Controls.Add(this.BtnCadastrarProduto);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -107,22 +107,23 @@
             this.tabPage2.Text = "Suprimentos";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // PainelPrincipal
+            // BtnEstoque
             // 
-            this.PainelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PainelPrincipal.Location = new System.Drawing.Point(0, 100);
-            this.PainelPrincipal.Name = "PainelPrincipal";
-            this.PainelPrincipal.Size = new System.Drawing.Size(1008, 590);
-            this.PainelPrincipal.TabIndex = 1;
+            this.BtnEstoque.Location = new System.Drawing.Point(459, 7);
+            this.BtnEstoque.Name = "BtnEstoque";
+            this.BtnEstoque.Size = new System.Drawing.Size(144, 24);
+            this.BtnEstoque.TabIndex = 3;
+            this.BtnEstoque.Text = "Estoque";
+            this.BtnEstoque.UseVisualStyleBackColor = true;
             // 
-            // BtnCadastrarProduto
+            // BtnVisualizarProduto
             // 
-            this.BtnCadastrarProduto.Location = new System.Drawing.Point(9, 7);
-            this.BtnCadastrarProduto.Name = "BtnCadastrarProduto";
-            this.BtnCadastrarProduto.Size = new System.Drawing.Size(144, 24);
-            this.BtnCadastrarProduto.TabIndex = 0;
-            this.BtnCadastrarProduto.Text = "Cadastrar Produto";
-            this.BtnCadastrarProduto.UseVisualStyleBackColor = true;
+            this.BtnVisualizarProduto.Location = new System.Drawing.Point(309, 7);
+            this.BtnVisualizarProduto.Name = "BtnVisualizarProduto";
+            this.BtnVisualizarProduto.Size = new System.Drawing.Size(144, 24);
+            this.BtnVisualizarProduto.TabIndex = 2;
+            this.BtnVisualizarProduto.Text = "Visualizar Produto";
+            this.BtnVisualizarProduto.UseVisualStyleBackColor = true;
             // 
             // BtnPesquisarProduto
             // 
@@ -133,28 +134,31 @@
             this.BtnPesquisarProduto.Text = "Pesquisar Produto";
             this.BtnPesquisarProduto.UseVisualStyleBackColor = true;
             // 
-            // BtnFornecedores
+            // BtnCadastrarProduto
             // 
-            this.BtnFornecedores.Location = new System.Drawing.Point(309, 7);
-            this.BtnFornecedores.Name = "BtnFornecedores";
-            this.BtnFornecedores.Size = new System.Drawing.Size(144, 24);
-            this.BtnFornecedores.TabIndex = 2;
-            this.BtnFornecedores.Text = "Fornecedores";
-            this.BtnFornecedores.UseVisualStyleBackColor = true;
+            this.BtnCadastrarProduto.Location = new System.Drawing.Point(9, 7);
+            this.BtnCadastrarProduto.Name = "BtnCadastrarProduto";
+            this.BtnCadastrarProduto.Size = new System.Drawing.Size(144, 24);
+            this.BtnCadastrarProduto.TabIndex = 0;
+            this.BtnCadastrarProduto.Text = "Cadastrar Produto";
+            this.BtnCadastrarProduto.UseVisualStyleBackColor = true;
             // 
-            // BtnEstoque
+            // PainelPrincipal
             // 
-            this.BtnEstoque.Location = new System.Drawing.Point(459, 7);
-            this.BtnEstoque.Name = "BtnEstoque";
-            this.BtnEstoque.Size = new System.Drawing.Size(144, 24);
-            this.BtnEstoque.TabIndex = 3;
-            this.BtnEstoque.Text = "Estoque";
-            this.BtnEstoque.UseVisualStyleBackColor = true;
+            this.PainelPrincipal.AutoSize = true;
+            this.PainelPrincipal.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.PainelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PainelPrincipal.Location = new System.Drawing.Point(0, 100);
+            this.PainelPrincipal.Name = "PainelPrincipal";
+            this.PainelPrincipal.Size = new System.Drawing.Size(1008, 590);
+            this.PainelPrincipal.TabIndex = 1;
             // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1008, 690);
             this.Controls.Add(this.PainelPrincipal);
@@ -168,6 +172,7 @@
             this.PageRecursosHumanos.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -181,7 +186,7 @@
         private System.Windows.Forms.Button BtnPesquisaFuncionario;
         private System.Windows.Forms.Button BtnVisualizarFuncionario;
         private System.Windows.Forms.Button BtnEstoque;
-        private System.Windows.Forms.Button BtnFornecedores;
+        private System.Windows.Forms.Button BtnVisualizarProduto;
         private System.Windows.Forms.Button BtnPesquisarProduto;
         private System.Windows.Forms.Button BtnCadastrarProduto;
 
