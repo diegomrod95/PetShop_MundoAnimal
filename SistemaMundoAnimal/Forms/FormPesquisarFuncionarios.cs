@@ -41,18 +41,49 @@ namespace SistemaMundoAnimal.Forms {
         private void Pesquisar() {
             GridResultado.Rows.Clear();
             try {
-                switch (ComboFiltroPesquisa.SelectedIndex + 1) {
-                    case (int)PesquisaFuncionario.Filtros.Id:
-                        if (TxtConsulta.Text != "") {
-                            PesquisaFuncionario.PorId(Convert.ToInt32(TxtConsulta.Text), AddResultadosDePesquisaAoGrid);
-                        }
-                        break;
-                    case (int)PesquisaFuncionario.Filtros.Cargo:
-                        PesquisaFuncionario.PorCargo(TxtConsulta.Text, AddResultadosDePesquisaAoGrid);
-                        break;
-                    default:
-                        PesquisaFuncionario.PorNome(TxtConsulta.Text, AddResultadosDePesquisaAoGrid);
-                        break;
+                string consulta = TxtConsulta.Text.Replace(",", ".");
+                if (consulta != "") {
+                    switch (ComboFiltroPesquisa.SelectedIndex + 1) {
+                        case (int)PesquisaFuncionario.Filtros.Id:
+                            PesquisaFuncionario.PorId(Convert.ToInt32(consulta), AddResultadosDePesquisaAoGrid);
+                            break;
+                        case (int)PesquisaFuncionario.Filtros.Cargo:
+                            PesquisaFuncionario.PorCargo(consulta, AddResultadosDePesquisaAoGrid);
+                            break;
+                        case (int)PesquisaFuncionario.Filtros.Sobrenome:
+                            PesquisaFuncionario.PorSobrenome(consulta, AddResultadosDePesquisaAoGrid);
+                            break;
+                        case (int)PesquisaFuncionario.Filtros.RG:
+                            PesquisaFuncionario.PorRG(consulta, AddResultadosDePesquisaAoGrid);
+                            break;
+                        case (int)PesquisaFuncionario.Filtros.CPF:
+                            PesquisaFuncionario.PorCPF(consulta, AddResultadosDePesquisaAoGrid);
+                            break;
+                        case (int)PesquisaFuncionario.Filtros.Idade:
+                            PesquisaFuncionario.PorIdade(consulta, ">=", AddResultadosDePesquisaAoGrid);
+                            break;
+                        case (int)PesquisaFuncionario.Filtros.IdadeMaiorQue:
+                            PesquisaFuncionario.PorIdade(consulta, ">=", AddResultadosDePesquisaAoGrid);
+                            break;
+                        case (int)PesquisaFuncionario.Filtros.IdadeMenorQue:
+                            PesquisaFuncionario.PorIdade(consulta, "<=", AddResultadosDePesquisaAoGrid);
+                            break;
+                        case (int)PesquisaFuncionario.Filtros.Salario:
+                            PesquisaFuncionario.PorSalario(consulta, "=", AddResultadosDePesquisaAoGrid);
+                            break;
+                        case (int)PesquisaFuncionario.Filtros.SalarioMaiorQue:
+                            PesquisaFuncionario.PorSalario(consulta, ">=", AddResultadosDePesquisaAoGrid);
+                            break;
+                        case (int)PesquisaFuncionario.Filtros.SalarioMenorQue:
+                            PesquisaFuncionario.PorSalario(consulta, "<=", AddResultadosDePesquisaAoGrid);
+                            break;
+                        case (int)PesquisaFuncionario.Filtros.DiaDePagamento:
+                            PesquisaFuncionario.PorDiaDePagamento(consulta, AddResultadosDePesquisaAoGrid);
+                            break;
+                        default:
+                            PesquisaFuncionario.PorNome(consulta, AddResultadosDePesquisaAoGrid);
+                            break;
+                    }
                 }
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
@@ -92,6 +123,10 @@ namespace SistemaMundoAnimal.Forms {
                 }
             } catch (Exception) {
             }
+        }
+
+        private void ComboFiltroPesquisa_SelectedIndexChanged(object sender, EventArgs e) {
+            TxtConsulta.Text = "";
         }
 
     }

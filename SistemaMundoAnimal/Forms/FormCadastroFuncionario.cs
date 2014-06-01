@@ -136,7 +136,9 @@ namespace SistemaMundoAnimal.Forms {
                 int index = ComboTipoContato.Items.IndexOf(ComboTipoContato.Text) + 1;
                 var contato = FabricaContato.GetContato(TxtContato.Text, (TipoContato)index);
 
-                funcionario.AddContato(contato);
+                if (TxtContato.Text != "") {
+                    funcionario.AddContato(contato);
+                }
 
                 LimpaControlesContato();
             } catch (Exception ex) {

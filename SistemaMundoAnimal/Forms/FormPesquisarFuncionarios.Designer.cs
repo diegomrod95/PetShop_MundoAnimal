@@ -62,11 +62,22 @@
             this.ComboFiltroPesquisa.Items.AddRange(new object[] {
             "Código",
             "Nome",
-            "Cargo"});
+            "Sobrenome",
+            "Cargo",
+            "RG",
+            "CPF",
+            "Idade",
+            "Idade maior que",
+            "Idade menor que",
+            "Salario",
+            "Salario maior que",
+            "Salario menor que",
+            "Dia de Pagamento"});
             this.ComboFiltroPesquisa.Location = new System.Drawing.Point(78, 28);
             this.ComboFiltroPesquisa.Name = "ComboFiltroPesquisa";
             this.ComboFiltroPesquisa.Size = new System.Drawing.Size(154, 21);
             this.ComboFiltroPesquisa.TabIndex = 1;
+            this.ComboFiltroPesquisa.SelectedIndexChanged += new System.EventHandler(this.ComboFiltroPesquisa_SelectedIndexChanged);
             // 
             // TxtConsulta
             // 

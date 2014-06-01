@@ -17,7 +17,17 @@ namespace SistemaMundoAnimal.Source.Pesquisa.Entidade {
         public enum Filtros : int { 
             Id = 1,
             Nome,
-            Cargo
+            Sobrenome,
+            Cargo,
+            RG,
+            CPF,
+            Idade,
+            IdadeMaiorQue,
+            IdadeMenorQue,
+            Salario,
+            SalarioMaiorQue,
+            SalarioMenorQue,
+            DiaDePagamento
         }
 
         private static string SelectFuncionarioPorIdSqlQuery = @"SELECT *"
@@ -25,6 +35,9 @@ namespace SistemaMundoAnimal.Source.Pesquisa.Entidade {
 
         private static string SelectFuncionarioPorCampoSqlQuery = @"SELECT *"
             + " FROM [View_Funcionarios] WHERE [{0}] LIKE '{1}%'";
+
+        private static string SelectFuncionarioPorComparacaoSqlQuery = @"SELECT *"
+            + " FROM [View_Funcionarios] WHERE [{0}] {1} {2}";
 
         private static string SelectFuncionarioTodos = @"SELECT * FROM [View_Funcionarios]";
 
@@ -90,6 +103,45 @@ namespace SistemaMundoAnimal.Source.Pesquisa.Entidade {
             BancoDeDados.NovaConsultaSql(consulta, callback);
         }
 
+        public static void PorSobrenome(string sobrenome, BancoDeDados.ConsultaSqlCallback callback) {
+            var consulta = string.Format(SelectFuncionarioPorCampoSqlQuery, "Sobrenome", sobrenome);
+            BancoDeDados.NovaConsultaSql(consulta, callback);
+        }
+
+        public static void PorRG(string rg, BancoDeDados.ConsultaSqlCallback callback) {
+            var consulta = string.Format(SelectFuncionarioPorCampoSqlQuery, "RG", rg);
+            BancoDeDados.NovaConsultaSql(consulta, callback);
+        }
+
+        public static void PorCPF(string cpf, BancoDeDados.ConsultaSqlCallback callback) {
+            var consulta = string.Format(SelectFuncionarioPorCampoSqlQuery, "CPF", cpf);
+            BancoDeDados.NovaConsultaSql(consulta, callback);
+        }
+
+        /// <summary>
+        /// Faz uma consulta a view funcionários comparando o campo idade com o parametro passado
+        /// como argumento.
+        /// </summary>
+        /// <param name="idade">O valor a ser comparado</param>
+        /// <param name="cmp">O sinal de comparação</param>
+        /// <param name="callback">Uma função callback que permite manipular os dados retornandos</param>
+        public static void PorIdade(string idade, string cmp, BancoDeDados.ConsultaSqlCallback callback) {
+            var consulta = string.Format(SelectFuncionarioPorComparacaoSqlQuery, "Idade", cmp, idade);
+            BancoDeDados.NovaConsultaSql(consulta, callback);
+        }
+
+        /// <summary>
+        /// Faz uma consulta a view funcionários comparando o campo salario com o parametro passado
+        /// como argumento.
+        /// </summary>
+        /// <param name="idade">O valor a ser comparado</param>
+        /// <param name="cmp">O sinal de comparação</param>
+        /// <param name="callback">Uma função callback que permite manipular os dados retornandos</param>
+        public static void PorSalario(string salario, string cmp, BancoDeDados.ConsultaSqlCallback callback) {
+            var consulta = string.Format(SelectFuncionarioPorComparacaoSqlQuery, "Salario", cmp, salario);
+            BancoDeDados.NovaConsultaSql(consulta, callback);
+        }
+
         /// <summary>
         /// Faz uma consulta na view funcionários, retornando aqueles que exercem um determinado cargo.
         /// </summary>
@@ -97,6 +149,11 @@ namespace SistemaMundoAnimal.Source.Pesquisa.Entidade {
         /// <param name="callback">Uma função callback que permite manipular os dados retornandos</param>
         public static void PorCargo(string cargo, BancoDeDados.ConsultaSqlCallback callback) {
             var consulta = string.Format(SelectFuncionarioPorCampoSqlQuery, "Cargo", cargo);
+            BancoDeDados.NovaConsultaSql(consulta, callback);
+        }
+
+        public static void PorDiaDePagamento(string dia, BancoDeDados.ConsultaSqlCallback callback) {
+            var consulta = string.Format(SelectFuncionarioPorComparacaoSqlQuery, "Dia de Pagamento", "=", dia);
             BancoDeDados.NovaConsultaSql(consulta, callback);
         }
 
