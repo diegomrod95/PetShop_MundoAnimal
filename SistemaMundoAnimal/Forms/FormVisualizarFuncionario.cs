@@ -38,7 +38,7 @@ namespace SistemaMundoAnimal.Forms {
             TxtSalarioFuncionario.Text = reader["Salario"].ToString();
             TxtNascimento.Text = reader["Nascimento"].ToString();
             ComboCargoFuncionario.Text = reader["Cargo"].ToString();
-            TxtValeAlimentacao.Text = reader["Vale Alimentção"].ToString();
+            TxtValeAlimentacao.Text = reader["Vale Alimentacao"].ToString();
             TxtValeTransporte.Text = reader["Vale Transporte"].ToString();
             TxtAuxilioCreche.Text = reader["Auxilio Creche"].ToString();
             TxtAssitenciaMedica.Text = reader["Assitencia Medica"].ToString();

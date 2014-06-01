@@ -45,7 +45,7 @@ namespace SistemaMundoAnimal.Source.Pesquisa.Entidade {
             funcionario.SetSalario(Convert.ToDouble(reader["Salario"]));
             funcionario.SetAssitenciaMedica(Convert.ToDouble(reader["Assitencia Medica"]));
             funcionario.SetAuxilioCreche(Convert.ToDouble(reader["Auxilio Creche"]));
-            funcionario.SetValeAlimentacao(Convert.ToDouble(reader["Vale Alimentção"]));
+            funcionario.SetValeAlimentacao(Convert.ToDouble(reader["Vale Alimentacao"]));
             funcionario.SetValeTransporte(Convert.ToDouble(reader["Vale Transporte"]));
             funcionario.SetDiaPagamento(Convert.ToInt32(reader["Dia de Pagamento"]));
             funcionario.SetCargo((TipoCargo)Convert.ToInt32(reader["Codigo do Cargo"]));

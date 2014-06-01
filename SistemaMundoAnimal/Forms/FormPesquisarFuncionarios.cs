@@ -33,7 +33,7 @@ namespace SistemaMundoAnimal.Forms {
                     reader["Salario"],
                     reader["Assitencia Medica"],
                     reader["Auxilio Creche"],
-                    reader["Vale Alimentção"],
+                    reader["Vale Alimentacao"],
                     reader["Vale Transporte"],
                     reader["Dia de Pagamento"]);
         }

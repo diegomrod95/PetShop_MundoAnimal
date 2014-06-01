@@ -158,7 +158,7 @@ SELECT
     F.Salario                   AS [Salario], 
     F.Assitencia_Medica         AS [Assitencia Medica], 
     F.Auxilio_Creche            AS [Auxilio Creche], 
-    F.Vale_Alimentacao          AS [Vale Alimentção], -- Arrumar no código! 
+    F.Vale_Alimentacao          AS [Vale Alimentacao], 
     F.Vale_Transporte           AS [Vale Transporte],
     F.Dia_Pagamento             AS [Dia de Pagamento],
     F.Data_Demissao             AS [Data Demissao],
