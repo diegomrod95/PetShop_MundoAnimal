@@ -7,9 +7,13 @@ using System.Threading.Tasks;
 using SistemaMundoAnimal.Source.Dados.Tipos;
 
 namespace SistemaMundoAnimal.Source.Entidades {
+    /// <summary>
+    /// Entidade que representa um produto.
+    /// </summary>
     public class Produto : Entidade {
         private int Id;
         private string Nome;
+        private TipoDinheiro PrecoVenda;
         private TipoCodigo Codigo;
         private TipoTamanho Tamanho;
         private TipoPeso Peso;
@@ -21,8 +25,8 @@ namespace SistemaMundoAnimal.Source.Entidades {
         private List<Fornecedor> Fornecedores;
         private List<Fabricante> Fabricantes;
 
-        private int NomeMaxLength = 150;
-        private int DescricaoMaxLength = 1000;
+        private readonly int NomeMaxLength = 150;
+        private readonly int DescricaoMaxLength = 1000;
 
         #region Getters e Setters
         public int GetId() {
@@ -47,6 +51,14 @@ namespace SistemaMundoAnimal.Source.Entidades {
             } else {
                 throw new ArgumentException(nome + " não é um nome válido.");
             }
+        }
+
+        public void SetPrecoVenda(double valor) {
+            this.PrecoVenda = new TipoDinheiro(valor);
+        }
+
+        public string GetPrecoVenda() {
+            return this.PrecoVenda.ToString();
         }
 
         public void SetCodigo() {

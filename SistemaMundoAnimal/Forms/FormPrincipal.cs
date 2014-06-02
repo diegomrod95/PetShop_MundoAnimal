@@ -30,5 +30,10 @@ namespace SistemaMundoAnimal.Forms {
             PainelPrincipal.Controls.Add(new FormVisualizarFuncionario());
         }
 
+        private void BtnCadastrarProduto_Click(object sender, EventArgs e) {
+            PainelPrincipal.Controls.Clear();
+            PainelPrincipal.Controls.Add(new FormCadastroProduto());
+        }
+
     }
 }

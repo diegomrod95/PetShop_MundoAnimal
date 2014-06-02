@@ -206,6 +206,7 @@ CREATE TABLE [Produto] (
     [Nome]                  VARCHAR(150) NOT NULL,
     [Codigo]                CHAR(10) NOT NULL,
     [Tamanho]               DECIMAL(10,2) NULL,
+    [Preco_Venda]           DECIMAL(10, 2) NULL,
     [Peso]                  DECIMAL(10,3) NULL,
     [Tipo_Medida]           CHAR(2) NOT NULL,
     [Descricao]             VARCHAR(1000) NULL,
@@ -269,6 +270,7 @@ GO
 CREATE TABLE [Fornecedor_Produto] (
    [Fornecedor_Id]         INT NOT NULL,
    [Produto_Id]            INT NOT NULL,
+   [Preco]                 DECIMAL(10, 2) NOT NULL,
    [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
    [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
    PRIMARY KEY([Fornecedor_Id], [Produto_Id]),
