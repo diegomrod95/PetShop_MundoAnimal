@@ -24,10 +24,21 @@ namespace SistemaMundoAnimal.Source.Entidades {
         /// <summary>
         /// Consulta Sql usada para inserir Funcionarios na tabela Funcionario.
         /// </summary>
-        private static string InsertFuncionarioSqlQuery = @"INSERT INTO [Funcionario]"
+        private static readonly string InsertFuncionarioSqlQuery = @"INSERT INTO [Funcionario]"
             + " ([Pessoa_Id], [Cargo_Id], [Salario], [Vale_Alimentacao], [Vale_Transporte], [Auxilio_Creche],"
             + " [Assitencia_Medica], [Dia_Pagamento])"
             + " VALUES ({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7});";
+
+        private static readonly string UpdateFuncionarioSqlQuery = @"UPDATE Funcionario SET"
+            + " [Cargo_Id] = {1},"
+            + " [Salario] = {2},"
+            + " [Vale_Alimentacao] = {3},"
+            + " [Vale_Transporte] = {4},"
+            + " [Auxilio_Creche] = {5},"
+            + " [Assitencia_Medica] = {6},"
+            + " [Dia_Pagamento] = {7}"
+            + " WHERE [Pessoa_Id] = {0}";
+ 
 
         /// <summary>
         /// Metodo que insere Entidades do tipo Pessoa no banco de dados.
@@ -59,6 +70,32 @@ namespace SistemaMundoAnimal.Source.Entidades {
 
                 BancoDeDados.NovoComandoSql(comando);
             
+            } catch (Exception e) {
+                throw e;
+            }
+        }
+
+        /// <summary>
+        /// Atualiza os dados do funcionário passado como argumento no banco de dados.
+        /// </summary>
+        /// <param name="funcionario">Uma entidade do tipo Funcionario</param>
+        public static void UpdateNoBancoDeDados(Funcionario funcionario) {
+            string comando;
+
+            try {
+
+                comando = string.Format(UpdateFuncionarioSqlQuery,
+                    funcionario.GetId(),
+                    funcionario.GetCargo().GetTipo(),
+                    funcionario.GetSalario(),
+                    funcionario.GetValeAlimentacao(),
+                    funcionario.GetValeTransporte(),
+                    funcionario.GetAuxilioCreche(),
+                    funcionario.GetAssitenciaMedica(),
+                    funcionario.GetDiaPagamento());
+
+                BancoDeDados.NovoComandoSql(comando);
+
             } catch (Exception e) {
                 throw e;
             }

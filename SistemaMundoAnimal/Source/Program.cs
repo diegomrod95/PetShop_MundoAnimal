@@ -11,6 +11,8 @@ using System.Windows.Forms;
 namespace SistemaMundoAnimal {
     static class Program {
 
+        public static FormPrincipal Form;
+
         /// <summary>
         /// Ponto de partida da aplicação.
         /// </summary>
@@ -20,7 +22,10 @@ namespace SistemaMundoAnimal {
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPrincipal());
+
+            Form = new FormPrincipal();
+
+            Application.Run(Form);
         }
     }
 }

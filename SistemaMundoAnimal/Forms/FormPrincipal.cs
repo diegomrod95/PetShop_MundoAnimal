@@ -15,6 +15,11 @@ namespace SistemaMundoAnimal.Forms {
             InitializeComponent();
         }
 
+        public void ShowVisualizarFuncionario(int codigo) {
+            PainelPrincipal.Controls.Clear();
+            PainelPrincipal.Controls.Add(new FormVisualizarFuncionario(codigo));
+        }
+
         private void BtnCadastrarFuncionario_Click(object sender, EventArgs e) {
             PainelPrincipal.Controls.Clear();
             PainelPrincipal.Controls.Add(new FormCadastroFuncionario());

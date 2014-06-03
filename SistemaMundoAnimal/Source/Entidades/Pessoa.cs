@@ -39,21 +39,28 @@ namespace SistemaMundoAnimal.Source.Entidades {
         /// <summary>
         /// Query usada para inserir entidades do tipo Pessoa na tabela Pessoa no banco de dados.
         /// </summary>
-        private static string InsertPessoaSqlQuery = @"INSERT INTO [Pessoa]" 
+        private static readonly string InsertPessoaSqlQuery = @"INSERT INTO [Pessoa]" 
             + " ([Nome], [Sobrenome], [Nome_Fantasia], [Tipo_Pessoa], [Genero], [RG], [CPF], [CNPJ], [Nascimento])"
             + " OUTPUT inserted.Pessoa_Id AS [ID]"
             + " VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}');"; 
+
+        private static readonly string UpdatePessoaSqlQuery = @"UPDATE Pessoa SET "
+            + " [Nome] = '{1}',"
+            + " [Sobrenome] = '{2}',"
+            + " [Tipo_Pessoa] = '{3}',"
+            + " [Genero] = '{4}',"
+            + " [RG] = '{5}',"
+            + " [CNPJ] = '{6}',"
+            + " [CPF] = '{7}',"
+            + " [Nascimento] = '{8}'"
+            + " WHERE [Pessoa_Id] = {0}";
 
         /// <summary>
         /// Insere uma entidade do tipo pessoa no banco de dados.
         /// </summary>
         /// <param name="pessoa">Uma instancia da classe Pessoa</param>
         public static void InserirNoBancoDeDados(Pessoa pessoa) {
-            string comando;
-            string rg = "";
-            string cpf = "";
-            string cnpj = "";
-            string nascimento = "";
+            string comando, rg = "", cpf = "", cnpj = "", nascimento = "";
 
             try {
 
@@ -77,6 +84,32 @@ namespace SistemaMundoAnimal.Source.Entidades {
                     pessoa.SetId(Convert.ToInt32(reader["ID"]));
                 });
 
+            } catch (Exception e) {
+                throw e;
+            }
+        }
+
+        public static void UpdateNoBancoDeDados(Pessoa pessoa) {
+            string comando, rg = "", cpf = "", cnpj = "", nascimento = "";
+
+            try {
+                if (pessoa.GetTipoPessoa() == 'F') {
+                    rg = pessoa.GetRG();
+                    cpf = pessoa.GetCPF();
+                    nascimento = pessoa.GetNascimento().ToString("d");
+                } else {
+                    cnpj = pessoa.GetCNPJ();
+                }
+
+                comando = string.Format(UpdatePessoaSqlQuery,
+                    pessoa.GetId(),
+                    pessoa.GetNome(),
+                    pessoa.GetSobrenome(),
+                    pessoa.GetTipoPessoa(),
+                    pessoa.GetGenero(),
+                    rg, cnpj, cpf, nascimento);
+
+                BancoDeDados.NovoComandoSql(comando);
             } catch (Exception e) {
                 throw e;
             }

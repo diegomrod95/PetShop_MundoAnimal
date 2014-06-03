@@ -137,6 +137,7 @@
             this.BtnSalvar.TabIndex = 60;
             this.BtnSalvar.Text = "Salvar Alterações";
             this.BtnSalvar.UseVisualStyleBackColor = true;
+            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
             // TxtDataCadastro
             // 
@@ -218,6 +219,7 @@
             this.ComboCargoFuncionario.Name = "ComboCargoFuncionario";
             this.ComboCargoFuncionario.Size = new System.Drawing.Size(223, 21);
             this.ComboCargoFuncionario.TabIndex = 50;
+            this.ComboCargoFuncionario.Enter += new System.EventHandler(this.ComboCargoFuncionario_Enter);
             // 
             // label23
             // 

@@ -114,12 +114,10 @@ namespace SistemaMundoAnimal.Forms {
         }
         
         private void GridResultado_CellClick(object sender, DataGridViewCellEventArgs e) {
-            // TODO: Criar um formulario onde o usuario possa alterar os dados do 
-            // funcionário clicado, com base no código dele.
             try {
-                int index = Convert.ToInt32(GridResultado.Rows[e.RowIndex].Cells[0].Value);
-                if (index >= 0) {
-                    MessageBox.Show(index.ToString());
+                int codigo = Convert.ToInt32(GridResultado.Rows[e.RowIndex].Cells[0].Value);
+                if (codigo >= 0) {
+                    Program.Form.ShowVisualizarFuncionario(codigo);
                 }
             } catch (Exception) {
             }
