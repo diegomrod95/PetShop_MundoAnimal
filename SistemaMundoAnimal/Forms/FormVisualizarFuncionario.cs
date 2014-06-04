@@ -105,18 +105,18 @@ namespace SistemaMundoAnimal.Forms {
         /// </summary>
         /// <param name="reader">Um SqlDataReader</param>
         private void SetContato(SqlDataReader reader) {
-
-            if (reader["Ativo"].ToString() == "S") {
-                DataGridContato.RowsDefaultCellStyle.BackColor = Color.LightGreen;
-            } else {
-                DataGridContato.RowsDefaultCellStyle.BackColor = Color.Red;
-            }
+            int index;
             
             DataGridContato.Rows.Add(
                 reader["Nome"],
                 reader["Contato"],
                 reader["Data_Cadastro"],
                 reader["Ativo"]);
+
+            index = DataGridContato.Rows.Count - 1;
+
+            DataGridContato.Rows[index].Tag = reader["Tipo_Id"];
+            DataGridContato.Rows[index].Cells[1].Tag = reader["Contato"];
         }
 
         /// <summary>
@@ -124,13 +124,6 @@ namespace SistemaMundoAnimal.Forms {
         /// </summary>
         /// <param name="reader">Um SqlDataReader</param>
         private void SetEndereco(SqlDataReader reader) {
-
-            if (reader["Ativo"].ToString() == "S") {
-                DataGridEnderecos.RowsDefaultCellStyle.BackColor = Color.LightGreen;
-            } else {
-                DataGridEnderecos.RowsDefaultCellStyle.BackColor = Color.Red;
-            }
-
             DataGridEnderecos.Rows.Add(
                 reader["Pais"],
                 reader["Estado"],
@@ -156,6 +149,20 @@ namespace SistemaMundoAnimal.Forms {
                 PesquisaFuncionario.PorId(id, SetFuncionario);
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void UpdateContatos() {
+            try {
+                foreach (DataGridViewRow row in DataGridContato.Rows) {
+                    string antigo = row.Cells[1].Tag.ToString();
+                    var contato = FabricaContato.GetContato(row.Cells[1].Value.ToString(), 
+                                                                        (TipoContato)Convert.ToInt32(row.Tag));
+                    contato.SetAtivo(row.Cells[3].Value.ToString()[0]);
+                    Contato.UpdateNoBancoDeDados(contato, Convert.ToInt32(TxtCodigo.Text), antigo);
+                }
+            } catch (Exception e) {
+                throw e;
             }
         }
 
@@ -185,7 +192,10 @@ namespace SistemaMundoAnimal.Forms {
                 Pessoa.UpdateNoBancoDeDados(funcionario);
                 Funcionario.UpdateNoBancoDeDados(funcionario);
 
+                UpdateContatos();
+
                 MessageBox.Show("Alterações realizadas com sucesso!");
+                Pesquisar();
             } catch (Exception ex) {
                 MessageBox.Show(ex.StackTrace + "\n" + ex.Message + "\n" + ex.Source);
             }
@@ -199,6 +209,19 @@ namespace SistemaMundoAnimal.Forms {
             PesquisaCargos.Todos((SqlDataReader reader) => {
                 ComboCargoFuncionario.Items.Add(reader["Cargo_Id"] + " " + reader["Nome"]);
             });
+        }
+
+        /// <summary>
+        /// Pinta de verde os contatos e endereços ativos e de vermelho os não ativos.
+        /// </summary>
+        private void DataGrid_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) {
+            var o = (DataGridView)sender;
+
+            if (o.Rows[e.RowIndex].Cells[Convert.ToInt32(o.Tag)].Value.ToString() == "S") {
+                o.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;
+            } else {
+                o.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+            }
         }
     }
 }

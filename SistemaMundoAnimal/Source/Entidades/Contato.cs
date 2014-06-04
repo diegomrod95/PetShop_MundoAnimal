@@ -52,9 +52,14 @@ namespace SistemaMundoAnimal.Source.Entidades {
         private Tipo<string> Valor;
         private TipoContato Tipo;
 
-        private static string InsertContatoSqlQuery = @"INSERT INTO [Pessoa_Contato]"
+        private static readonly string InsertContatoSqlQuery = @"INSERT INTO [Pessoa_Contato]"
             + " ([Pessoa_Id], [Tipo_Id], [Contato])"
             + " VALUES ({0}, {1}, '{2}')";
+
+        private static readonly string UpdateContatoSqlQuery = @"UPDATE [Pessoa_Contato] SET "
+            + " [Contato] = '{3}',"
+            + " [Ativo] = '{4}'"
+            + " WHERE [Pessoa_Id] = {0} AND [Tipo_Id] = {1} AND [Contato] = '{2}'";
 
         public static void InserirNoBancoDeDados(Contato contato, int pessoa_id) {
             string comando;
@@ -64,6 +69,24 @@ namespace SistemaMundoAnimal.Source.Entidades {
                     pessoa_id,
                     contato.GetTipo(),
                     contato.GetValor());
+
+                BancoDeDados.NovoComandoSql(comando);
+
+            } catch (Exception e) {
+                throw e;
+            }
+        }
+
+        public static void UpdateNoBancoDeDados(Contato contato, int pessoa_id, string velho) {
+            string comando;
+            try {
+
+                comando = string.Format(UpdateContatoSqlQuery,
+                    pessoa_id,
+                    contato.GetTipo(),
+                    velho,
+                    contato.GetValor(),
+                    contato.GetAtivo());
 
                 BancoDeDados.NovoComandoSql(comando);
 

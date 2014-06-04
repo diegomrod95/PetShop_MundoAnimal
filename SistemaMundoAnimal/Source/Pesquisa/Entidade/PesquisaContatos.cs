@@ -13,7 +13,7 @@ namespace SistemaMundoAnimal.Source.Pesquisa.Entidade {
             + " FROM [Pessoa_Contato] AS P JOIN [Tipo_Contato] AS T ON T.Tipo_Id = P.Tipo_Id "
             + " WHERE [Pessoa_Id] = {0}";
 
-        private static string SelectContatosPorFuncionarioId = @"SELECT T.Nome, P.Contato, P.Data_Cadastro, P.Ativo"
+        private static string SelectContatosPorFuncionarioId = @"SELECT T.Nome, P.Tipo_Id, P.Contato, P.Data_Cadastro, P.Ativo"
             + " FROM [Funcionario] AS F JOIN [Pessoa_Contato] AS P ON F.Pessoa_Id = P.Pessoa_Id"
             + " JOIN [Tipo_Contato] AS T ON P.Tipo_Id = T.Tipo_Id"
             + " WHERE F.Pessoa_Id = {0}";

@@ -67,10 +67,6 @@
             this.Ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.DataGridContato = new System.Windows.Forms.DataGridView();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ContatoDataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ContatoAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TxtCodigo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -82,6 +78,10 @@
             this.ParenteRG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ParenteCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ParenteDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContatoDataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContatoAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupInformacoesPessoais.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridEnderecos)).BeginInit();
@@ -434,6 +434,8 @@
             this.DataGridEnderecos.Name = "DataGridEnderecos";
             this.DataGridEnderecos.Size = new System.Drawing.Size(549, 123);
             this.DataGridEnderecos.TabIndex = 0;
+            this.DataGridEnderecos.Tag = "9";
+            this.DataGridEnderecos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGrid_RowsAdded);
             // 
             // Pais
             // 
@@ -503,33 +505,15 @@
             this.DataGridContato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridContato.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Tipo,
-            this.Contato,
+            this._Contato,
             this.ContatoDataCadastro,
             this.ContatoAtivo});
             this.DataGridContato.Location = new System.Drawing.Point(7, 19);
             this.DataGridContato.Name = "DataGridContato";
             this.DataGridContato.Size = new System.Drawing.Size(548, 142);
             this.DataGridContato.TabIndex = 0;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo do Contato";
-            this.Tipo.Name = "Tipo";
-            // 
-            // Contato
-            // 
-            this.Contato.HeaderText = "Contato";
-            this.Contato.Name = "Contato";
-            // 
-            // ContatoDataCadastro
-            // 
-            this.ContatoDataCadastro.HeaderText = "Data Cadastro";
-            this.ContatoDataCadastro.Name = "ContatoDataCadastro";
-            // 
-            // ContatoAtivo
-            // 
-            this.ContatoAtivo.HeaderText = "Ativo";
-            this.ContatoAtivo.Name = "ContatoAtivo";
+            this.DataGridContato.Tag = "3";
+            this.DataGridContato.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGrid_RowsAdded);
             // 
             // TxtCodigo
             // 
@@ -612,6 +596,28 @@
             this.ParenteDataNascimento.HeaderText = "Data de Nascimento";
             this.ParenteDataNascimento.Name = "ParenteDataNascimento";
             // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo do Contato";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            // 
+            // _Contato
+            // 
+            this._Contato.HeaderText = "Contato";
+            this._Contato.Name = "_Contato";
+            // 
+            // ContatoDataCadastro
+            // 
+            this.ContatoDataCadastro.HeaderText = "Data Cadastro";
+            this.ContatoDataCadastro.Name = "ContatoDataCadastro";
+            this.ContatoDataCadastro.ReadOnly = true;
+            // 
+            // ContatoAtivo
+            // 
+            this.ContatoAtivo.HeaderText = "Ativo";
+            this.ContatoAtivo.Name = "ContatoAtivo";
+            // 
             // FormVisualizarFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -685,10 +691,6 @@
         private System.Windows.Forms.Button BtnSalvar;
         private System.Windows.Forms.TextBox TxtDataCadastro;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contato;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ContatoDataCadastro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ContatoAtivo;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ParenteParentesco;
@@ -698,5 +700,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ParenteRG;
         private System.Windows.Forms.DataGridViewTextBoxColumn ParenteCPF;
         private System.Windows.Forms.DataGridViewTextBoxColumn ParenteDataNascimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _Contato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ContatoDataCadastro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ContatoAtivo;
     }
 }
