@@ -20,6 +20,10 @@ namespace SistemaMundoAnimal.Forms {
             PesquisaFuncionario.Todos(AddResultadosDePesquisaAoGrid);
         }
 
+        /// <summary>
+        /// Adiciona as informações do funcionario na DataGridView.
+        /// </summary>
+        /// <param name="reader">Um SqlDataReader</param>
         private void AddResultadosDePesquisaAoGrid(SqlDataReader reader) {
             GridResultado.Rows.Add(
                     reader["Código da Pessoa"],
@@ -38,6 +42,9 @@ namespace SistemaMundoAnimal.Forms {
                     reader["Dia de Pagamento"]);
         }
 
+        /// <summary>
+        /// Realiza a pesquisa de acordo com o filtro e texto da TxtConsulta.
+        /// </summary>
         private void Pesquisar() {
             GridResultado.Rows.Clear();
             try {
@@ -113,6 +120,9 @@ namespace SistemaMundoAnimal.Forms {
             TxtConsulta.Text = "";
         }
         
+        /// <summary>
+        /// Abre o formulario de visualização de funcionários com o codigo da linha que foi clicada.
+        /// </summary>
         private void GridResultado_CellClick(object sender, DataGridViewCellEventArgs e) {
             try {
                 int codigo = Convert.ToInt32(GridResultado.Rows[e.RowIndex].Cells[0].Value);

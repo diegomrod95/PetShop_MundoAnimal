@@ -92,6 +92,9 @@ namespace SistemaMundoAnimal.Forms {
             }
         }
 
+        /// <summary>
+        /// Registra o funcionario no banco de dados.
+        /// </summary>
         private void BtnRegistrarFuncionario_Click(object sender, EventArgs e) {
             try {
                 int dia = Convert.ToInt32(TxtNascimento.Text.Substring(0, 2));
@@ -158,6 +161,9 @@ namespace SistemaMundoAnimal.Forms {
             LimpaControlesFormularioCadastroFuncionario();
         }
 
+        /// <summary>
+        /// Prenche a ComboCargoFuncionario com os cargos registrados no banco de dados.
+        /// </summary>
         private void ComboCargoFuncionario_Enter(object sender, EventArgs e) {
             ComboCargoFuncionario.Items.Clear();
             PesquisaCargos.Todos((SqlDataReader reader) => {

@@ -19,12 +19,20 @@ namespace SistemaMundoAnimal.Forms {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Contructor que recebe o codigo do funcionario para ser visualizado
+        /// e aletarado.
+        /// </summary>
+        /// <param name="funcionario">O codigo do funcionario.</param>
         public FormVisualizarFuncionario(int funcionario) {
             InitializeComponent();
             TxtCodigo.Text = funcionario.ToString();
             Pesquisar();
         }
 
+        /// <summary>
+        /// Limpa os DataGrids.
+        /// </summary>
         private void LimpaDataGrid() {
             DataGridContato.Rows.Clear();
             DataGridEnderecos.Rows.Clear();
@@ -36,6 +44,10 @@ namespace SistemaMundoAnimal.Forms {
             }
         }
 
+        /// <summary>
+        /// Insere as infomações do funcionarios nos controles. 
+        /// </summary>
+        /// <param name="reader">Um SqlDataReader</param>
         private void SetFuncionario(SqlDataReader reader) {
             TxtNome.Text = reader["Nome"].ToString();
             TxtSobrenome.Text = reader["Sobrenome"].ToString();
@@ -44,7 +56,7 @@ namespace SistemaMundoAnimal.Forms {
             TxtCPF.Text = reader["CPF"].ToString();
             TxtSalarioFuncionario.Text = reader["Salario"].ToString();
             TxtNascimento.Text = reader["Nascimento"].ToString();
-            ComboCargoFuncionario.Text = reader["Cargo"].ToString();
+            ComboCargoFuncionario.Text = reader["Codigo do Cargo"].ToString() + " " + reader["Cargo"].ToString();
             TxtValeAlimentacao.Text = reader["Vale Alimentacao"].ToString();
             TxtValeTransporte.Text = reader["Vale Transporte"].ToString();
             TxtAuxilioCreche.Text = reader["Auxilio Creche"].ToString();
@@ -53,6 +65,10 @@ namespace SistemaMundoAnimal.Forms {
             TxtDataCadastro.Text = reader["Admissao"].ToString();
         }
 
+        /// <summary>
+        /// Retorna uma instancia da entidade funcionário.
+        /// </summary>
+        /// <returns>Um funcionario com os dados dos controles.</returns>
         private Funcionario NovoFuncionario() {
             var funcionario = new Funcionario();
 
@@ -84,6 +100,10 @@ namespace SistemaMundoAnimal.Forms {
             }
         }
 
+        /// <summary>
+        /// Adiciona os contatos de um funcionário no DataGrid.
+        /// </summary>
+        /// <param name="reader">Um SqlDataReader</param>
         private void SetContato(SqlDataReader reader) {
 
             if (reader["Ativo"].ToString() == "S") {
@@ -99,6 +119,10 @@ namespace SistemaMundoAnimal.Forms {
                 reader["Ativo"]);
         }
 
+        /// <summary>
+        /// Adiciona os endereços de um funcionario no DataGrid.
+        /// </summary>
+        /// <param name="reader">Um SqlDataReader</param>
         private void SetEndereco(SqlDataReader reader) {
 
             if (reader["Ativo"].ToString() == "S") {
@@ -120,6 +144,9 @@ namespace SistemaMundoAnimal.Forms {
                 reader["Ativo"]);
         }
 
+        /// <summary>
+        /// Pesquisa na view funcionários de acordo com o codigo do controle TxtCodigo.
+        /// </summary>
         private void Pesquisar() {
             try {
                 LimpaDataGrid();
@@ -148,6 +175,9 @@ namespace SistemaMundoAnimal.Forms {
             }
         }
 
+        /// <summary>
+        /// Cria um funcionario com os dados do controle e o salva no banco de dados.
+        /// </summary>
         private void BtnSalvar_Click(object sender, EventArgs e) {
             try {
                 Funcionario funcionario = NovoFuncionario();
@@ -161,6 +191,9 @@ namespace SistemaMundoAnimal.Forms {
             }
         }
 
+        /// <summary>
+        /// Prenche a ComboBox com os cargos cadastrados no banco.
+        /// </summary>
         private void ComboCargoFuncionario_Enter(object sender, EventArgs e) {
             ComboCargoFuncionario.Items.Clear();
             PesquisaCargos.Todos((SqlDataReader reader) => {

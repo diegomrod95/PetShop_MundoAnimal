@@ -164,6 +164,7 @@
             this.ClientSize = new System.Drawing.Size(1008, 690);
             this.Controls.Add(this.PainelPrincipal);
             this.Controls.Add(this.TabControl);
+            this.MaximumSize = new System.Drawing.Size(1024, 728);
             this.MinimumSize = new System.Drawing.Size(1024, 728);
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
