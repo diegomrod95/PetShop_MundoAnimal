@@ -29,16 +29,15 @@
 </pre>
 
 <h3>Complexidade:</h3>
-Project: SistemaMundoAnimal
-Configuration: Debug
-Scope: Project
-Assembly: C:\..\PetShop_MundoAnimal\SistemaMundoAnimal\bin\Debug\SistemaMundoAnimal.exe
+<pre>
+<code>
 Maintainability Index: 82
 Cyclomatic Complexity: 446
 Depth of Inheritance: 7
 Class Coupling: 124
 Lines of Code: 2.260
-
+</code>
+</pre>
 
 <h3>Colaboradores</h3>
 <ul>
