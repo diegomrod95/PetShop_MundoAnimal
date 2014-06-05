@@ -99,8 +99,11 @@
     <Compile Include="Source\Entidades\Pessoa.cs" />
     <Compile Include="Source\Entidades\Produto.cs" />
     <Compile Include="Source\Pesquisa\Entidade\PesquisaCargos.cs" />
+    <Compile Include="Source\Pesquisa\Entidade\PesquisaCategoria.cs" />
     <Compile Include="Source\Pesquisa\Entidade\PesquisaContatos.cs" />
     <Compile Include="Source\Pesquisa\Entidade\PesquisaEnderecos.cs" />
+    <Compile Include="Source\Pesquisa\Entidade\PesquisaFabricante.cs" />
+    <Compile Include="Source\Pesquisa\Entidade\PesquisaFornecedor.cs" />
     <Compile Include="Source\Pesquisa\Entidade\PesquisaFuncionario.cs" />
     <Compile Include="Source\Program.cs" />
     <Compile Include="Testes\Dados\Tipos\TipoCPFTeste.cs" />

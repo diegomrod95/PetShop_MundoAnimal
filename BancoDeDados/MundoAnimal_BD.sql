@@ -257,7 +257,7 @@ GO
 -- CRIA TABELA Fornecedor
 -- ----------------------------------------------------------------------------
 CREATE TABLE [Fornecedor] (
-   [Fornecedor_Id]         INT PRIMARY KEY IDENTITY,
+   [Fornecedor_Id]         INT NOT NULL PRIMARY KEY,
    [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
    [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
    CONSTRAINT [ck_Fornecedor_ativo_sn]

@@ -24,6 +24,8 @@
         /// </summary>
         private void InitializeComponent() {
             this.gbProduto = new System.Windows.Forms.GroupBox();
+            this.ComboCategoria = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.TxtDescricao = new System.Windows.Forms.RichTextBox();
             this.ComboMedida = new System.Windows.Forms.ComboBox();
             this.numPeso = new System.Windows.Forms.NumericUpDown();
@@ -38,20 +40,25 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.BtnRemoveFabricante = new System.Windows.Forms.Button();
             this.ComboFabricanteCampo = new System.Windows.Forms.ComboBox();
+            this.BtnAddFabricante = new System.Windows.Forms.Button();
             this.TxtFabricanteConsulta = new System.Windows.Forms.TextBox();
+            this.ListFabricantesProduto = new System.Windows.Forms.ListBox();
             this.BtnNovoFabricante = new System.Windows.Forms.Button();
-            this.ListFabricante = new System.Windows.Forms.ListBox();
+            this.ListFabricantesTodos = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.BtnNovoFornecedor = new System.Windows.Forms.Button();
             this.BtnRemoveFornecedor = new System.Windows.Forms.Button();
             this.BtnAddFornecedor = new System.Windows.Forms.Button();
             this.ListFornecedoresProduto = new System.Windows.Forms.ListBox();
             this.ListFornecedoresTodos = new System.Windows.Forms.ListBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.ComboCategoria = new System.Windows.Forms.ComboBox();
             this.BtnCadastrarProduto = new System.Windows.Forms.Button();
             this.gbProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPeso)).BeginInit();
@@ -85,6 +92,26 @@
             this.gbProduto.TabStop = false;
             this.gbProduto.Text = "Informações do Produto";
             // 
+            // ComboCategoria
+            // 
+            this.ComboCategoria.FormattingEnabled = true;
+            this.ComboCategoria.Location = new System.Drawing.Point(140, 183);
+            this.ComboCategoria.Name = "ComboCategoria";
+            this.ComboCategoria.Size = new System.Drawing.Size(236, 21);
+            this.ComboCategoria.TabIndex = 14;
+            this.ComboCategoria.Enter += new System.EventHandler(this.ComboCategoria_Enter);
+            this.ComboCategoria.Leave += new System.EventHandler(this.ComboCategoria_Leave);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(15, 183);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 20);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Categoria:";
+            // 
             // TxtDescricao
             // 
             this.TxtDescricao.Location = new System.Drawing.Point(19, 271);
@@ -97,6 +124,13 @@
             // ComboMedida
             // 
             this.ComboMedida.FormattingEnabled = true;
+            this.ComboMedida.Items.AddRange(new object[] {
+            "UN - Unidade",
+            "KG - Kilograma",
+            "GR - Gramas",
+            "DU - Dúzias",
+            "DZ - Dezenas",
+            "LT - Litros"});
             this.ComboMedida.Location = new System.Drawing.Point(140, 150);
             this.ComboMedida.Name = "ComboMedida";
             this.ComboMedida.Size = new System.Drawing.Size(236, 21);
@@ -104,6 +138,7 @@
             // 
             // numPeso
             // 
+            this.numPeso.DecimalPlaces = 3;
             this.numPeso.Location = new System.Drawing.Point(140, 122);
             this.numPeso.Maximum = new decimal(new int[] {
             10000000,
@@ -117,6 +152,7 @@
             // 
             // numTamanho
             // 
+            this.numTamanho.DecimalPlaces = 2;
             this.numTamanho.Location = new System.Drawing.Point(140, 90);
             this.numTamanho.Maximum = new decimal(new int[] {
             10000000,
@@ -130,6 +166,7 @@
             // 
             // numPrecoVenda
             // 
+            this.numPrecoVenda.DecimalPlaces = 2;
             this.numPrecoVenda.Location = new System.Drawing.Point(140, 58);
             this.numPrecoVenda.Maximum = new decimal(new int[] {
             10000000,
@@ -220,16 +257,49 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.BtnRemoveFabricante);
             this.groupBox1.Controls.Add(this.ComboFabricanteCampo);
+            this.groupBox1.Controls.Add(this.BtnAddFabricante);
             this.groupBox1.Controls.Add(this.TxtFabricanteConsulta);
+            this.groupBox1.Controls.Add(this.ListFabricantesProduto);
             this.groupBox1.Controls.Add(this.BtnNovoFabricante);
-            this.groupBox1.Controls.Add(this.ListFabricante);
+            this.groupBox1.Controls.Add(this.ListFabricantesTodos);
             this.groupBox1.Location = new System.Drawing.Point(426, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(563, 242);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fabricante";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(295, 44);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(115, 13);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Fabricam este produto:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 44);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(69, 13);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Cadastrados:";
+            // 
+            // BtnRemoveFabricante
+            // 
+            this.BtnRemoveFabricante.Location = new System.Drawing.Point(257, 130);
+            this.BtnRemoveFabricante.Name = "BtnRemoveFabricante";
+            this.BtnRemoveFabricante.Size = new System.Drawing.Size(38, 33);
+            this.BtnRemoveFabricante.TabIndex = 10;
+            this.BtnRemoveFabricante.Text = "<<";
+            this.BtnRemoveFabricante.UseVisualStyleBackColor = true;
+            this.BtnRemoveFabricante.Click += new System.EventHandler(this.BtnRemoveFabricante_Click);
             // 
             // ComboFabricanteCampo
             // 
@@ -239,6 +309,16 @@
             this.ComboFabricanteCampo.Size = new System.Drawing.Size(161, 21);
             this.ComboFabricanteCampo.TabIndex = 2;
             // 
+            // BtnAddFabricante
+            // 
+            this.BtnAddFabricante.Location = new System.Drawing.Point(257, 90);
+            this.BtnAddFabricante.Name = "BtnAddFabricante";
+            this.BtnAddFabricante.Size = new System.Drawing.Size(38, 34);
+            this.BtnAddFabricante.TabIndex = 9;
+            this.BtnAddFabricante.Text = ">>";
+            this.BtnAddFabricante.UseVisualStyleBackColor = true;
+            this.BtnAddFabricante.Click += new System.EventHandler(this.BtnAddFabricante_Click);
+            // 
             // TxtFabricanteConsulta
             // 
             this.TxtFabricanteConsulta.Location = new System.Drawing.Point(173, 20);
@@ -246,26 +326,36 @@
             this.TxtFabricanteConsulta.Size = new System.Drawing.Size(384, 20);
             this.TxtFabricanteConsulta.TabIndex = 3;
             // 
+            // ListFabricantesProduto
+            // 
+            this.ListFabricantesProduto.FormattingEnabled = true;
+            this.ListFabricantesProduto.Location = new System.Drawing.Point(301, 63);
+            this.ListFabricantesProduto.Name = "ListFabricantesProduto";
+            this.ListFabricantesProduto.Size = new System.Drawing.Size(259, 134);
+            this.ListFabricantesProduto.TabIndex = 8;
+            // 
             // BtnNovoFabricante
             // 
-            this.BtnNovoFabricante.Location = new System.Drawing.Point(400, 209);
+            this.BtnNovoFabricante.Location = new System.Drawing.Point(6, 203);
             this.BtnNovoFabricante.Name = "BtnNovoFabricante";
             this.BtnNovoFabricante.Size = new System.Drawing.Size(157, 27);
             this.BtnNovoFabricante.TabIndex = 2;
             this.BtnNovoFabricante.Text = "Adicionar novo fabricante";
             this.BtnNovoFabricante.UseVisualStyleBackColor = true;
             // 
-            // ListFabricante
+            // ListFabricantesTodos
             // 
-            this.ListFabricante.FormattingEnabled = true;
-            this.ListFabricante.Location = new System.Drawing.Point(6, 56);
-            this.ListFabricante.Name = "ListFabricante";
-            this.ListFabricante.Size = new System.Drawing.Size(551, 147);
-            this.ListFabricante.TabIndex = 0;
+            this.ListFabricantesTodos.FormattingEnabled = true;
+            this.ListFabricantesTodos.Location = new System.Drawing.Point(9, 63);
+            this.ListFabricantesTodos.Name = "ListFabricantesTodos";
+            this.ListFabricantesTodos.Size = new System.Drawing.Size(242, 134);
+            this.ListFabricantesTodos.TabIndex = 7;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.BtnNovoFornecedor);
             this.groupBox2.Controls.Add(this.BtnRemoveFornecedor);
@@ -279,19 +369,34 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Fornecedores";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 19);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(161, 21);
+            this.comboBox1.TabIndex = 11;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(295, 29);
+            this.label9.Location = new System.Drawing.Point(295, 52);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(119, 13);
             this.label9.TabIndex = 6;
             this.label9.Text = "Fornecem este produto:";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(173, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(384, 20);
+            this.textBox1.TabIndex = 12;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 29);
+            this.label8.Location = new System.Drawing.Point(6, 52);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 13);
             this.label8.TabIndex = 5;
@@ -314,6 +419,7 @@
             this.BtnRemoveFornecedor.TabIndex = 3;
             this.BtnRemoveFornecedor.Text = "<<";
             this.BtnRemoveFornecedor.UseVisualStyleBackColor = true;
+            this.BtnRemoveFornecedor.Click += new System.EventHandler(this.BtnRemoveFornecedor_Click);
             // 
             // BtnAddFornecedor
             // 
@@ -323,40 +429,23 @@
             this.BtnAddFornecedor.TabIndex = 2;
             this.BtnAddFornecedor.Text = ">>";
             this.BtnAddFornecedor.UseVisualStyleBackColor = true;
+            this.BtnAddFornecedor.Click += new System.EventHandler(this.BtnAddFornecedor_Click);
             // 
             // ListFornecedoresProduto
             // 
             this.ListFornecedoresProduto.FormattingEnabled = true;
-            this.ListFornecedoresProduto.Location = new System.Drawing.Point(298, 45);
+            this.ListFornecedoresProduto.Location = new System.Drawing.Point(298, 68);
             this.ListFornecedoresProduto.Name = "ListFornecedoresProduto";
-            this.ListFornecedoresProduto.Size = new System.Drawing.Size(259, 225);
+            this.ListFornecedoresProduto.Size = new System.Drawing.Size(259, 199);
             this.ListFornecedoresProduto.TabIndex = 1;
             // 
             // ListFornecedoresTodos
             // 
             this.ListFornecedoresTodos.FormattingEnabled = true;
-            this.ListFornecedoresTodos.Location = new System.Drawing.Point(6, 45);
+            this.ListFornecedoresTodos.Location = new System.Drawing.Point(6, 68);
             this.ListFornecedoresTodos.Name = "ListFornecedoresTodos";
-            this.ListFornecedoresTodos.Size = new System.Drawing.Size(242, 225);
+            this.ListFornecedoresTodos.Size = new System.Drawing.Size(242, 199);
             this.ListFornecedoresTodos.TabIndex = 0;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(15, 183);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 20);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Categoria:";
-            // 
-            // ComboCategoria
-            // 
-            this.ComboCategoria.FormattingEnabled = true;
-            this.ComboCategoria.Location = new System.Drawing.Point(140, 183);
-            this.ComboCategoria.Name = "ComboCategoria";
-            this.ComboCategoria.Size = new System.Drawing.Size(236, 21);
-            this.ComboCategoria.TabIndex = 14;
             // 
             // BtnCadastrarProduto
             // 
@@ -366,6 +455,7 @@
             this.BtnCadastrarProduto.TabIndex = 3;
             this.BtnCadastrarProduto.Text = "Cadastrar Produto";
             this.BtnCadastrarProduto.UseVisualStyleBackColor = true;
+            this.BtnCadastrarProduto.Click += new System.EventHandler(this.BtnCadastrarProduto_Click);
             // 
             // FormCadastroProduto
             // 
@@ -407,7 +497,6 @@
         private System.Windows.Forms.NumericUpDown numPeso;
         private System.Windows.Forms.NumericUpDown numTamanho;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox ListFabricante;
         private System.Windows.Forms.Button BtnNovoFabricante;
         private System.Windows.Forms.ComboBox ComboFabricanteCampo;
         private System.Windows.Forms.TextBox TxtFabricanteConsulta;
@@ -422,5 +511,13 @@
         private System.Windows.Forms.ComboBox ComboCategoria;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button BtnCadastrarProduto;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button BtnRemoveFabricante;
+        private System.Windows.Forms.Button BtnAddFabricante;
+        private System.Windows.Forms.ListBox ListFabricantesProduto;
+        private System.Windows.Forms.ListBox ListFabricantesTodos;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
