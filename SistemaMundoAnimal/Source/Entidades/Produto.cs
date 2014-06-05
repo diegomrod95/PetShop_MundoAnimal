@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
+using SistemaMundoAnimal.Source.Dados;
 using SistemaMundoAnimal.Source.Dados.Tipos;
 
 namespace SistemaMundoAnimal.Source.Entidades {
@@ -27,6 +29,45 @@ namespace SistemaMundoAnimal.Source.Entidades {
 
         private readonly int NomeMaxLength = 150;
         private readonly int DescricaoMaxLength = 1000;
+
+        private static readonly string InsertProdutoSqlQuery = "INSERT INTO [Produto]"
+            + " ([Nome], [Codigo], [Tamanho], [Preco_Venda], [Peso], [Tipo_Medida], [Descricao], [Especificacoes])"
+            + " OUTPUT inserted.Produto_Id"
+            + " VALUES ('{0}', '{1}', {2}, {3}, {4}, '{5}', '{6}', '{7}')";
+
+        public static void InserirNoBancoDeDados(Produto produto) {
+            string comando;
+            try {
+
+                comando = string.Format(InsertProdutoSqlQuery,
+                    produto.GetNome(),
+                    produto.GetCodigo(),
+                    produto.GetTamanho(),
+                    produto.GetPrecoVenda(),
+                    produto.GetPeso(),
+                    produto.GetMedida(),
+                    produto.GetDescricao(),
+                    produto.GetEspecificacoes());
+
+                BancoDeDados.NovaConsultaSql(comando, (SqlDataReader reader) => {
+                    produto.SetId(Convert.ToInt32(reader["Produto_Id"]));
+                });
+
+            } catch (Exception e) {
+                throw e;
+            }
+        }
+
+        public void InserirFornecedoresNoBancoDeDados() {
+            this.GetFornecedores().ForEach((Fornecedor fornecedor) => {
+            });
+        }
+
+        public void InserirFabricantesNoBancoDeDados() {
+            this.GetFabricantes().ForEach((Fabricante fabricante) => {
+                Fabricante.InserirFabricanteProduto(fabricante, this.GetId());
+            });
+        }
 
         #region Getters e Setters
         public int GetId() {
@@ -89,6 +130,10 @@ namespace SistemaMundoAnimal.Source.Entidades {
             }
         }
 
+        public string GetPeso() {
+            return this.Peso.ToString();
+        }
+
         public void SetMedida(string medida) {
             if (TipoMedida.ValidarMedida(medida)) {
                 this.Medida = new TipoMedida(medida);
@@ -109,6 +154,10 @@ namespace SistemaMundoAnimal.Source.Entidades {
             }
         }
 
+        public string GetDescricao() {
+            return this.Descricao;
+        }
+
         public string GetEspecificacoes() {
             return this.Especificacoes;
         }
@@ -125,7 +174,7 @@ namespace SistemaMundoAnimal.Source.Entidades {
             return this.Categorias;
         }
 
-        public void AddFabricantes(Fabricante fabricante) {
+        public void AddFabricante(Fabricante fabricante) {
             this.Fabricantes.Add(fabricante);
         }
 

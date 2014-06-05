@@ -37,9 +37,33 @@ namespace SistemaMundoAnimal.Forms {
                 produto.AddCategoria(FabricaCategoria.GetCategoria((TipoCategoria)index));
                 produto.SetDescricao(TxtDescricao.Text);
 
-                //TODO: Inserir fabricantes e fornecedore no banco
+                AddFornecedoresAoProduto();
+                AddFabricantesAoProduto();
+                
+                Produto.InserirNoBancoDeDados(produto);
+
             } catch (Exception ex) {
                 MessageBox.Show(ex.StackTrace + "\n" + ex.Message + "\n" + ex.Source);
+            }
+        }
+
+        private void AddFabricantesAoProduto() {
+            foreach (var item in ListFabricantesProduto.Items) {
+                var fabricante = new Fabricante();
+
+                fabricante.SetId(Convert.ToInt32(item.ToString()[0]));
+
+                produto.AddFabricante(fabricante);
+            }
+        }
+
+        private void AddFornecedoresAoProduto() {
+            foreach (var item in ListFornecedoresProduto.Items) {
+                var fornecedor = new Fornecedor();
+
+                fornecedor.SetId(Convert.ToInt32(item.ToString()[0]));
+
+                produto.AddFornecedor(fornecedor);
             }
         }
 

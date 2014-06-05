@@ -7,5 +7,6 @@ using System.Threading.Tasks;
 namespace SistemaMundoAnimal.Source.Entidades {
     public class Fornecedor : Pessoa {
         private List<Produto> Produtos;
+
     }
 }
