@@ -94,13 +94,13 @@
             // 
             // ComboCategoria
             // 
+            this.ComboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboCategoria.FormattingEnabled = true;
             this.ComboCategoria.Location = new System.Drawing.Point(140, 183);
             this.ComboCategoria.Name = "ComboCategoria";
             this.ComboCategoria.Size = new System.Drawing.Size(236, 21);
             this.ComboCategoria.TabIndex = 14;
             this.ComboCategoria.Enter += new System.EventHandler(this.ComboCategoria_Enter);
-            this.ComboCategoria.Leave += new System.EventHandler(this.ComboCategoria_Leave);
             // 
             // label10
             // 
@@ -123,6 +123,7 @@
             // 
             // ComboMedida
             // 
+            this.ComboMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboMedida.FormattingEnabled = true;
             this.ComboMedida.Items.AddRange(new object[] {
             "UN - Unidade",
@@ -303,6 +304,7 @@
             // 
             // ComboFabricanteCampo
             // 
+            this.ComboFabricanteCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboFabricanteCampo.FormattingEnabled = true;
             this.ComboFabricanteCampo.Location = new System.Drawing.Point(6, 20);
             this.ComboFabricanteCampo.Name = "ComboFabricanteCampo";
@@ -371,6 +373,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(6, 19);
             this.comboBox1.Name = "comboBox1";

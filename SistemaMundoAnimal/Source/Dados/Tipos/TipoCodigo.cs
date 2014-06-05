@@ -8,7 +8,7 @@ namespace SistemaMundoAnimal.Source.Dados.Tipos {
     public class TipoCodigo : Tipo<string> {
 
         public static string GerarCodigo() {
-            return "TODO";
+            return "0123456789";
         }
 
         public TipoCodigo(string valor) {

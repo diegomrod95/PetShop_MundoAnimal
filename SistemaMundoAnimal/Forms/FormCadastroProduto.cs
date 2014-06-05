@@ -30,6 +30,7 @@ namespace SistemaMundoAnimal.Forms {
                 int index = Convert.ToInt32(categoriaIds[ComboCategoria.SelectedIndex]);
 
                 produto.SetNome(TxtNome.Text);
+                produto.SetCodigo();
                 produto.SetPrecoVenda((double)numPrecoVenda.Value);
                 produto.SetTamanho((double)numTamanho.Value);
                 produto.SetPeso((double)numPeso.Value);
@@ -41,6 +42,10 @@ namespace SistemaMundoAnimal.Forms {
                 AddFabricantesAoProduto();
                 
                 Produto.InserirNoBancoDeDados(produto);
+
+                produto.InserirFabricantesNoBancoDeDados();
+
+                MessageBox.Show("Produto cadastrado com sucesso.");
 
             } catch (Exception ex) {
                 MessageBox.Show(ex.StackTrace + "\n" + ex.Message + "\n" + ex.Source);
@@ -77,15 +82,12 @@ namespace SistemaMundoAnimal.Forms {
 
         private void ComboCategoria_Enter(object sender, EventArgs e) {
             var ids = new List<string>();
+            ComboCategoria.Items.Clear();
             PesquisaCategoria.Todos((SqlDataReader reader) => {
                 ComboCategoria.Items.Add(reader["Nome"]);
                 ids.Add(reader["Categoria_Id"].ToString());
             });
             ComboCategoria.Tag = ids;
-        }
-
-        private void ComboCategoria_Leave(object sender, EventArgs e) {
-            ComboCategoria.Items.Clear();
         }
 
         private void SwapItemsListBox(ListBox from, ListBox to) {

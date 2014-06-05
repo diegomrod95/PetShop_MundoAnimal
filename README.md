@@ -33,10 +33,10 @@
 <code>
 Project: SistemaMundoAnimal
 Maintainability Index: 83
-Cyclomatic Complexity: 492
+Cyclomatic Complexity: 491
 Depth of Inheritance: 7
 Class Coupling: 135
-Lines of Code: 2.444
+Lines of Code: 2.453
 </code>
 </pre>
 

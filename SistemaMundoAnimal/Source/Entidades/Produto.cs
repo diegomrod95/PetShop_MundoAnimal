@@ -58,6 +58,12 @@ namespace SistemaMundoAnimal.Source.Entidades {
             }
         }
 
+        public Produto() {
+            this.Categorias = new List<Categoria>();
+            this.Fabricantes = new List<Fabricante>();
+            this.Fornecedores = new List<Fornecedor>();
+        }
+
         public void InserirFornecedoresNoBancoDeDados() {
             this.GetFornecedores().ForEach((Fornecedor fornecedor) => {
             });
