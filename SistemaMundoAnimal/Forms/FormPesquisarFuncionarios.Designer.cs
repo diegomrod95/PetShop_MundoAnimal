@@ -58,6 +58,7 @@
             // 
             // ComboFiltroPesquisa
             // 
+            this.ComboFiltroPesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboFiltroPesquisa.FormattingEnabled = true;
             this.ComboFiltroPesquisa.Items.AddRange(new object[] {
             "Código",

@@ -66,6 +66,7 @@ namespace SistemaMundoAnimal.Source.Entidades {
 
         public void InserirFornecedoresNoBancoDeDados() {
             this.GetFornecedores().ForEach((Fornecedor fornecedor) => {
+                Fornecedor.InserirFornecedorProduto(fornecedor, this.GetId(), 0);
             });
         }
 

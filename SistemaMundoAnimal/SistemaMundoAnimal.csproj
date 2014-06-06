@@ -33,7 +33,6 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\FormCadastroFuncionario.cs">
@@ -53,6 +52,12 @@
     </Compile>
     <Compile Include="Forms\FormPesquisarFuncionarios.Designer.cs">
       <DependentUpon>FormPesquisarFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormPesquisarProduto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPesquisarProduto.Designer.cs">
+      <DependentUpon>FormPesquisarProduto.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormPrincipal.cs">
       <SubType>Form</SubType>
@@ -133,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPesquisarFuncionarios.resx">
       <DependentUpon>FormPesquisarFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPesquisarProduto.resx">
+      <DependentUpon>FormPesquisarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>

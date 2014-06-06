@@ -133,6 +133,7 @@
             this.BtnPesquisarProduto.TabIndex = 1;
             this.BtnPesquisarProduto.Text = "Pesquisar Produto";
             this.BtnPesquisarProduto.UseVisualStyleBackColor = true;
+            this.BtnPesquisarProduto.Click += new System.EventHandler(this.BtnPesquisarProduto_Click);
             // 
             // BtnCadastrarProduto
             // 

@@ -44,6 +44,7 @@ namespace SistemaMundoAnimal.Forms {
                 Produto.InserirNoBancoDeDados(produto);
 
                 produto.InserirFabricantesNoBancoDeDados();
+                produto.InserirFornecedoresNoBancoDeDados();
 
                 MessageBox.Show("Produto cadastrado com sucesso.");
 
@@ -56,8 +57,8 @@ namespace SistemaMundoAnimal.Forms {
             foreach (var item in ListFabricantesProduto.Items) {
                 var fabricante = new Fabricante();
 
-                fabricante.SetId(Convert.ToInt32(item.ToString()[0]));
-
+                fabricante.SetId(Convert.ToInt32(item.ToString()[0].ToString()));
+                
                 produto.AddFabricante(fabricante);
             }
         }
@@ -66,7 +67,7 @@ namespace SistemaMundoAnimal.Forms {
             foreach (var item in ListFornecedoresProduto.Items) {
                 var fornecedor = new Fornecedor();
 
-                fornecedor.SetId(Convert.ToInt32(item.ToString()[0]));
+                fornecedor.SetId(Convert.ToInt32(item.ToString()[0].ToString()));
 
                 produto.AddFornecedor(fornecedor);
             }
