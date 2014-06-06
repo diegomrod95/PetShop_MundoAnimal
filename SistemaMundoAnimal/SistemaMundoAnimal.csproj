@@ -111,6 +111,7 @@
     <Compile Include="Source\Pesquisa\Entidade\PesquisaFabricante.cs" />
     <Compile Include="Source\Pesquisa\Entidade\PesquisaFornecedor.cs" />
     <Compile Include="Source\Pesquisa\Entidade\PesquisaFuncionario.cs" />
+    <Compile Include="Source\Pesquisa\Entidade\PesquisaProduto.cs" />
     <Compile Include="Source\Program.cs" />
     <Compile Include="Testes\Dados\Tipos\TipoCPFTeste.cs" />
     <Compile Include="Testes\Dados\Tipos\TipoEmailTeste.cs" />

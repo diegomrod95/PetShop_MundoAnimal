@@ -26,8 +26,8 @@ namespace SistemaMundoAnimal.Forms {
 
         private void BtnCadastrarProduto_Click(object sender, EventArgs e) {
             try {
-                var categoriaIds = (List<string>)ComboCategoria.Tag;
-                int index = Convert.ToInt32(categoriaIds[ComboCategoria.SelectedIndex]);
+                var categorias = (ComboCategoria.Tag as string).Split(',');
+                int cat = Convert.ToInt32(categorias[ComboCategoria.SelectedIndex]);
 
                 produto.SetNome(TxtNome.Text);
                 produto.SetCodigo();
@@ -35,7 +35,7 @@ namespace SistemaMundoAnimal.Forms {
                 produto.SetTamanho((double)numTamanho.Value);
                 produto.SetPeso((double)numPeso.Value);
                 produto.SetMedida(ComboMedida.Text.Substring(0, 2));
-                produto.AddCategoria(FabricaCategoria.GetCategoria((TipoCategoria)index));
+                produto.AddCategoria(FabricaCategoria.GetCategoria((TipoCategoria)cat));
                 produto.SetDescricao(TxtDescricao.Text);
 
                 AddFornecedoresAoProduto();
@@ -82,13 +82,11 @@ namespace SistemaMundoAnimal.Forms {
         }
 
         private void ComboCategoria_Enter(object sender, EventArgs e) {
-            var ids = new List<string>();
             ComboCategoria.Items.Clear();
             PesquisaCategoria.Todos((SqlDataReader reader) => {
                 ComboCategoria.Items.Add(reader["Nome"]);
-                ids.Add(reader["Categoria_Id"].ToString());
+                ComboCategoria.Tag += reader["Categoria_Id"].ToString() + ",";
             });
-            ComboCategoria.Tag = ids;
         }
 
         private void SwapItemsListBox(ListBox from, ListBox to) {
