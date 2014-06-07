@@ -26,9 +26,6 @@
             this.BtnLimpar = new System.Windows.Forms.Button();
             this.BtnPesquisar = new System.Windows.Forms.Button();
             this.GridResultado = new System.Windows.Forms.DataGridView();
-            this.TxtConsulta = new System.Windows.Forms.TextBox();
-            this.ComboFiltroPesquisa = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +36,9 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TxtConsulta = new System.Windows.Forms.TextBox();
+            this.ComboFiltroPesquisa = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GridResultado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,6 +50,7 @@
             this.BtnLimpar.TabIndex = 11;
             this.BtnLimpar.Text = "Limpar Resultado";
             this.BtnLimpar.UseVisualStyleBackColor = true;
+            this.BtnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click);
             // 
             // BtnPesquisar
             // 
@@ -59,6 +60,7 @@
             this.BtnPesquisar.TabIndex = 10;
             this.BtnPesquisar.Text = "Pesquisar";
             this.BtnPesquisar.UseVisualStyleBackColor = true;
+            this.BtnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
             // 
             // GridResultado
             // 
@@ -82,32 +84,6 @@
             this.GridResultado.ReadOnly = true;
             this.GridResultado.Size = new System.Drawing.Size(951, 496);
             this.GridResultado.TabIndex = 9;
-            // 
-            // TxtConsulta
-            // 
-            this.TxtConsulta.Location = new System.Drawing.Point(239, 30);
-            this.TxtConsulta.Name = "TxtConsulta";
-            this.TxtConsulta.Size = new System.Drawing.Size(534, 20);
-            this.TxtConsulta.TabIndex = 8;
-            // 
-            // ComboFiltroPesquisa
-            // 
-            this.ComboFiltroPesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboFiltroPesquisa.FormattingEnabled = true;
-            this.ComboFiltroPesquisa.Location = new System.Drawing.Point(78, 30);
-            this.ComboFiltroPesquisa.Name = "ComboFiltroPesquisa";
-            this.ComboFiltroPesquisa.Size = new System.Drawing.Size(154, 21);
-            this.ComboFiltroPesquisa.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 18);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Filtro:";
             // 
             // Column1
             // 
@@ -168,6 +144,39 @@
             this.Column9.HeaderText = "Ativo";
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
+            // 
+            // TxtConsulta
+            // 
+            this.TxtConsulta.Location = new System.Drawing.Point(239, 30);
+            this.TxtConsulta.Name = "TxtConsulta";
+            this.TxtConsulta.Size = new System.Drawing.Size(534, 20);
+            this.TxtConsulta.TabIndex = 8;
+            this.TxtConsulta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtConsulta_KeyPress);
+            this.TxtConsulta.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtConsulta_KeyUp);
+            // 
+            // ComboFiltroPesquisa
+            // 
+            this.ComboFiltroPesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboFiltroPesquisa.FormattingEnabled = true;
+            this.ComboFiltroPesquisa.Items.AddRange(new object[] {
+            "Id",
+            "Nome",
+            "Codigo"});
+            this.ComboFiltroPesquisa.Location = new System.Drawing.Point(78, 30);
+            this.ComboFiltroPesquisa.Name = "ComboFiltroPesquisa";
+            this.ComboFiltroPesquisa.Size = new System.Drawing.Size(154, 21);
+            this.ComboFiltroPesquisa.TabIndex = 7;
+            this.ComboFiltroPesquisa.SelectedIndexChanged += new System.EventHandler(this.ComboFiltroPesquisa_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 18);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Filtro:";
             // 
             // FormPesquisarProduto
             // 
