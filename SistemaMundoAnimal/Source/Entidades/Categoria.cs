@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using SistemaMundoAnimal.Source.Dados;
+
 namespace SistemaMundoAnimal.Source.Entidades {
 
     public enum TipoCategoria {
@@ -42,9 +44,31 @@ namespace SistemaMundoAnimal.Source.Entidades {
         private string Nome;
         private TipoCategoria Tipo;
 
+        private static readonly string InsertProdutoCategoriaSqlQuery = @"INSERT INTO [Categoria_Produto]"
+            + " ([Categoria_Id], [Produto_Id]) VALUES ({0}, {1});";
+
+        public static void InserirProdutoCategoria(Categoria categoria, int produto_id) {
+            string comando;
+            try {
+
+                comando = string.Format(InsertProdutoCategoriaSqlQuery,
+                    categoria.GetTipo(),
+                    produto_id);
+
+                BancoDeDados.NovoComandoSql(comando);
+
+            } catch (Exception e) {
+                throw e;
+            }
+        } 
+
         public Categoria(string nome, TipoCategoria tipo) {
             this.Nome = nome;
             this.Tipo = tipo;
+        }
+
+        public int GetTipo() {
+            return (int)Tipo;
         }
     }
 }

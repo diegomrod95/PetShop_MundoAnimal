@@ -76,6 +76,12 @@ namespace SistemaMundoAnimal.Source.Entidades {
             });
         }
 
+        public void InserirCategoriasNoBancoDeDados() {
+            this.GetCategorias().ForEach((Categoria categoria) => {
+                Categoria.InserirProdutoCategoria(categoria, this.GetId());
+            });
+        }
+
         #region Getters e Setters
         public int GetId() {
             return this.Id;

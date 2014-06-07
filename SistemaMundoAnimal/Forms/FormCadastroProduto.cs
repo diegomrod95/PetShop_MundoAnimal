@@ -45,6 +45,7 @@ namespace SistemaMundoAnimal.Forms {
 
                 produto.InserirFabricantesNoBancoDeDados();
                 produto.InserirFornecedoresNoBancoDeDados();
+                produto.InserirCategoriasNoBancoDeDados();
 
                 MessageBox.Show("Produto cadastrado com sucesso.");
 
