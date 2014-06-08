@@ -12,8 +12,8 @@ GO
 -- ----------------------------------------------------------------------------
 CREATE TABLE [Pessoa] (
     [Pessoa_Id]             INT IDENTITY PRIMARY KEY,
-    [Nome]                  VARCHAR(60) NOT NULL,
-    [Sobrenome]             VARCHAR(80) NOT NULL,
+    [Nome]                  VARCHAR(60) NULL,
+    [Sobrenome]             VARCHAR(80) NULL,
     [Nome_Fantasia]         VARCHAR(100) NULL,
     [Tipo_Pessoa]           CHAR(1) NOT NULL, -- F: Fisica, J: Juridica
     [Genero]                CHAR(1) NOT NULL DEFAULT 'O', -- M: Masculino, F: Feminino, O: Outro/Não tem
