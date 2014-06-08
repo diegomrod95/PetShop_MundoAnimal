@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 using SistemaMundoAnimal.Source.Pesquisa.Entidade;
+using SistemaMundoAnimal.Source.Exportar;
 
 namespace SistemaMundoAnimal.Forms {
     public partial class FormPesquisarFuncionarios : UserControl {
@@ -135,6 +136,14 @@ namespace SistemaMundoAnimal.Forms {
 
         private void ComboFiltroPesquisa_SelectedIndexChanged(object sender, EventArgs e) {
             TxtConsulta.Text = "";
+        }
+
+        private void LinkExportarExcel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            try {
+                ExportarDataGrid.ParaExcel(GridResultado);
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }

@@ -110,6 +110,7 @@
     <Compile Include="Source\Entidades\Parente.cs" />
     <Compile Include="Source\Entidades\Pessoa.cs" />
     <Compile Include="Source\Entidades\Produto.cs" />
+    <Compile Include="Source\Exportar\ExportarDataGrid.cs" />
     <Compile Include="Source\Pesquisa\Entidade\PesquisaCargos.cs" />
     <Compile Include="Source\Pesquisa\Entidade\PesquisaCategoria.cs" />
     <Compile Include="Source\Pesquisa\Entidade\PesquisaContatos.cs" />
@@ -130,6 +131,9 @@
     <Compile Include="Testes\Teste.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -163,6 +167,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

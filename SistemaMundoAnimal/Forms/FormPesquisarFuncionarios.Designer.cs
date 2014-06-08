@@ -43,6 +43,7 @@
             this.DiaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnPesquisar = new System.Windows.Forms.Button();
             this.BtnLimpar = new System.Windows.Forms.Button();
+            this.LinkExportarExcel = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.GridResultado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -235,10 +236,22 @@
             this.BtnLimpar.UseVisualStyleBackColor = true;
             this.BtnLimpar.Click += new System.EventHandler(this.BtnLimpar_Click);
             // 
+            // LinkExportarExcel
+            // 
+            this.LinkExportarExcel.AutoSize = true;
+            this.LinkExportarExcel.Location = new System.Drawing.Point(30, 568);
+            this.LinkExportarExcel.Name = "LinkExportarExcel";
+            this.LinkExportarExcel.Size = new System.Drawing.Size(108, 13);
+            this.LinkExportarExcel.TabIndex = 6;
+            this.LinkExportarExcel.TabStop = true;
+            this.LinkExportarExcel.Text = "Exportar para o Excel";
+            this.LinkExportarExcel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkExportarExcel_LinkClicked);
+            // 
             // FormPesquisarFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.LinkExportarExcel);
             this.Controls.Add(this.BtnLimpar);
             this.Controls.Add(this.BtnPesquisar);
             this.Controls.Add(this.GridResultado);
@@ -275,5 +288,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ValeAlimentacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn ValeTransporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaPagamento;
+        private System.Windows.Forms.LinkLabel LinkExportarExcel;
     }
 }
