@@ -58,7 +58,7 @@ namespace SistemaMundoAnimal.Forms {
             foreach (var item in ListFabricantesProduto.Items) {
                 var fabricante = new Fabricante();
 
-                fabricante.SetId(Convert.ToInt32(item.ToString()[0].ToString()));
+                fabricante.SetId(Convert.ToInt32(item.ToString().Split('-')[0]));
                 
                 produto.AddFabricante(fabricante);
             }
@@ -68,7 +68,7 @@ namespace SistemaMundoAnimal.Forms {
             foreach (var item in ListFornecedoresProduto.Items) {
                 var fornecedor = new Fornecedor();
 
-                fornecedor.SetId(Convert.ToInt32(item.ToString()[0].ToString()));
+                fornecedor.SetId(Convert.ToInt32(item.ToString().Split('-')[0]));
 
                 produto.AddFornecedor(fornecedor);
             }
