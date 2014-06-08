@@ -152,6 +152,9 @@ namespace SistemaMundoAnimal.Forms {
             }
         }
 
+        /// <summary>
+        /// Atualiza os contatos do funcionário no banco de dados.
+        /// </summary>
         private void UpdateContatos() {
             try {
                 foreach (DataGridViewRow row in DataGridContato.Rows) {
@@ -162,6 +165,28 @@ namespace SistemaMundoAnimal.Forms {
                     Contato.UpdateNoBancoDeDados(contato, Convert.ToInt32(TxtCodigo.Text), antigo);
                 }
             } catch (Exception e) {
+                throw e;
+            }
+        }
+
+        private void UpdateEnderecos() {
+            try {
+                foreach (DataGridViewRow row in DataGridEnderecos.Rows) {
+                    string antigo = row.Cells[7].Value.ToString();
+                    var endereco = new Endereco();
+
+                    endereco.SetPais(row.Cells[0].Value.ToString());
+                    endereco.SetEstado(row.Cells[1].Value.ToString());
+                    endereco.SetCidade(row.Cells[2].Value.ToString());
+                    endereco.SetEndereco(row.Cells[3].Value.ToString());
+                    endereco.SetNumeroEndereco(Convert.ToInt32(row.Cells[4].Value));
+                    endereco.SetBairro(row.Cells[5].Value.ToString());
+                    endereco.SetComplemento(row.Cells[6].Value.ToString());
+                    endereco.SetAtivo(row.Cells[9].Value.ToString()[0]);
+
+                    Endereco.UpdateNoBancoDeDados(endereco, Convert.ToInt32(TxtCodigo.Text), antigo);
+                }
+            } catch (Exception e) { 
                 throw e;
             }
         }
@@ -193,6 +218,7 @@ namespace SistemaMundoAnimal.Forms {
                 Funcionario.UpdateNoBancoDeDados(funcionario);
 
                 UpdateContatos();
+                UpdateEnderecos();
 
                 MessageBox.Show("Alterações realizadas com sucesso!");
                 Pesquisar();
@@ -221,6 +247,28 @@ namespace SistemaMundoAnimal.Forms {
                 o.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;
             } else {
                 o.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+            }
+        }
+
+        private void DataGridContato_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            if (e.ColumnIndex == 3 && e.RowIndex >= 0) {
+                var cell = DataGridContato.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                if (cell.Value.ToString() == "S") {
+                    cell.Value = "N";
+                } else {
+                    cell.Value = "S";
+                }
+            }
+        }
+
+        private void DataGridEnderecos_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            if (e.ColumnIndex == 9 && e.RowIndex >= 0) {
+                var cell = DataGridEnderecos.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                if (cell.Value.ToString() == "S") {
+                    cell.Value = "N";
+                } else {
+                    cell.Value = "S";
+                }
             }
         }
     }

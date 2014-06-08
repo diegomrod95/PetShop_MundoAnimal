@@ -45,5 +45,10 @@ namespace SistemaMundoAnimal.Forms {
             PainelPrincipal.Controls.Add(new FormPesquisarProduto());
         }
 
+        private void BtnVisualizarProduto_Click(object sender, EventArgs e) {
+            PainelPrincipal.Controls.Clear();
+            PainelPrincipal.Controls.Add(new FormVisualizarProduto());
+        }
+
     }
 }

@@ -55,16 +55,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.DataGridEnderecos = new System.Windows.Forms.DataGridView();
-            this.Pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumeroEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.DataGridContato = new System.Windows.Forms.DataGridView();
             this.TxtCodigo = new System.Windows.Forms.TextBox();
@@ -82,6 +72,16 @@
             this._Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContatoDataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ContatoAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._Endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumeroEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupInformacoesPessoais.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridEnderecos)).BeginInit();
@@ -423,7 +423,7 @@
             this.Pais,
             this.Estado,
             this.Cidade,
-            this.Endereco,
+            this._Endereco,
             this.NumeroEndereco,
             this.Bairro,
             this.Complemento,
@@ -435,57 +435,8 @@
             this.DataGridEnderecos.Size = new System.Drawing.Size(549, 123);
             this.DataGridEnderecos.TabIndex = 0;
             this.DataGridEnderecos.Tag = "9";
+            this.DataGridEnderecos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridEnderecos_CellDoubleClick);
             this.DataGridEnderecos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGrid_RowsAdded);
-            // 
-            // Pais
-            // 
-            this.Pais.HeaderText = "País";
-            this.Pais.Name = "Pais";
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            // 
-            // Cidade
-            // 
-            this.Cidade.HeaderText = "Cidade";
-            this.Cidade.Name = "Cidade";
-            // 
-            // Endereco
-            // 
-            this.Endereco.HeaderText = "Endereço";
-            this.Endereco.Name = "Endereco";
-            // 
-            // NumeroEndereco
-            // 
-            this.NumeroEndereco.HeaderText = "Número";
-            this.NumeroEndereco.Name = "NumeroEndereco";
-            // 
-            // Bairro
-            // 
-            this.Bairro.HeaderText = "Bairro";
-            this.Bairro.Name = "Bairro";
-            // 
-            // Complemento
-            // 
-            this.Complemento.HeaderText = "Complemento";
-            this.Complemento.Name = "Complemento";
-            // 
-            // CEP
-            // 
-            this.CEP.HeaderText = "CEP";
-            this.CEP.Name = "CEP";
-            // 
-            // DataCadastro
-            // 
-            this.DataCadastro.HeaderText = "Data Cadastro";
-            this.DataCadastro.Name = "DataCadastro";
-            // 
-            // Ativo
-            // 
-            this.Ativo.HeaderText = "Ativo";
-            this.Ativo.Name = "Ativo";
             // 
             // groupBox3
             // 
@@ -513,6 +464,7 @@
             this.DataGridContato.Size = new System.Drawing.Size(548, 142);
             this.DataGridContato.TabIndex = 0;
             this.DataGridContato.Tag = "3";
+            this.DataGridContato.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridContato_CellDoubleClick);
             this.DataGridContato.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGrid_RowsAdded);
             // 
             // TxtCodigo
@@ -617,6 +569,59 @@
             // 
             this.ContatoAtivo.HeaderText = "Ativo";
             this.ContatoAtivo.Name = "ContatoAtivo";
+            this.ContatoAtivo.ReadOnly = true;
+            // 
+            // Pais
+            // 
+            this.Pais.HeaderText = "País";
+            this.Pais.Name = "Pais";
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            // 
+            // Cidade
+            // 
+            this.Cidade.HeaderText = "Cidade";
+            this.Cidade.Name = "Cidade";
+            // 
+            // _Endereco
+            // 
+            this._Endereco.HeaderText = "Endereço";
+            this._Endereco.Name = "_Endereco";
+            // 
+            // NumeroEndereco
+            // 
+            this.NumeroEndereco.HeaderText = "Número";
+            this.NumeroEndereco.Name = "NumeroEndereco";
+            // 
+            // Bairro
+            // 
+            this.Bairro.HeaderText = "Bairro";
+            this.Bairro.Name = "Bairro";
+            // 
+            // Complemento
+            // 
+            this.Complemento.HeaderText = "Complemento";
+            this.Complemento.Name = "Complemento";
+            // 
+            // CEP
+            // 
+            this.CEP.HeaderText = "CEP";
+            this.CEP.Name = "CEP";
+            this.CEP.ReadOnly = true;
+            // 
+            // DataCadastro
+            // 
+            this.DataCadastro.HeaderText = "Data Cadastro";
+            this.DataCadastro.Name = "DataCadastro";
+            // 
+            // Ativo
+            // 
+            this.Ativo.HeaderText = "Ativo";
+            this.Ativo.Name = "Ativo";
+            this.Ativo.ReadOnly = true;
             // 
             // FormVisualizarFuncionario
             // 
@@ -678,16 +683,6 @@
         private System.Windows.Forms.DataGridView DataGridContato;
         private System.Windows.Forms.TextBox TxtCodigo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pais;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Endereco;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroEndereco;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bairro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Complemento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CEP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataCadastro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ativo;
         private System.Windows.Forms.Button BtnSalvar;
         private System.Windows.Forms.TextBox TxtDataCadastro;
         private System.Windows.Forms.Label label4;
@@ -704,5 +699,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn _Contato;
         private System.Windows.Forms.DataGridViewTextBoxColumn ContatoDataCadastro;
         private System.Windows.Forms.DataGridViewTextBoxColumn ContatoAtivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _Endereco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumeroEndereco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Complemento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CEP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataCadastro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ativo;
     }
 }

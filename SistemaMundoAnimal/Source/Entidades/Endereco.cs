@@ -33,9 +33,20 @@ namespace SistemaMundoAnimal.Source.Entidades {
         /// <summary>
         /// Query usada para inserir entidades do tipo Enderco, usada por entidades do tipo Pessoa.
         /// </summary>
-        private static string InsertEnderecoSqlQuery = @"INSERT INTO [Pessoa_Endereco]"
+        private static readonly string InsertEnderecoSqlQuery = @"INSERT INTO [Pessoa_Endereco]"
             + "([Pessoa_Id], [Pais], [Estado], [Cidade], [Endereco], [NumeroEndereco], [Bairro], [Complemento], [CEP])"
             + " VALUES ({0}, '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}');";
+
+        private static readonly string UpdateEnderecoSqlQuery = @"UPDATE Pessoa_Endereco SET"
+            + " [Pais] = '{0}',"
+            + " [Estado] = '{1}',"
+            + " [Cidade] = '{2}',"
+            + " [Endereco] = '{3}',"
+            + " [NumeroEndereco] = '{4}',"
+            + " [Bairro] = '{5}',"
+            + " [Complemento] = '{6}',"
+            + " [Ativo] = '{7}'"
+            + " WHERE [Pessoa_Id] = {8} AND [CEP] = '{9}'";
 
         public static void InserirNoBancoDeDados(Endereco endereco, int pessoa_id) {
             string comando;
@@ -51,6 +62,28 @@ namespace SistemaMundoAnimal.Source.Entidades {
                     endereco.GetBairro(),
                     endereco.GetComplemento(),
                     endereco.GetCEP());
+
+                BancoDeDados.NovoComandoSql(comando);
+
+            } catch (Exception e) {
+                throw e;
+            }
+        }
+
+        public static void UpdateNoBancoDeDados(Endereco endereco, int pessoa_id, string antigo_cep) {
+            string comando;
+            try {
+
+                comando = string.Format(UpdateEnderecoSqlQuery,
+                    endereco.GetPais(),
+                    endereco.GetEstado(),
+                    endereco.GetCidade(),
+                    endereco.GetEndereco(),
+                    endereco.GetNumeroEndereco(),
+                    endereco.GetBairro(),
+                    endereco.GetComplemento(),
+                    endereco.GetAtivo(),
+                    pessoa_id, antigo_cep);
 
                 BancoDeDados.NovoComandoSql(comando);
 

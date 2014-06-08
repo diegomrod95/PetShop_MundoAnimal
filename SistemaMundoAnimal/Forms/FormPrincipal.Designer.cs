@@ -124,6 +124,7 @@
             this.BtnVisualizarProduto.TabIndex = 2;
             this.BtnVisualizarProduto.Text = "Visualizar Produto";
             this.BtnVisualizarProduto.UseVisualStyleBackColor = true;
+            this.BtnVisualizarProduto.Click += new System.EventHandler(this.BtnVisualizarProduto_Click);
             // 
             // BtnPesquisarProduto
             // 
