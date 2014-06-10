@@ -24,6 +24,11 @@
         /// </summary>
         private void InitializeComponent() {
             this.gbProduto = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.BtnSalvar = new System.Windows.Forms.Button();
+            this.ComboCategoria = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.TxtDescricao = new System.Windows.Forms.RichTextBox();
             this.ComboMedida = new System.Windows.Forms.ComboBox();
             this.numPeso = new System.Windows.Forms.NumericUpDown();
@@ -37,26 +42,31 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.BtnAddFornecedor = new System.Windows.Forms.Button();
+            this.DataGridFornecedores = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnAddFabricante = new System.Windows.Forms.Button();
-            this.ComboCategoria = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.BtnSalvar = new System.Windows.Forms.Button();
+            this.DataGridFabricantes = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.TxtCodigo = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPeso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTamanho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecoVenda)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridFornecedores)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridFabricantes)).BeginInit();
             this.SuspendLayout();
             // 
             // gbProduto
@@ -84,6 +94,51 @@
             this.gbProduto.TabIndex = 1;
             this.gbProduto.TabStop = false;
             this.gbProduto.Text = "Informações do Produto";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(140, 53);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(236, 20);
+            this.textBox1.TabIndex = 63;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(15, 51);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 20);
+            this.label8.TabIndex = 62;
+            this.label8.Text = "Código:";
+            // 
+            // BtnSalvar
+            // 
+            this.BtnSalvar.Location = new System.Drawing.Point(268, 525);
+            this.BtnSalvar.Name = "BtnSalvar";
+            this.BtnSalvar.Size = new System.Drawing.Size(120, 28);
+            this.BtnSalvar.TabIndex = 61;
+            this.BtnSalvar.Text = "Salvar Alterações";
+            this.BtnSalvar.UseVisualStyleBackColor = true;
+            // 
+            // ComboCategoria
+            // 
+            this.ComboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboCategoria.FormattingEnabled = true;
+            this.ComboCategoria.Location = new System.Drawing.Point(140, 197);
+            this.ComboCategoria.Name = "ComboCategoria";
+            this.ComboCategoria.Size = new System.Drawing.Size(236, 21);
+            this.ComboCategoria.TabIndex = 16;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(15, 197);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 20);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Categoria:";
             // 
             // TxtDescricao
             // 
@@ -222,46 +277,13 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.BtnAddFornecedor);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.DataGridFornecedores);
             this.groupBox1.Location = new System.Drawing.Point(419, 45);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(566, 199);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fornecedores";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(553, 141);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.BtnAddFabricante);
-            this.groupBox2.Controls.Add(this.dataGridView2);
-            this.groupBox2.Location = new System.Drawing.Point(419, 250);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(566, 199);
-            this.groupBox2.TabIndex = 15;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Fabricantes";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(7, 19);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(553, 140);
-            this.dataGridView2.TabIndex = 0;
             // 
             // BtnAddFornecedor
             // 
@@ -272,6 +294,34 @@
             this.BtnAddFornecedor.Text = "Adicionar Fornecedor";
             this.BtnAddFornecedor.UseVisualStyleBackColor = true;
             // 
+            // DataGridFornecedores
+            // 
+            this.DataGridFornecedores.AllowUserToAddRows = false;
+            this.DataGridFornecedores.AllowUserToDeleteRows = false;
+            this.DataGridFornecedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridFornecedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.DataGridFornecedores.Location = new System.Drawing.Point(7, 19);
+            this.DataGridFornecedores.Name = "DataGridFornecedores";
+            this.DataGridFornecedores.ReadOnly = true;
+            this.DataGridFornecedores.Size = new System.Drawing.Size(553, 141);
+            this.DataGridFornecedores.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.BtnAddFabricante);
+            this.groupBox2.Controls.Add(this.DataGridFabricantes);
+            this.groupBox2.Location = new System.Drawing.Point(419, 250);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(566, 199);
+            this.groupBox2.TabIndex = 15;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Fabricantes";
+            // 
             // BtnAddFabricante
             // 
             this.BtnAddFabricante.Location = new System.Drawing.Point(7, 165);
@@ -281,33 +331,22 @@
             this.BtnAddFabricante.Text = "Adicionar Fabricante";
             this.BtnAddFabricante.UseVisualStyleBackColor = true;
             // 
-            // ComboCategoria
+            // DataGridFabricantes
             // 
-            this.ComboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboCategoria.FormattingEnabled = true;
-            this.ComboCategoria.Location = new System.Drawing.Point(140, 197);
-            this.ComboCategoria.Name = "ComboCategoria";
-            this.ComboCategoria.Size = new System.Drawing.Size(236, 21);
-            this.ComboCategoria.TabIndex = 16;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(15, 197);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 20);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Categoria:";
-            // 
-            // BtnSalvar
-            // 
-            this.BtnSalvar.Location = new System.Drawing.Point(268, 525);
-            this.BtnSalvar.Name = "BtnSalvar";
-            this.BtnSalvar.Size = new System.Drawing.Size(120, 28);
-            this.BtnSalvar.TabIndex = 61;
-            this.BtnSalvar.Text = "Salvar Alterações";
-            this.BtnSalvar.UseVisualStyleBackColor = true;
+            this.DataGridFabricantes.AllowUserToAddRows = false;
+            this.DataGridFabricantes.AllowUserToDeleteRows = false;
+            this.DataGridFabricantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridFabricantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10});
+            this.DataGridFabricantes.Location = new System.Drawing.Point(7, 19);
+            this.DataGridFabricantes.Name = "DataGridFabricantes";
+            this.DataGridFabricantes.ReadOnly = true;
+            this.DataGridFabricantes.Size = new System.Drawing.Size(553, 140);
+            this.DataGridFabricantes.TabIndex = 0;
             // 
             // label7
             // 
@@ -318,29 +357,84 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "Código do Produto:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(140, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 20);
-            this.textBox1.TabIndex = 63;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(15, 51);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 20);
-            this.label8.TabIndex = 62;
-            this.label8.Text = "Código:";
-            // 
             // TxtCodigo
             // 
             this.TxtCodigo.Location = new System.Drawing.Point(841, 15);
             this.TxtCodigo.Name = "TxtCodigo";
             this.TxtCodigo.Size = new System.Drawing.Size(144, 20);
             this.TxtCodigo.TabIndex = 17;
+            this.TxtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigo_KeyPress);
+            this.TxtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtCodigo_KeyUp);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 102;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nome Fantasia";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 102;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "CNPJ";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 102;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Data Cadastro";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 102;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Ativo";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 102;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Codigo";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 102;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Nome Fantasia";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 102;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "CNPJ";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 102;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Data Cadastro";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 102;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Ativo";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Width = 102;
             // 
             // FormVisualizarProduto
             // 
@@ -359,9 +453,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numTamanho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecoVenda)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridFornecedores)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridFabricantes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,11 +477,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DataGridFornecedores;
         private System.Windows.Forms.Button BtnAddFornecedor;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button BtnAddFabricante;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView DataGridFabricantes;
         private System.Windows.Forms.ComboBox ComboCategoria;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button BtnSalvar;
@@ -395,5 +489,15 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TxtCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }
 }

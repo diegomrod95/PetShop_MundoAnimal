@@ -16,7 +16,7 @@ namespace SistemaMundoAnimal.Source.Pesquisa.Entidade {
             + " FROM [Fabricante] AS F JOIN [Pessoa] AS P ON F.Fabricante_Id = P.Pessoa_Id";
 
         private static readonly string SelectFabricantesPorProdutoId = @"SELECT "
-            + " F.Fabricante_Id, S.Nome_Fantasia, S.CNPJ, S.Data_Cadastro, S.Ativo"
+            + " F.Fabricante_Id, S.Nome_Fantasia, S.CNPJ, S.Data_Cadastro, P.Data_Cadastro, P.Ativo"
             + " FROM [Fabricante] AS F JOIN [Fabricante_Produto] AS P ON F.Fabricante_Id = P.Fabricante_Id"
             + " JOIN [Pessoa] AS S ON F.Fabricante_Id = S.Pessoa_Id WHERE P.Produto_Id = {0}";
 
