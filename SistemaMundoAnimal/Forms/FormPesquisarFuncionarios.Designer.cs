@@ -44,6 +44,7 @@
             this.BtnPesquisar = new System.Windows.Forms.Button();
             this.BtnLimpar = new System.Windows.Forms.Button();
             this.LinkExportarExcel = new System.Windows.Forms.LinkLabel();
+            this.LinkExportarCsv = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.GridResultado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -247,10 +248,22 @@
             this.LinkExportarExcel.Text = "Exportar para o Excel";
             this.LinkExportarExcel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkExportarExcel_LinkClicked);
             // 
+            // LinkExportarCsv
+            // 
+            this.LinkExportarCsv.AutoSize = true;
+            this.LinkExportarCsv.Location = new System.Drawing.Point(145, 567);
+            this.LinkExportarCsv.Name = "LinkExportarCsv";
+            this.LinkExportarCsv.Size = new System.Drawing.Size(93, 13);
+            this.LinkExportarCsv.TabIndex = 7;
+            this.LinkExportarCsv.TabStop = true;
+            this.LinkExportarCsv.Text = "Exportar para .csv";
+            this.LinkExportarCsv.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkExportarCsv_LinkClicked);
+            // 
             // FormPesquisarFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.LinkExportarCsv);
             this.Controls.Add(this.LinkExportarExcel);
             this.Controls.Add(this.BtnLimpar);
             this.Controls.Add(this.BtnPesquisar);
@@ -289,5 +302,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ValeTransporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaPagamento;
         private System.Windows.Forms.LinkLabel LinkExportarExcel;
+        private System.Windows.Forms.LinkLabel LinkExportarCsv;
     }
 }

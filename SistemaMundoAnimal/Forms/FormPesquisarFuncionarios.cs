@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 using SistemaMundoAnimal.Source.Pesquisa.Entidade;
-using SistemaMundoAnimal.Source.Exportar;
+using SistemaMundoAnimal.Source.IO.Exportar;
 
 namespace SistemaMundoAnimal.Forms {
     public partial class FormPesquisarFuncionarios : UserControl {
@@ -141,6 +141,14 @@ namespace SistemaMundoAnimal.Forms {
         private void LinkExportarExcel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             try {
                 ExportarDataGrid.ParaExcel(GridResultado);
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void LinkExportarCsv_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            try {
+                ExportarDataGrid.ParaCsv(GridResultado);
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }

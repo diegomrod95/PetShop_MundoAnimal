@@ -110,7 +110,8 @@
     <Compile Include="Source\Entidades\Parente.cs" />
     <Compile Include="Source\Entidades\Pessoa.cs" />
     <Compile Include="Source\Entidades\Produto.cs" />
-    <Compile Include="Source\Exportar\ExportarDataGrid.cs" />
+    <Compile Include="Source\IO\Exportar\ExportarDataGrid.cs" />
+    <Compile Include="Source\IO\Imprimir\ImprimirDataGrid.cs" />
     <Compile Include="Source\Pesquisa\Entidade\PesquisaCargos.cs" />
     <Compile Include="Source\Pesquisa\Entidade\PesquisaCategoria.cs" />
     <Compile Include="Source\Pesquisa\Entidade\PesquisaContatos.cs" />
