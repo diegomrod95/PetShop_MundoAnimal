@@ -288,6 +288,7 @@ GO
 CREATE TABLE [Estoque_Produto] (
     [Produto_Id]            INT NOT NULL,
     [Quantidade]            DECIMAL(10, 3) NULL,
+    [Quantidade_Minima]     DECIMAL(10, 3) NULL,
     [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
     [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
     CONSTRAINT [fk_Estoque_Produto_Produto]

@@ -50,5 +50,10 @@ namespace SistemaMundoAnimal.Forms {
             PainelPrincipal.Controls.Add(new FormVisualizarProduto());
         }
 
+        private void BtnEstoque_Click(object sender, EventArgs e) {
+            PainelPrincipal.Controls.Clear();
+            PainelPrincipal.Controls.Add(new FormEstoque());
+        }
+
     }
 }

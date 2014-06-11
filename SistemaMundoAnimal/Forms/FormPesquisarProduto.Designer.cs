@@ -66,7 +66,7 @@
             // 
             this.GridResultado.AllowUserToAddRows = false;
             this.GridResultado.AllowUserToDeleteRows = false;
-            this.GridResultado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.GridResultado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.GridResultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridResultado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -90,60 +90,70 @@
             this.Column1.HeaderText = "Id";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.Width = 41;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Codigo";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            this.Column2.Width = 65;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Nome";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            this.Column3.Width = 60;
             // 
             // Column10
             // 
             this.Column10.HeaderText = "Categoria";
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
+            this.Column10.Width = 77;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Tamanho";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            this.Column4.Width = 77;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Preço Venda";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            this.Column5.Width = 87;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Peso";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
+            this.Column6.Width = 56;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Medida";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
+            this.Column7.Width = 67;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "Data Cadastro";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
+            this.Column8.Width = 92;
             // 
             // Column9
             // 
             this.Column9.HeaderText = "Ativo";
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
+            this.Column9.Width = 56;
             // 
             // TxtConsulta
             // 

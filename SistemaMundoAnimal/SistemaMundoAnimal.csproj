@@ -47,6 +47,12 @@
     <Compile Include="Forms\FormCadastroProduto.Designer.cs">
       <DependentUpon>FormCadastroProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormEstoque.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEstoque.Designer.cs">
+      <DependentUpon>FormEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormPesquisarFuncionarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCadastroProduto.resx">
       <DependentUpon>FormCadastroProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEstoque.resx">
+      <DependentUpon>FormEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPesquisarFuncionarios.resx">
       <DependentUpon>FormPesquisarFuncionarios.cs</DependentUpon>

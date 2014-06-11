@@ -115,6 +115,7 @@
             this.BtnEstoque.TabIndex = 3;
             this.BtnEstoque.Text = "Estoque";
             this.BtnEstoque.UseVisualStyleBackColor = true;
+            this.BtnEstoque.Click += new System.EventHandler(this.BtnEstoque_Click);
             // 
             // BtnVisualizarProduto
             // 
