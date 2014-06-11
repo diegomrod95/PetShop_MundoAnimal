@@ -45,6 +45,7 @@
             this.BtnLimpar = new System.Windows.Forms.Button();
             this.LinkExportarExcel = new System.Windows.Forms.LinkLabel();
             this.LinkExportarCsv = new System.Windows.Forms.LinkLabel();
+            this.LinkExportarHTML = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.GridResultado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -251,7 +252,7 @@
             // LinkExportarCsv
             // 
             this.LinkExportarCsv.AutoSize = true;
-            this.LinkExportarCsv.Location = new System.Drawing.Point(145, 567);
+            this.LinkExportarCsv.Location = new System.Drawing.Point(144, 568);
             this.LinkExportarCsv.Name = "LinkExportarCsv";
             this.LinkExportarCsv.Size = new System.Drawing.Size(93, 13);
             this.LinkExportarCsv.TabIndex = 7;
@@ -259,10 +260,22 @@
             this.LinkExportarCsv.Text = "Exportar para .csv";
             this.LinkExportarCsv.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkExportarCsv_LinkClicked);
             // 
+            // LinkExportarHTML
+            // 
+            this.LinkExportarHTML.AutoSize = true;
+            this.LinkExportarHTML.Location = new System.Drawing.Point(243, 568);
+            this.LinkExportarHTML.Name = "LinkExportarHTML";
+            this.LinkExportarHTML.Size = new System.Drawing.Size(103, 13);
+            this.LinkExportarHTML.TabIndex = 8;
+            this.LinkExportarHTML.TabStop = true;
+            this.LinkExportarHTML.Text = "Exportar para HTML";
+            this.LinkExportarHTML.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkExportarHTML_LinkClicked);
+            // 
             // FormPesquisarFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.LinkExportarHTML);
             this.Controls.Add(this.LinkExportarCsv);
             this.Controls.Add(this.LinkExportarExcel);
             this.Controls.Add(this.BtnLimpar);
@@ -303,5 +316,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaPagamento;
         private System.Windows.Forms.LinkLabel LinkExportarExcel;
         private System.Windows.Forms.LinkLabel LinkExportarCsv;
+        private System.Windows.Forms.LinkLabel LinkExportarHTML;
     }
 }

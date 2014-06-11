@@ -100,6 +100,7 @@
     <Compile Include="Source\Dados\Tipos\TipoMedida.cs" />
     <Compile Include="Source\Dados\Tipos\TipoOutroContato.cs" />
     <Compile Include="Source\Dados\Tipos\TipoPeso.cs" />
+    <Compile Include="Source\Dados\Tipos\TipoQuantidade.cs" />
     <Compile Include="Source\Dados\Tipos\TipoRedeSocial.cs" />
     <Compile Include="Source\Dados\Tipos\TipoRG.cs" />
     <Compile Include="Source\Dados\Tipos\TipoTamanho.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="Source\Entidades\Parente.cs" />
     <Compile Include="Source\Entidades\Pessoa.cs" />
     <Compile Include="Source\Entidades\Produto.cs" />
+    <Compile Include="Source\Estoque\Estoque.cs" />
     <Compile Include="Source\IO\Exportar\ExportarDataGrid.cs" />
     <Compile Include="Source\IO\Imprimir\ImprimirDataGrid.cs" />
     <Compile Include="Source\Pesquisa\Entidade\PesquisaCargos.cs" />

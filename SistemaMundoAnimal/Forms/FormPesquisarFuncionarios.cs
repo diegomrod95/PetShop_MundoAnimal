@@ -154,5 +154,13 @@ namespace SistemaMundoAnimal.Forms {
             }
         }
 
+        private void LinkExportarHTML_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            try {
+                ExportarDataGrid.ParaHTML(GridResultado, "Resultado da pesquisa dos funcionários.");
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

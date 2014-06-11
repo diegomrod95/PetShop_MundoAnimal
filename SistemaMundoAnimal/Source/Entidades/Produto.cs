@@ -20,6 +20,8 @@ namespace SistemaMundoAnimal.Source.Entidades {
         private TipoTamanho Tamanho;
         private TipoPeso Peso;
         private TipoMedida Medida;
+        private TipoQuantidade Quantidade;
+        private TipoQuantidade QtdMinima;
         private string Descricao;
         private string Especificacoes;
 
@@ -145,6 +147,30 @@ namespace SistemaMundoAnimal.Source.Entidades {
 
         public string GetPeso() {
             return this.Peso.ToString();
+        }
+
+        public void SetQuantidade(double valor) {
+            if (valor >= 0) {
+                this.Quantidade = new TipoQuantidade(valor);
+            } else {
+                throw new ArgumentException(valor + " não é uma quantidade válida.");
+            }
+        }
+
+        public string GetQuantidade() {
+            return this.Quantidade.ToString();
+        }
+
+        public void SetQtdMinima(double valor) {
+            if (valor >= 0) {
+                this.QtdMinima = new TipoQuantidade(valor);
+            } else {
+                throw new ArgumentException(valor + " não é uma quantidade minima válida.");
+            }
+        }
+
+        public string GetQtdMinima() {
+            return this.QtdMinima.ToString();
         }
 
         public void SetMedida(string medida) {

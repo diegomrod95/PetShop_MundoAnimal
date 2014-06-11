@@ -60,16 +60,26 @@
             this.ListFornecedoresProduto = new System.Windows.Forms.ListBox();
             this.ListFornecedoresTodos = new System.Windows.Forms.ListBox();
             this.BtnCadastrarProduto = new System.Windows.Forms.Button();
+            this.NumQuantidade = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.NumQtdMinima = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
             this.gbProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPeso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTamanho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPrecoVenda)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumQuantidade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumQtdMinima)).BeginInit();
             this.SuspendLayout();
             // 
             // gbProduto
             // 
+            this.gbProduto.Controls.Add(this.NumQtdMinima);
+            this.gbProduto.Controls.Add(this.label14);
+            this.gbProduto.Controls.Add(this.NumQuantidade);
+            this.gbProduto.Controls.Add(this.label13);
             this.gbProduto.Controls.Add(this.ComboCategoria);
             this.gbProduto.Controls.Add(this.label10);
             this.gbProduto.Controls.Add(this.TxtDescricao);
@@ -87,7 +97,7 @@
             this.gbProduto.Controls.Add(this.label1);
             this.gbProduto.Location = new System.Drawing.Point(13, 12);
             this.gbProduto.Name = "gbProduto";
-            this.gbProduto.Size = new System.Drawing.Size(394, 452);
+            this.gbProduto.Size = new System.Drawing.Size(394, 515);
             this.gbProduto.TabIndex = 0;
             this.gbProduto.TabStop = false;
             this.gbProduto.Text = "Informações do Produto";
@@ -96,7 +106,7 @@
             // 
             this.ComboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboCategoria.FormattingEnabled = true;
-            this.ComboCategoria.Location = new System.Drawing.Point(140, 183);
+            this.ComboCategoria.Location = new System.Drawing.Point(140, 234);
             this.ComboCategoria.Name = "ComboCategoria";
             this.ComboCategoria.Size = new System.Drawing.Size(236, 21);
             this.ComboCategoria.TabIndex = 14;
@@ -106,7 +116,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(15, 183);
+            this.label10.Location = new System.Drawing.Point(15, 232);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 20);
             this.label10.TabIndex = 13;
@@ -114,7 +124,7 @@
             // 
             // TxtDescricao
             // 
-            this.TxtDescricao.Location = new System.Drawing.Point(19, 271);
+            this.TxtDescricao.Location = new System.Drawing.Point(19, 322);
             this.TxtDescricao.MaxLength = 1000;
             this.TxtDescricao.Name = "TxtDescricao";
             this.TxtDescricao.Size = new System.Drawing.Size(357, 163);
@@ -132,7 +142,7 @@
             "DU - Dúzias",
             "DZ - Dezenas",
             "LT - Litros"});
-            this.ComboMedida.Location = new System.Drawing.Point(140, 150);
+            this.ComboMedida.Location = new System.Drawing.Point(140, 207);
             this.ComboMedida.Name = "ComboMedida";
             this.ComboMedida.Size = new System.Drawing.Size(236, 21);
             this.ComboMedida.TabIndex = 11;
@@ -190,7 +200,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 216);
+            this.label7.Location = new System.Drawing.Point(15, 267);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 20);
             this.label7.TabIndex = 6;
@@ -200,7 +210,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 248);
+            this.label6.Location = new System.Drawing.Point(15, 299);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 20);
             this.label6.TabIndex = 5;
@@ -210,7 +220,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 152);
+            this.label5.Location = new System.Drawing.Point(15, 205);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 20);
             this.label5.TabIndex = 4;
@@ -460,6 +470,54 @@
             this.BtnCadastrarProduto.UseVisualStyleBackColor = true;
             this.BtnCadastrarProduto.Click += new System.EventHandler(this.BtnCadastrarProduto_Click);
             // 
+            // NumQuantidade
+            // 
+            this.NumQuantidade.DecimalPlaces = 3;
+            this.NumQuantidade.Location = new System.Drawing.Point(140, 151);
+            this.NumQuantidade.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.NumQuantidade.Name = "NumQuantidade";
+            this.NumQuantidade.Size = new System.Drawing.Size(142, 20);
+            this.NumQuantidade.TabIndex = 16;
+            this.NumQuantidade.ThousandsSeparator = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(15, 151);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(96, 20);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Quantidade:";
+            // 
+            // NumQtdMinima
+            // 
+            this.NumQtdMinima.DecimalPlaces = 3;
+            this.NumQtdMinima.Location = new System.Drawing.Point(140, 177);
+            this.NumQtdMinima.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.NumQtdMinima.Name = "NumQtdMinima";
+            this.NumQtdMinima.Size = new System.Drawing.Size(142, 20);
+            this.NumQtdMinima.TabIndex = 18;
+            this.NumQtdMinima.ThousandsSeparator = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(15, 177);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(97, 20);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "Qtd. Minima:";
+            // 
             // FormCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,6 +537,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumQuantidade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumQtdMinima)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -522,5 +582,9 @@
         private System.Windows.Forms.ListBox ListFabricantesTodos;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.NumericUpDown NumQtdMinima;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.NumericUpDown NumQuantidade;
+        private System.Windows.Forms.Label label13;
     }
 }
