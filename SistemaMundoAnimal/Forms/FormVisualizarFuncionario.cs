@@ -36,6 +36,7 @@ namespace SistemaMundoAnimal.Forms {
         private void LimpaDataGrid() {
             DataGridContato.Rows.Clear();
             DataGridEnderecos.Rows.Clear();
+            DataGridParentes.Rows.Clear();
 
             foreach (Control controle in GroupInformacoesPessoais.Controls) {
                 if (controle is TextBox || controle is MaskedTextBox || controle is ComboBox) {
@@ -137,6 +138,17 @@ namespace SistemaMundoAnimal.Forms {
                 reader["Ativo"]);
         }
 
+        private void SetParente(SqlDataReader reader) {
+            DataGridParentes.Rows.Add(
+                reader["Parentesco"],
+                reader["Nome"],
+                reader["Sobrenome"],
+                reader["Genero"],
+                reader["RG"],
+                reader["CPF"],
+                reader["Nascimento"]);
+        }
+
         /// <summary>
         /// Pesquisa na view funcionários de acordo com o codigo do controle TxtCodigo.
         /// </summary>
@@ -146,6 +158,7 @@ namespace SistemaMundoAnimal.Forms {
                 int id = Convert.ToInt32(TxtCodigo.Text);
                 PesquisaContatos.PorFuncionarioId(id, SetContato);
                 PesquisaEnderecos.PorFuncionarioId(id, SetEndereco);
+                PesquisaParente.PorPessoaId(id, SetParente);
                 PesquisaFuncionario.PorId(id, SetFuncionario);
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message);

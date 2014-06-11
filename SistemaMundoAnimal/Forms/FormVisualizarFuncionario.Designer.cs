@@ -55,23 +55,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.DataGridEnderecos = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.DataGridContato = new System.Windows.Forms.DataGridView();
-            this.TxtCodigo = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.ParenteParentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ParenteNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ParenteSobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ParenteGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ParenteRG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ParenteCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ParenteDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ContatoDataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ContatoAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,13 +65,30 @@
             this.CEP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.DataGridContato = new System.Windows.Forms.DataGridView();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._Contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContatoDataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContatoAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TxtCodigo = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.DataGridParentes = new System.Windows.Forms.DataGridView();
+            this.ParenteParentesco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParenteNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParenteSobrenome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParenteGenero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParenteRG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParenteCPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParenteDataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GroupInformacoesPessoais.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridEnderecos)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridContato)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridParentes)).BeginInit();
             this.SuspendLayout();
             // 
             // GroupInformacoesPessoais
@@ -438,139 +438,6 @@
             this.DataGridEnderecos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridEnderecos_CellDoubleClick);
             this.DataGridEnderecos.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGrid_RowsAdded);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.DataGridContato);
-            this.groupBox3.Location = new System.Drawing.Point(422, 200);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(561, 172);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Contatos";
-            // 
-            // DataGridContato
-            // 
-            this.DataGridContato.AllowUserToAddRows = false;
-            this.DataGridContato.AllowUserToDeleteRows = false;
-            this.DataGridContato.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DataGridContato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridContato.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Tipo,
-            this._Contato,
-            this.ContatoDataCadastro,
-            this.ContatoAtivo});
-            this.DataGridContato.Location = new System.Drawing.Point(7, 19);
-            this.DataGridContato.Name = "DataGridContato";
-            this.DataGridContato.Size = new System.Drawing.Size(548, 142);
-            this.DataGridContato.TabIndex = 0;
-            this.DataGridContato.Tag = "3";
-            this.DataGridContato.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridContato_CellDoubleClick);
-            this.DataGridContato.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGrid_RowsAdded);
-            // 
-            // TxtCodigo
-            // 
-            this.TxtCodigo.Location = new System.Drawing.Point(877, 15);
-            this.TxtCodigo.Name = "TxtCodigo";
-            this.TxtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.TxtCodigo.TabIndex = 3;
-            this.TxtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigo_KeyPress);
-            this.TxtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtCodigo_KeyUp);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(743, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Código do Funcionário:";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.dataGridView3);
-            this.groupBox4.Location = new System.Drawing.Point(422, 378);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(561, 182);
-            this.groupBox4.TabIndex = 5;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Parentes";
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ParenteParentesco,
-            this.ParenteNome,
-            this.ParenteSobrenome,
-            this.ParenteGenero,
-            this.ParenteRG,
-            this.ParenteCPF,
-            this.ParenteDataNascimento});
-            this.dataGridView3.Location = new System.Drawing.Point(7, 20);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(548, 156);
-            this.dataGridView3.TabIndex = 0;
-            // 
-            // ParenteParentesco
-            // 
-            this.ParenteParentesco.HeaderText = "Parentesco";
-            this.ParenteParentesco.Name = "ParenteParentesco";
-            // 
-            // ParenteNome
-            // 
-            this.ParenteNome.HeaderText = "Nome";
-            this.ParenteNome.Name = "ParenteNome";
-            // 
-            // ParenteSobrenome
-            // 
-            this.ParenteSobrenome.HeaderText = "Sobrenome";
-            this.ParenteSobrenome.Name = "ParenteSobrenome";
-            // 
-            // ParenteGenero
-            // 
-            this.ParenteGenero.HeaderText = "Genero";
-            this.ParenteGenero.Name = "ParenteGenero";
-            // 
-            // ParenteRG
-            // 
-            this.ParenteRG.HeaderText = "RG";
-            this.ParenteRG.Name = "ParenteRG";
-            // 
-            // ParenteCPF
-            // 
-            this.ParenteCPF.HeaderText = "CPF";
-            this.ParenteCPF.Name = "ParenteCPF";
-            // 
-            // ParenteDataNascimento
-            // 
-            this.ParenteDataNascimento.HeaderText = "Data de Nascimento";
-            this.ParenteDataNascimento.Name = "ParenteDataNascimento";
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo do Contato";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
-            // _Contato
-            // 
-            this._Contato.HeaderText = "Contato";
-            this._Contato.Name = "_Contato";
-            // 
-            // ContatoDataCadastro
-            // 
-            this.ContatoDataCadastro.HeaderText = "Data Cadastro";
-            this.ContatoDataCadastro.Name = "ContatoDataCadastro";
-            this.ContatoDataCadastro.ReadOnly = true;
-            // 
-            // ContatoAtivo
-            // 
-            this.ContatoAtivo.HeaderText = "Ativo";
-            this.ContatoAtivo.Name = "ContatoAtivo";
-            this.ContatoAtivo.ReadOnly = true;
-            // 
             // Pais
             // 
             this.Pais.HeaderText = "País";
@@ -623,6 +490,140 @@
             this.Ativo.Name = "Ativo";
             this.Ativo.ReadOnly = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.DataGridContato);
+            this.groupBox3.Location = new System.Drawing.Point(422, 200);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(561, 172);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Contatos";
+            // 
+            // DataGridContato
+            // 
+            this.DataGridContato.AllowUserToAddRows = false;
+            this.DataGridContato.AllowUserToDeleteRows = false;
+            this.DataGridContato.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridContato.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridContato.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Tipo,
+            this._Contato,
+            this.ContatoDataCadastro,
+            this.ContatoAtivo});
+            this.DataGridContato.Location = new System.Drawing.Point(7, 19);
+            this.DataGridContato.Name = "DataGridContato";
+            this.DataGridContato.Size = new System.Drawing.Size(548, 142);
+            this.DataGridContato.TabIndex = 0;
+            this.DataGridContato.Tag = "3";
+            this.DataGridContato.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridContato_CellDoubleClick);
+            this.DataGridContato.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGrid_RowsAdded);
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo do Contato";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            // 
+            // _Contato
+            // 
+            this._Contato.HeaderText = "Contato";
+            this._Contato.Name = "_Contato";
+            // 
+            // ContatoDataCadastro
+            // 
+            this.ContatoDataCadastro.HeaderText = "Data Cadastro";
+            this.ContatoDataCadastro.Name = "ContatoDataCadastro";
+            this.ContatoDataCadastro.ReadOnly = true;
+            // 
+            // ContatoAtivo
+            // 
+            this.ContatoAtivo.HeaderText = "Ativo";
+            this.ContatoAtivo.Name = "ContatoAtivo";
+            this.ContatoAtivo.ReadOnly = true;
+            // 
+            // TxtCodigo
+            // 
+            this.TxtCodigo.Location = new System.Drawing.Point(877, 15);
+            this.TxtCodigo.Name = "TxtCodigo";
+            this.TxtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.TxtCodigo.TabIndex = 3;
+            this.TxtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigo_KeyPress);
+            this.TxtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtCodigo_KeyUp);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(743, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Código do Funcionário:";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.DataGridParentes);
+            this.groupBox4.Location = new System.Drawing.Point(422, 378);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(561, 182);
+            this.groupBox4.TabIndex = 5;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Parentes";
+            // 
+            // DataGridParentes
+            // 
+            this.DataGridParentes.AllowUserToAddRows = false;
+            this.DataGridParentes.AllowUserToDeleteRows = false;
+            this.DataGridParentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridParentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ParenteParentesco,
+            this.ParenteNome,
+            this.ParenteSobrenome,
+            this.ParenteGenero,
+            this.ParenteRG,
+            this.ParenteCPF,
+            this.ParenteDataNascimento});
+            this.DataGridParentes.Location = new System.Drawing.Point(7, 20);
+            this.DataGridParentes.Name = "DataGridParentes";
+            this.DataGridParentes.ReadOnly = true;
+            this.DataGridParentes.Size = new System.Drawing.Size(548, 156);
+            this.DataGridParentes.TabIndex = 0;
+            // 
+            // ParenteParentesco
+            // 
+            this.ParenteParentesco.HeaderText = "Parentesco";
+            this.ParenteParentesco.Name = "ParenteParentesco";
+            // 
+            // ParenteNome
+            // 
+            this.ParenteNome.HeaderText = "Nome";
+            this.ParenteNome.Name = "ParenteNome";
+            // 
+            // ParenteSobrenome
+            // 
+            this.ParenteSobrenome.HeaderText = "Sobrenome";
+            this.ParenteSobrenome.Name = "ParenteSobrenome";
+            // 
+            // ParenteGenero
+            // 
+            this.ParenteGenero.HeaderText = "Genero";
+            this.ParenteGenero.Name = "ParenteGenero";
+            // 
+            // ParenteRG
+            // 
+            this.ParenteRG.HeaderText = "RG";
+            this.ParenteRG.Name = "ParenteRG";
+            // 
+            // ParenteCPF
+            // 
+            this.ParenteCPF.HeaderText = "CPF";
+            this.ParenteCPF.Name = "ParenteCPF";
+            // 
+            // ParenteDataNascimento
+            // 
+            this.ParenteDataNascimento.HeaderText = "Data de Nascimento";
+            this.ParenteDataNascimento.Name = "ParenteDataNascimento";
+            // 
             // FormVisualizarFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -642,7 +643,7 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridContato)).EndInit();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridParentes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -687,7 +688,7 @@
         private System.Windows.Forms.TextBox TxtDataCadastro;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView DataGridParentes;
         private System.Windows.Forms.DataGridViewTextBoxColumn ParenteParentesco;
         private System.Windows.Forms.DataGridViewTextBoxColumn ParenteNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn ParenteSobrenome;
