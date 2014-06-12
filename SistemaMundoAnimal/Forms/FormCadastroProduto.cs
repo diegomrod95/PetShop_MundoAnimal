@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 using SistemaMundoAnimal.Source.Entidades;
+using SistemaMundoAnimal.Source.Estoque;
 using SistemaMundoAnimal.Source.Pesquisa.Entidade;
 
 namespace SistemaMundoAnimal.Forms {
@@ -37,6 +38,8 @@ namespace SistemaMundoAnimal.Forms {
                 produto.SetMedida(ComboMedida.Text.Substring(0, 2));
                 produto.AddCategoria(FabricaCategoria.GetCategoria((TipoCategoria)cat));
                 produto.SetDescricao(TxtDescricao.Text);
+                produto.SetQuantidade((double)NumQuantidade.Value);
+                produto.SetQtdMinima((double)NumQtdMinima.Value);
 
                 AddFornecedoresAoProduto();
                 AddFabricantesAoProduto();
@@ -46,6 +49,8 @@ namespace SistemaMundoAnimal.Forms {
                 produto.InserirFabricantesNoBancoDeDados();
                 produto.InserirFornecedoresNoBancoDeDados();
                 produto.InserirCategoriasNoBancoDeDados();
+
+                Estoque.CadastrarProdutoNoEstoque(produto);
 
                 MessageBox.Show("Produto cadastrado com sucesso.");
 

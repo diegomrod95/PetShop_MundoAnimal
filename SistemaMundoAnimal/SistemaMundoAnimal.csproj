@@ -129,6 +129,7 @@
     <Compile Include="Source\Pesquisa\Entidade\PesquisaFuncionario.cs" />
     <Compile Include="Source\Pesquisa\Entidade\PesquisaParente.cs" />
     <Compile Include="Source\Pesquisa\Entidade\PesquisaProduto.cs" />
+    <Compile Include="Source\Pesquisa\PesquisaEstoque.cs" />
     <Compile Include="Source\Program.cs" />
     <Compile Include="Testes\Dados\Tipos\TipoCPFTeste.cs" />
     <Compile Include="Testes\Dados\Tipos\TipoEmailTeste.cs" />

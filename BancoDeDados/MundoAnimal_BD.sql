@@ -296,3 +296,24 @@ CREATE TABLE [Estoque_Produto] (
     CONSTRAINT [ck_Estoque_Produto_ativo_sn]
         CHECK([Ativo] IN ('S', 'N')));
 GO
+
+-- ----------------------------------------------------------------------------
+-- CRIA VIEW View_Estoque
+-- ----------------------------------------------------------------------------
+CREATE VIEW [View_Estoque]
+AS
+SELECT 
+    P.Produto_Id            AS [Id], 
+    P.Codigo                AS [Codigo], 
+    CT.Nome                 AS [Categoria], 
+    P.Nome                  AS [Nome], 
+    P.Preco_Venda           AS [Preco Venda], 
+    P.Tipo_Medida           AS [Medida], 
+    E.Quantidade            AS [Quantidade], 
+    E.Quantidade_Minima     AS [Quantidade Minima], 
+    CAST(E.Quantidade * P.Preco_Venda AS DECIMAL(10, 2)) AS Subtotal 
+FROM Estoque_Produto AS E JOIN Produto AS P ON E.Produto_Id = P.Produto_Id 
+                          JOIN Categoria_Produto AS C ON C.Produto_Id = P.Produto_Id 
+                          JOIN Categoria AS CT ON C.Categoria_Id = CT.Categoria_Id
+WHERE P.Ativo = 'S';
+GO

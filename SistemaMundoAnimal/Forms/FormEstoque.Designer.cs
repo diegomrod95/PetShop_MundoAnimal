@@ -23,12 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BtnLimpar = new System.Windows.Forms.Button();
-            this.BtnPesquisar = new System.Windows.Forms.Button();
-            this.TxtConsulta = new System.Windows.Forms.TextBox();
-            this.ComboFiltroPesquisa = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.DataGridEstoque = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,16 +33,21 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.BtnLimpar = new System.Windows.Forms.Button();
+            this.BtnPesquisar = new System.Windows.Forms.Button();
+            this.TxtConsulta = new System.Windows.Forms.TextBox();
+            this.ComboFiltroPesquisa = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridEstoque)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // DataGridEstoque
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataGridEstoque.AllowUserToAddRows = false;
+            this.DataGridEstoque.AllowUserToDeleteRows = false;
+            this.DataGridEstoque.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DataGridEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridEstoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,
             this.Column1,
             this.Column4,
@@ -57,59 +57,11 @@
             this.Column6,
             this.Column7,
             this.Column8});
-            this.dataGridView1.Location = new System.Drawing.Point(17, 53);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(976, 493);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // BtnLimpar
-            // 
-            this.BtnLimpar.Location = new System.Drawing.Point(858, 17);
-            this.BtnLimpar.Name = "BtnLimpar";
-            this.BtnLimpar.Size = new System.Drawing.Size(121, 23);
-            this.BtnLimpar.TabIndex = 16;
-            this.BtnLimpar.Text = "Limpar Resultado";
-            this.BtnLimpar.UseVisualStyleBackColor = true;
-            // 
-            // BtnPesquisar
-            // 
-            this.BtnPesquisar.Location = new System.Drawing.Point(777, 17);
-            this.BtnPesquisar.Name = "BtnPesquisar";
-            this.BtnPesquisar.Size = new System.Drawing.Size(75, 23);
-            this.BtnPesquisar.TabIndex = 15;
-            this.BtnPesquisar.Text = "Pesquisar";
-            this.BtnPesquisar.UseVisualStyleBackColor = true;
-            // 
-            // TxtConsulta
-            // 
-            this.TxtConsulta.Location = new System.Drawing.Point(237, 19);
-            this.TxtConsulta.Name = "TxtConsulta";
-            this.TxtConsulta.Size = new System.Drawing.Size(534, 20);
-            this.TxtConsulta.TabIndex = 14;
-            // 
-            // ComboFiltroPesquisa
-            // 
-            this.ComboFiltroPesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboFiltroPesquisa.FormattingEnabled = true;
-            this.ComboFiltroPesquisa.Items.AddRange(new object[] {
-            "Id",
-            "Nome",
-            "Codigo"});
-            this.ComboFiltroPesquisa.Location = new System.Drawing.Point(76, 19);
-            this.ComboFiltroPesquisa.Name = "ComboFiltroPesquisa";
-            this.ComboFiltroPesquisa.Size = new System.Drawing.Size(154, 21);
-            this.ComboFiltroPesquisa.TabIndex = 13;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 18);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Filtro:";
+            this.DataGridEstoque.Location = new System.Drawing.Point(17, 53);
+            this.DataGridEstoque.Name = "DataGridEstoque";
+            this.DataGridEstoque.ReadOnly = true;
+            this.DataGridEstoque.Size = new System.Drawing.Size(976, 493);
+            this.DataGridEstoque.TabIndex = 0;
             // 
             // Column2
             // 
@@ -165,6 +117,54 @@
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
+            // BtnLimpar
+            // 
+            this.BtnLimpar.Location = new System.Drawing.Point(858, 17);
+            this.BtnLimpar.Name = "BtnLimpar";
+            this.BtnLimpar.Size = new System.Drawing.Size(121, 23);
+            this.BtnLimpar.TabIndex = 16;
+            this.BtnLimpar.Text = "Limpar Resultado";
+            this.BtnLimpar.UseVisualStyleBackColor = true;
+            // 
+            // BtnPesquisar
+            // 
+            this.BtnPesquisar.Location = new System.Drawing.Point(777, 17);
+            this.BtnPesquisar.Name = "BtnPesquisar";
+            this.BtnPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.BtnPesquisar.TabIndex = 15;
+            this.BtnPesquisar.Text = "Pesquisar";
+            this.BtnPesquisar.UseVisualStyleBackColor = true;
+            // 
+            // TxtConsulta
+            // 
+            this.TxtConsulta.Location = new System.Drawing.Point(237, 19);
+            this.TxtConsulta.Name = "TxtConsulta";
+            this.TxtConsulta.Size = new System.Drawing.Size(534, 20);
+            this.TxtConsulta.TabIndex = 14;
+            // 
+            // ComboFiltroPesquisa
+            // 
+            this.ComboFiltroPesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboFiltroPesquisa.FormattingEnabled = true;
+            this.ComboFiltroPesquisa.Items.AddRange(new object[] {
+            "Id",
+            "Nome",
+            "Codigo"});
+            this.ComboFiltroPesquisa.Location = new System.Drawing.Point(76, 19);
+            this.ComboFiltroPesquisa.Name = "ComboFiltroPesquisa";
+            this.ComboFiltroPesquisa.Size = new System.Drawing.Size(154, 21);
+            this.ComboFiltroPesquisa.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(25, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 18);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Filtro:";
+            // 
             // FormEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,10 +174,10 @@
             this.Controls.Add(this.TxtConsulta);
             this.Controls.Add(this.ComboFiltroPesquisa);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DataGridEstoque);
             this.Name = "FormEstoque";
             this.Size = new System.Drawing.Size(1008, 590);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridEstoque)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,7 +185,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DataGridEstoque;
         private System.Windows.Forms.Button BtnLimpar;
         private System.Windows.Forms.Button BtnPesquisar;
         private System.Windows.Forms.TextBox TxtConsulta;
