@@ -62,6 +62,7 @@
             this.DataGridEstoque.ReadOnly = true;
             this.DataGridEstoque.Size = new System.Drawing.Size(976, 493);
             this.DataGridEstoque.TabIndex = 0;
+            this.DataGridEstoque.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DataGridEstoque_RowsAdded);
             // 
             // Column2
             // 

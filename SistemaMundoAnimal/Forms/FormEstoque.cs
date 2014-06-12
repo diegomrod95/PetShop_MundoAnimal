@@ -30,5 +30,19 @@ namespace SistemaMundoAnimal.Forms {
                 reader["Quantidade Minima"],
                 reader["Subtotal"]);
         }
+
+        private void DataGridEstoque_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e) {
+            var o = (DataGridView)sender;
+            var qtd = Convert.ToDouble(o.Rows[e.RowIndex].Cells[6].Value);
+            var qtdmin = Convert.ToDouble(o.Rows[e.RowIndex].Cells[7].Value);
+            
+            if (qtd < qtdmin) {
+                o.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Red;
+            } else if (qtd == qtdmin) {
+                o.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
+            } else {
+                o.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightGreen;
+            }
+        }
     }
 }

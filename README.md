@@ -20,6 +20,10 @@
           Tipos/                          > Diretório com tipos de dados
           BancoDeDados.cs                 > Classe responsável por fazer consultas e executar comandos no banco
         Entidades/                        > Diretório com entidades do sistema
+        Estoque/                          > Diretório com classes resposáveis por gerir o estoque
+        IO/                               > Diertório com classes reposáveis por realizar operações de IO
+          Exportar/                       > Diertório com classes reposáveis por exportar para diferentes formatos
+          Imprimir/                       > Diertório com classes reposáveis por impressões
         Pesquisa/                         > Diretório com classes referentes a pesquisa no banco
           Entidade/                       > Diretório com classes que realizam pesquisa de entidades no banco
       Testes/                             > Diretório com testes dos objetos da aplicação

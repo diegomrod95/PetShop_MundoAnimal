@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 using SistemaMundoAnimal.Source.Pesquisa.Entidade;
+using SistemaMundoAnimal.Source.IO.Exportar;
 
 namespace SistemaMundoAnimal.Forms {
     public partial class FormPesquisarProduto : UserControl {
@@ -76,6 +77,22 @@ namespace SistemaMundoAnimal.Forms {
 
         private void BtnLimpar_Click(object sender, EventArgs e) {
             PesquisaProduto.Todos(AddResultadoDePesquisaAoGrid);
+        }
+
+        private void LinkExportarCsv_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            try {
+                ExportarDataGrid.ParaCsv(GridResultado);
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);    
+            } 
+        }
+
+        private void LinkExportarHTML_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            try {
+                ExportarDataGrid.ParaHTML(GridResultado, "Pesquisa Produto");
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            } 
         }
 
 

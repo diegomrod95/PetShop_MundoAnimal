@@ -39,6 +39,8 @@
             this.TxtConsulta = new System.Windows.Forms.TextBox();
             this.ComboFiltroPesquisa = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.LinkExportarCsv = new System.Windows.Forms.LinkLabel();
+            this.LinkExportarHTML = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.GridResultado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,7 +127,7 @@
             this.Column5.HeaderText = "Preço Venda";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 87;
+            this.Column5.Width = 94;
             // 
             // Column6
             // 
@@ -146,7 +148,6 @@
             this.Column8.HeaderText = "Data Cadastro";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
-            this.Column8.Width = 92;
             // 
             // Column9
             // 
@@ -188,10 +189,34 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Filtro:";
             // 
+            // LinkExportarCsv
+            // 
+            this.LinkExportarCsv.AutoSize = true;
+            this.LinkExportarCsv.Location = new System.Drawing.Point(30, 570);
+            this.LinkExportarCsv.Name = "LinkExportarCsv";
+            this.LinkExportarCsv.Size = new System.Drawing.Size(93, 13);
+            this.LinkExportarCsv.TabIndex = 12;
+            this.LinkExportarCsv.TabStop = true;
+            this.LinkExportarCsv.Text = "Exportar para .csv";
+            this.LinkExportarCsv.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkExportarCsv_LinkClicked);
+            // 
+            // LinkExportarHTML
+            // 
+            this.LinkExportarHTML.AutoSize = true;
+            this.LinkExportarHTML.Location = new System.Drawing.Point(129, 570);
+            this.LinkExportarHTML.Name = "LinkExportarHTML";
+            this.LinkExportarHTML.Size = new System.Drawing.Size(103, 13);
+            this.LinkExportarHTML.TabIndex = 13;
+            this.LinkExportarHTML.TabStop = true;
+            this.LinkExportarHTML.Text = "Exportar para HTML";
+            this.LinkExportarHTML.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkExportarHTML_LinkClicked);
+            // 
             // FormPesquisarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.LinkExportarHTML);
+            this.Controls.Add(this.LinkExportarCsv);
             this.Controls.Add(this.BtnLimpar);
             this.Controls.Add(this.BtnPesquisar);
             this.Controls.Add(this.GridResultado);
@@ -224,5 +249,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.LinkLabel LinkExportarCsv;
+        private System.Windows.Forms.LinkLabel LinkExportarHTML;
     }
 }
