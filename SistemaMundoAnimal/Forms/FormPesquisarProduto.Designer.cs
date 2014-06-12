@@ -86,6 +86,7 @@
             this.GridResultado.ReadOnly = true;
             this.GridResultado.Size = new System.Drawing.Size(951, 496);
             this.GridResultado.TabIndex = 9;
+            this.GridResultado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridResultado_CellClick);
             // 
             // Column1
             // 

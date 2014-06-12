@@ -20,6 +20,7 @@ namespace SistemaMundoAnimal.Forms {
         public FormVisualizarProduto(int produto) {
             InitializeComponent();
             TxtCodigo.Text = produto.ToString();
+            Pesquisar();
         }
 
         private void SetFornecedor(SqlDataReader reader) {

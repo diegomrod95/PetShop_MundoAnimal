@@ -95,6 +95,16 @@ namespace SistemaMundoAnimal.Forms {
             } 
         }
 
+        private void GridResultado_CellClick(object sender, DataGridViewCellEventArgs e) {
+            try {
+                int codigo = Convert.ToInt32(GridResultado.Rows[e.RowIndex].Cells[0].Value);
+                if (codigo >= 0) {
+                    Program.Form.ShowVisualizarProduto(codigo);
+                }
+            } catch (Exception) {
+            }
+        }
+
 
     }
 }
