@@ -114,7 +114,9 @@
     <Compile Include="Source\Entidades\Fabricante.cs" />
     <Compile Include="Source\Entidades\Fornecedor.cs" />
     <Compile Include="Source\Entidades\Funcionario.cs" />
+    <Compile Include="Source\Entidades\ItemPedido.cs" />
     <Compile Include="Source\Entidades\Parente.cs" />
+    <Compile Include="Source\Entidades\Pedido.cs" />
     <Compile Include="Source\Entidades\Pessoa.cs" />
     <Compile Include="Source\Entidades\Produto.cs" />
     <Compile Include="Source\Estoque\Estoque.cs" />

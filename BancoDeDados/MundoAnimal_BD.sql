@@ -317,3 +317,55 @@ FROM Estoque_Produto AS E JOIN Produto AS P ON E.Produto_Id = P.Produto_Id
                           JOIN Categoria AS CT ON C.Categoria_Id = CT.Categoria_Id
 WHERE P.Ativo = 'S';
 GO
+
+-- ----------------------------------------------------------------------------
+-- CRIA TABELA Tipo_Pedido
+-- ----------------------------------------------------------------------------
+CREATE TABLE [Tipo_Pedido] (
+    [Tipo_Id]               INT PRIMARY KEY IDENTITY,
+    [Descricao]             VARCHAR(100) NOT NULL,
+    [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
+    [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
+    CONSTRAINT [ck_Tipo_Pedido_ativo_sn]
+        CHECK([Ativo] IN ('S', 'N')));
+GO
+
+-- ----------------------------------------------------------------------------
+-- CRIA TABELA Pedido
+-- Status -> 0: Cancelado, 1: Finalidado, 2: Andamento, 3: Aguardando Pgt,
+--      4: Aguardando Cliente
+-- ----------------------------------------------------------------------------
+CREATE TABLE [Pedido] (
+    [Pedido_Id]             INT PRIMARY KEY IDENTITY,
+    [Tipo_Id]               INT NOT NULL,  
+    [Funcionario_Id]        INT NOT NULL,
+    [Valor_Total]           DECIMAL(10, 2) NOT NULL,
+    [Desconto]              FLOAT NULL,
+    [Descricao]             VARCHAR(150) NULL,
+    [Status]                INT NOT NULL DEFAULT 1,
+    [Data_Entrega]          DATETIME NOT NULL DEFAULT GETDATE(),
+    [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
+    [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
+    CONSTRAINT [fk_Pedido_Pessoa]
+        FOREIGN KEY([Funcionario_Id]) REFERENCES [Funcionario]([Pessoa_Id]),
+    CONSTRAINT [ck_Pedido_ativo_sn]
+        CHECK([Ativo] IN ('S', 'N')));
+GO
+
+-- ----------------------------------------------------------------------------
+-- CRIA TABELA Pedido_Produto
+-- ----------------------------------------------------------------------------
+CREATE TABLE [Pedido_Produto] (
+    [Pedido_Id]              INT NOT NULL,
+    [Produto_Id]            INT NOT NULL,
+    [Quantidade]            FLOAT NOT NULL,
+    [Valor_Unitario]        DECIMAL(10, 2) NOT NULL,
+    [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
+    [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
+    CONSTRAINT [fk_Pedido_Produto_Venda]
+        FOREIGN KEY([Pedido_Id]) REFERENCES [Pedido]([Pedido_Id]),
+    CONSTRAINT [fk_Pedido_Produto_Produto]
+        FOREIGN KEY([Produto_Id]) REFERENCES [Produto]([Produto_Id]),
+    CONSTRAINT [ck_Pedido_Produto_ativo_sn]
+        CHECK([Ativo] IN ('S', 'N')));
+GO

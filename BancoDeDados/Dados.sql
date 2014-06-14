@@ -40,3 +40,12 @@ VALUES
     ('Conforto', 'Produto de conforto.'),
     ('Outro', 'Outros tipos de produtos.');
 GO
+
+-- ----------------------------------------------------------------------------
+-- TIPO DE PEDIDOS -- NÃO ALTERAR, COMPROMETE FUNCIONAMENTO DO SISTEMA
+-- ----------------------------------------------------------------------------
+INSERT INTO [Tipo_Pedido]
+    ([Descricao])
+VALUES
+    ('Venda'), ('Banho e Tosa'), ('Veterinario'), ('Outro');
+GO
