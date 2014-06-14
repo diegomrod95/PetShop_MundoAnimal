@@ -53,7 +53,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 31);
+            this.label1.Location = new System.Drawing.Point(27, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 18);
             this.label1.TabIndex = 0;
@@ -77,7 +77,7 @@
             "Salario maior que",
             "Salario menor que",
             "Dia de Pagamento"});
-            this.ComboFiltroPesquisa.Location = new System.Drawing.Point(78, 28);
+            this.ComboFiltroPesquisa.Location = new System.Drawing.Point(78, 24);
             this.ComboFiltroPesquisa.Name = "ComboFiltroPesquisa";
             this.ComboFiltroPesquisa.Size = new System.Drawing.Size(154, 21);
             this.ComboFiltroPesquisa.TabIndex = 1;
@@ -85,7 +85,7 @@
             // 
             // TxtConsulta
             // 
-            this.TxtConsulta.Location = new System.Drawing.Point(239, 28);
+            this.TxtConsulta.Location = new System.Drawing.Point(239, 24);
             this.TxtConsulta.Name = "TxtConsulta";
             this.TxtConsulta.Size = new System.Drawing.Size(534, 20);
             this.TxtConsulta.TabIndex = 2;
@@ -113,7 +113,7 @@
             this.ValeAlimentacao,
             this.ValeTransporte,
             this.DiaPagamento});
-            this.GridResultado.Location = new System.Drawing.Point(30, 65);
+            this.GridResultado.Location = new System.Drawing.Point(30, 61);
             this.GridResultado.Name = "GridResultado";
             this.GridResultado.ReadOnly = true;
             this.GridResultado.Size = new System.Drawing.Size(951, 496);
@@ -220,7 +220,7 @@
             // 
             // BtnPesquisar
             // 
-            this.BtnPesquisar.Location = new System.Drawing.Point(779, 26);
+            this.BtnPesquisar.Location = new System.Drawing.Point(779, 22);
             this.BtnPesquisar.Name = "BtnPesquisar";
             this.BtnPesquisar.Size = new System.Drawing.Size(75, 23);
             this.BtnPesquisar.TabIndex = 4;
@@ -230,7 +230,7 @@
             // 
             // BtnLimpar
             // 
-            this.BtnLimpar.Location = new System.Drawing.Point(860, 26);
+            this.BtnLimpar.Location = new System.Drawing.Point(860, 22);
             this.BtnLimpar.Name = "BtnLimpar";
             this.BtnLimpar.Size = new System.Drawing.Size(121, 23);
             this.BtnLimpar.TabIndex = 5;
@@ -241,7 +241,7 @@
             // LinkExportarExcel
             // 
             this.LinkExportarExcel.AutoSize = true;
-            this.LinkExportarExcel.Location = new System.Drawing.Point(30, 568);
+            this.LinkExportarExcel.Location = new System.Drawing.Point(30, 564);
             this.LinkExportarExcel.Name = "LinkExportarExcel";
             this.LinkExportarExcel.Size = new System.Drawing.Size(108, 13);
             this.LinkExportarExcel.TabIndex = 6;
@@ -252,7 +252,7 @@
             // LinkExportarCsv
             // 
             this.LinkExportarCsv.AutoSize = true;
-            this.LinkExportarCsv.Location = new System.Drawing.Point(144, 568);
+            this.LinkExportarCsv.Location = new System.Drawing.Point(144, 564);
             this.LinkExportarCsv.Name = "LinkExportarCsv";
             this.LinkExportarCsv.Size = new System.Drawing.Size(93, 13);
             this.LinkExportarCsv.TabIndex = 7;
@@ -263,7 +263,7 @@
             // LinkExportarHTML
             // 
             this.LinkExportarHTML.AutoSize = true;
-            this.LinkExportarHTML.Location = new System.Drawing.Point(243, 568);
+            this.LinkExportarHTML.Location = new System.Drawing.Point(243, 564);
             this.LinkExportarHTML.Name = "LinkExportarHTML";
             this.LinkExportarHTML.Size = new System.Drawing.Size(103, 13);
             this.LinkExportarHTML.TabIndex = 8;

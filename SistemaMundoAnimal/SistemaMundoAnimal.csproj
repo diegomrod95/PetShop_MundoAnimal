@@ -65,6 +65,12 @@
     <Compile Include="Forms\FormPesquisarProduto.Designer.cs">
       <DependentUpon>FormPesquisarProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormPesquisarVenda.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPesquisarVenda.Designer.cs">
+      <DependentUpon>FormPesquisarVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPesquisarProduto.resx">
       <DependentUpon>FormPesquisarProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPesquisarVenda.resx">
+      <DependentUpon>FormPesquisarVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>

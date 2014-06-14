@@ -33,16 +33,24 @@
             this.BtnVisualizarProduto = new System.Windows.Forms.Button();
             this.BtnPesquisarProduto = new System.Windows.Forms.Button();
             this.BtnCadastrarProduto = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.BtnVendedores = new System.Windows.Forms.Button();
+            this.BtnEstatisticas = new System.Windows.Forms.Button();
+            this.BtnRelatório = new System.Windows.Forms.Button();
+            this.BtnVisualizarVenda = new System.Windows.Forms.Button();
+            this.BtnPesquisarVenda = new System.Windows.Forms.Button();
             this.PainelPrincipal = new System.Windows.Forms.Panel();
             this.TabControl.SuspendLayout();
             this.PageRecursosHumanos.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl
             // 
             this.TabControl.Controls.Add(this.PageRecursosHumanos);
             this.TabControl.Controls.Add(this.tabPage2);
+            this.TabControl.Controls.Add(this.tabPage1);
             this.TabControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.TabControl.Location = new System.Drawing.Point(0, 0);
             this.TabControl.Name = "TabControl";
@@ -147,6 +155,67 @@
             this.BtnCadastrarProduto.UseVisualStyleBackColor = true;
             this.BtnCadastrarProduto.Click += new System.EventHandler(this.BtnCadastrarProduto_Click);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.BtnVendedores);
+            this.tabPage1.Controls.Add(this.BtnEstatisticas);
+            this.tabPage1.Controls.Add(this.BtnRelatório);
+            this.tabPage1.Controls.Add(this.BtnVisualizarVenda);
+            this.tabPage1.Controls.Add(this.BtnPesquisarVenda);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1000, 74);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Vendas";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // BtnVendedores
+            // 
+            this.BtnVendedores.Location = new System.Drawing.Point(517, 7);
+            this.BtnVendedores.Name = "BtnVendedores";
+            this.BtnVendedores.Size = new System.Drawing.Size(133, 24);
+            this.BtnVendedores.TabIndex = 4;
+            this.BtnVendedores.Text = "Vendedores";
+            this.BtnVendedores.UseVisualStyleBackColor = true;
+            // 
+            // BtnEstatisticas
+            // 
+            this.BtnEstatisticas.Location = new System.Drawing.Point(386, 7);
+            this.BtnEstatisticas.Name = "BtnEstatisticas";
+            this.BtnEstatisticas.Size = new System.Drawing.Size(124, 24);
+            this.BtnEstatisticas.TabIndex = 3;
+            this.BtnEstatisticas.Text = "Estatisticas";
+            this.BtnEstatisticas.UseVisualStyleBackColor = true;
+            // 
+            // BtnRelatório
+            // 
+            this.BtnRelatório.Location = new System.Drawing.Point(263, 7);
+            this.BtnRelatório.Name = "BtnRelatório";
+            this.BtnRelatório.Size = new System.Drawing.Size(116, 24);
+            this.BtnRelatório.TabIndex = 2;
+            this.BtnRelatório.Text = "Relatório";
+            this.BtnRelatório.UseVisualStyleBackColor = true;
+            // 
+            // BtnVisualizarVenda
+            // 
+            this.BtnVisualizarVenda.Location = new System.Drawing.Point(136, 7);
+            this.BtnVisualizarVenda.Name = "BtnVisualizarVenda";
+            this.BtnVisualizarVenda.Size = new System.Drawing.Size(121, 24);
+            this.BtnVisualizarVenda.TabIndex = 1;
+            this.BtnVisualizarVenda.Text = "Visualizar Venda";
+            this.BtnVisualizarVenda.UseVisualStyleBackColor = true;
+            // 
+            // BtnPesquisarVenda
+            // 
+            this.BtnPesquisarVenda.Location = new System.Drawing.Point(9, 7);
+            this.BtnPesquisarVenda.Name = "BtnPesquisarVenda";
+            this.BtnPesquisarVenda.Size = new System.Drawing.Size(121, 24);
+            this.BtnPesquisarVenda.TabIndex = 0;
+            this.BtnPesquisarVenda.Text = "Pesquisar Venda";
+            this.BtnPesquisarVenda.UseVisualStyleBackColor = true;
+            this.BtnPesquisarVenda.Click += new System.EventHandler(this.BtnPesquisarVenda_Click);
+            // 
             // PainelPrincipal
             // 
             this.PainelPrincipal.AutoSize = true;
@@ -175,6 +244,7 @@
             this.TabControl.ResumeLayout(false);
             this.PageRecursosHumanos.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,6 +263,12 @@
         private System.Windows.Forms.Button BtnVisualizarProduto;
         private System.Windows.Forms.Button BtnPesquisarProduto;
         private System.Windows.Forms.Button BtnCadastrarProduto;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button BtnVendedores;
+        private System.Windows.Forms.Button BtnEstatisticas;
+        private System.Windows.Forms.Button BtnRelatório;
+        private System.Windows.Forms.Button BtnVisualizarVenda;
+        private System.Windows.Forms.Button BtnPesquisarVenda;
 
     }
 }

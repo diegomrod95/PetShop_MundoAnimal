@@ -60,5 +60,10 @@ namespace SistemaMundoAnimal.Forms {
             PainelPrincipal.Controls.Add(new FormEstoque());
         }
 
+        private void BtnPesquisarVenda_Click(object sender, EventArgs e) {
+            PainelPrincipal.Controls.Clear();
+            PainelPrincipal.Controls.Add(new FormPesquisarVenda());
+        }
+
     }
 }
