@@ -140,6 +140,21 @@ CREATE TABLE [Funcionario] (
 GO
 
 -- ----------------------------------------------------------------------------
+-- CRIA TABELA Vendedor
+-- ----------------------------------------------------------------------------
+CREATE TABLE [Vendedor] (
+    [Funcionario_Id]        INT NOT NULL,
+    [Comissao]              DECIMAL(10, 3) NULL,
+    [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
+    [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
+    PRIMARY KEY ([Funcionario_Id]),
+    CONSTRAINT [fk_Vendedor_Funcionario]
+        FOREIGN KEY([Funcionario_Id]) REFERENCES [Funcionario]([Pessoa_Id]),
+    CONSTRAINT [ck_Vendedor_ativo_sn]
+        CHECK([Ativo] IN ('S', 'N')));
+GO
+
+-- ----------------------------------------------------------------------------
 -- CRIA VIEW View_Funcionarios
 -- ----------------------------------------------------------------------------
 CREATE VIEW [View_Funcionarios]
@@ -338,7 +353,7 @@ GO
 CREATE TABLE [Pedido] (
     [Pedido_Id]             INT PRIMARY KEY IDENTITY,
     [Tipo_Id]               INT NOT NULL,  
-    [Funcionario_Id]        INT NOT NULL,
+    [Vendedor_Id]           INT NOT NULL,
     [Valor_Total]           DECIMAL(10, 2) NOT NULL,
     [Desconto]              FLOAT NULL,
     [Descricao]             VARCHAR(150) NULL,
@@ -347,16 +362,16 @@ CREATE TABLE [Pedido] (
     [Data_Cadastro]         DATETIME NOT NULL DEFAULT GETDATE(),
     [Ativo]                 CHAR(1) NOT NULL DEFAULT 'S',
     CONSTRAINT [fk_Pedido_Pessoa]
-        FOREIGN KEY([Funcionario_Id]) REFERENCES [Funcionario]([Pessoa_Id]),
+        FOREIGN KEY([Vendedor_Id]) REFERENCES [Vendedor]([Funcionario_Id]),
     CONSTRAINT [ck_Pedido_ativo_sn]
         CHECK([Ativo] IN ('S', 'N')));
 GO
 
 -- ----------------------------------------------------------------------------
--- CRIA TABELA Pedido_Produto
+-- CRIA TABELA Item_Pedido
 -- ----------------------------------------------------------------------------
-CREATE TABLE [Pedido_Produto] (
-    [Pedido_Id]              INT NOT NULL,
+CREATE TABLE [Item_Pedido] (
+    [Pedido_Id]             INT NOT NULL,
     [Produto_Id]            INT NOT NULL,
     [Quantidade]            FLOAT NOT NULL,
     [Valor_Unitario]        DECIMAL(10, 2) NOT NULL,
