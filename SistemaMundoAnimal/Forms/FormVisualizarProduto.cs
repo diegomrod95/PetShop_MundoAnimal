@@ -20,6 +20,7 @@ namespace SistemaMundoAnimal.Forms {
         public FormVisualizarProduto(int produto) {
             InitializeComponent();
             TxtCodigo.Text = produto.ToString();
+            PesquisaCategoria.Todos(SetCategoria);
             Pesquisar();
         }
 
@@ -39,7 +40,38 @@ namespace SistemaMundoAnimal.Forms {
                 reader["CNPJ"],
                 reader["Data_Cadastro"],
                 reader["Ativo"]);
-        } 
+        }
+
+        private void SetCategoria(SqlDataReader reader) {
+            ComboCategoria.Items.Add(reader["Nome"]);
+        }
+
+        private void SetProduto(SqlDataReader reader) {
+            TxtNome.Text = reader["Nome"].ToString();
+            TxtCodigoProduto.Text = reader["Codigo"].ToString();
+            numPrecoVenda.Value = Convert.ToDecimal(reader["Preco_Venda"]);
+            numTamanho.Value = Convert.ToDecimal(reader["Tamanho"]);
+            numPeso.Value = Convert.ToDecimal(reader["Peso"]);
+            TxtDescricao.Text = reader["Descricao"].ToString();
+            
+            // Utiliza o linq para descobrir a medida correspondente
+            var medida = from string e in ComboMedida.Items
+                         where e.Substring(0, 2) == reader["Tipo_Medida"].ToString()
+                         select ComboMedida.Items.IndexOf(e);
+
+            foreach (int i in medida) {
+                ComboMedida.SelectedIndex = i;
+            }
+
+            var categoria = from string e in ComboCategoria.Items
+                            where e == reader["Categoria"].ToString()
+                            select ComboCategoria.Items.IndexOf(e);
+
+            foreach (int i in categoria) {
+                ComboCategoria.SelectedIndex = i;
+            }
+
+        }
 
         private void LimpaResultado() {
             DataGridFornecedores.Rows.Clear();
@@ -52,6 +84,7 @@ namespace SistemaMundoAnimal.Forms {
                 int id = Convert.ToInt32(TxtCodigo.Text);
                 PesquisaFornecedor.PorProdutoId(id, SetFornecedor);
                 PesquisaFabricante.ProProdutoId(id, SetFabricante);
+                PesquisaProduto.PorId(id.ToString(), SetProduto);
             } catch (Exception e) {
                 MessageBox.Show(e.Message);
             }

@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.gbProduto = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtCodigoProduto = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.BtnSalvar = new System.Windows.Forms.Button();
             this.ComboCategoria = new System.Windows.Forms.ComboBox();
@@ -44,21 +44,21 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BtnAddFornecedor = new System.Windows.Forms.Button();
             this.DataGridFornecedores = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.BtnAddFabricante = new System.Windows.Forms.Button();
-            this.DataGridFabricantes = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TxtCodigo = new System.Windows.Forms.TextBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BtnAddFabricante = new System.Windows.Forms.Button();
+            this.DataGridFabricantes = new System.Windows.Forms.DataGridView();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TxtCodigo = new System.Windows.Forms.TextBox();
             this.gbProduto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPeso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTamanho)).BeginInit();
@@ -71,7 +71,7 @@
             // 
             // gbProduto
             // 
-            this.gbProduto.Controls.Add(this.textBox1);
+            this.gbProduto.Controls.Add(this.TxtCodigoProduto);
             this.gbProduto.Controls.Add(this.label8);
             this.gbProduto.Controls.Add(this.BtnSalvar);
             this.gbProduto.Controls.Add(this.ComboCategoria);
@@ -95,12 +95,12 @@
             this.gbProduto.TabStop = false;
             this.gbProduto.Text = "Informações do Produto";
             // 
-            // textBox1
+            // TxtCodigoProduto
             // 
-            this.textBox1.Location = new System.Drawing.Point(140, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 20);
-            this.textBox1.TabIndex = 63;
+            this.TxtCodigoProduto.Location = new System.Drawing.Point(140, 53);
+            this.TxtCodigoProduto.Name = "TxtCodigoProduto";
+            this.TxtCodigoProduto.Size = new System.Drawing.Size(236, 20);
+            this.TxtCodigoProduto.TabIndex = 63;
             // 
             // label8
             // 
@@ -311,6 +311,41 @@
             this.DataGridFornecedores.Size = new System.Drawing.Size(553, 141);
             this.DataGridFornecedores.TabIndex = 0;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Codigo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 102;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Nome Fantasia";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 102;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "CNPJ";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 102;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Data Cadastro";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 102;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Ativo";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 102;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.BtnAddFabricante);
@@ -348,59 +383,6 @@
             this.DataGridFabricantes.Size = new System.Drawing.Size(553, 140);
             this.DataGridFabricantes.TabIndex = 0;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(737, 18);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 13);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Código do Produto:";
-            // 
-            // TxtCodigo
-            // 
-            this.TxtCodigo.Location = new System.Drawing.Point(841, 15);
-            this.TxtCodigo.Name = "TxtCodigo";
-            this.TxtCodigo.Size = new System.Drawing.Size(144, 20);
-            this.TxtCodigo.TabIndex = 17;
-            this.TxtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigo_KeyPress);
-            this.TxtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtCodigo_KeyUp);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Codigo";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 102;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nome Fantasia";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 102;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "CNPJ";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 102;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Data Cadastro";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 102;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Ativo";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 102;
-            // 
             // Column6
             // 
             this.Column6.HeaderText = "Codigo";
@@ -435,6 +417,24 @@
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
             this.Column10.Width = 102;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(737, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Código do Produto:";
+            // 
+            // TxtCodigo
+            // 
+            this.TxtCodigo.Location = new System.Drawing.Point(841, 15);
+            this.TxtCodigo.Name = "TxtCodigo";
+            this.TxtCodigo.Size = new System.Drawing.Size(144, 20);
+            this.TxtCodigo.TabIndex = 17;
+            this.TxtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCodigo_KeyPress);
+            this.TxtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtCodigo_KeyUp);
             // 
             // FormVisualizarProduto
             // 
@@ -485,7 +485,7 @@
         private System.Windows.Forms.ComboBox ComboCategoria;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button BtnSalvar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtCodigoProduto;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TxtCodigo;
