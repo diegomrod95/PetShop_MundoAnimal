@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+using SistemaMundoAnimal.Source.Entidades;
 using SistemaMundoAnimal.Source.Pesquisa.Entidade;
 
 namespace SistemaMundoAnimal.Forms {
@@ -73,6 +74,23 @@ namespace SistemaMundoAnimal.Forms {
 
         }
 
+        private Produto NovoProduto() {
+            var produto = new Produto();
+            try {
+
+                produto.SetId(Convert.ToInt32(TxtCodigo.Text));
+                produto.SetNome(TxtNome.Text);
+                produto.SetPrecoVenda((double)numPrecoVenda.Value);
+                produto.SetTamanho((double)numTamanho.Value);
+                produto.SetPeso((double)numPeso.Value);
+                //TODO
+
+                return produto;
+            } catch (Exception) {
+                throw;
+            }
+        }
+
         private void LimpaResultado() {
             DataGridFornecedores.Rows.Clear();
             DataGridFabricantes.Rows.Clear();
@@ -98,6 +116,10 @@ namespace SistemaMundoAnimal.Forms {
         private void TxtCodigo_KeyUp(object sender, KeyEventArgs e) {
             if (TxtCodigo.Text != "") Pesquisar();
             else LimpaResultado();
+        }
+
+        private void BtnSalvar_Click(object sender, EventArgs e) {
+
         }
     }
 }

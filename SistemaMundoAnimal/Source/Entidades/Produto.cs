@@ -37,6 +37,16 @@ namespace SistemaMundoAnimal.Source.Entidades {
             + " OUTPUT inserted.Produto_Id"
             + " VALUES ('{0}', '{1}', {2}, {3}, {4}, '{5}', '{6}', '{7}')";
 
+        private static readonly string UpdateProdutoSqlQuery = "UPDATE [Produto] SET"
+            + " [Nome] = '{1}',"
+            + " [Tamanho] = {2},"
+            + " [Preco_Venda] = {3},"
+            + " [Peso] = {4},"
+            + " [Tipo_Medida] = '{5}',"
+            + " [Descricao] = '{6}',"
+            + " [Especificacoes] = NULL"
+            + " WHERE [Produto_Id] = {0}";
+
         public static void InserirNoBancoDeDados(Produto produto) {
             string comando;
             try {
@@ -57,6 +67,26 @@ namespace SistemaMundoAnimal.Source.Entidades {
 
             } catch (Exception e) {
                 throw e;
+            }
+        }
+
+        public static void UpdateNoBancoDeDados(Produto produto) {
+            string comando;
+            try {
+
+                comando = string.Format(UpdateProdutoSqlQuery,
+                    produto.GetId(),
+                    produto.GetNome(),
+                    produto.GetTamanho(),
+                    produto.GetPrecoVenda(),
+                    produto.GetPeso(),
+                    produto.GetMedida(),
+                    produto.GetDescricao());
+
+                BancoDeDados.NovoComandoSql(comando);
+
+            } catch (Exception) {
+                throw;
             }
         }
 

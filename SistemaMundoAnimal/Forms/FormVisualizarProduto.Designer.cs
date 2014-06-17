@@ -120,6 +120,7 @@
             this.BtnSalvar.TabIndex = 61;
             this.BtnSalvar.Text = "Salvar Alterações";
             this.BtnSalvar.UseVisualStyleBackColor = true;
+            this.BtnSalvar.Click += new System.EventHandler(this.BtnSalvar_Click);
             // 
             // ComboCategoria
             // 
