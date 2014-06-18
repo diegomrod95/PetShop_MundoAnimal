@@ -83,7 +83,7 @@ namespace SistemaMundoAnimal.Forms {
                 produto.SetPrecoVenda((double)numPrecoVenda.Value);
                 produto.SetTamanho((double)numTamanho.Value);
                 produto.SetPeso((double)numPeso.Value);
-                //TODO
+                produto.SetMedida(ComboMedida.Text.Substring(0, 2));
 
                 return produto;
             } catch (Exception) {
