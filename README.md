@@ -1,4 +1,4 @@
-<h1>Pet Shop Mundo Animal</h1>
+<h1>Pet Shop Mundo Animal - Descontinuado</h1>
 
 <p>Sistema completo e E-commerce de uma empresa de grande porte do ramo de Pet Shop.</p>
 
